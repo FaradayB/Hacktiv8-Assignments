@@ -195,3 +195,6 @@ Monthly Cost  =  ( Input tokens/call × calls/month ÷ 1,000,000 × input price 
 
 Monthly Cost  =  ( 722 × 90000 ÷ 1,000,000 × 3 )  +  ( 250 × 90000 ÷ 1,000,000 × 15 ) = $195 + $3375 = $3570
 ```
+
+PS:
+Kurang tahu perhitungan benar atau tidak, rumus sedikit ambigu.
