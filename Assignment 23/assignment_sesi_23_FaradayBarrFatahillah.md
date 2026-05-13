@@ -40,6 +40,7 @@ Masyarakat umum
 - Hasil riset mandiri yang didampingi dan di approve oleh dokter-dokter,
 - Panduan menjawab dengan bahasa yang halus, formal, dan informatif.
   &nbsp;
+  &nbsp;
 
 #### [2] Model Selection (Scale 1-3)
 
@@ -53,6 +54,7 @@ Masyarakat umum
 
 Sesuai dengan hasil konsiderasi di atas, Claude Sonnet 4.6 sangat cocok untuk use case ini karena merupakan model dengan kualitas terbaik, cepat, dan dapat menyesuaikan dengan constraint yang ditentukan.
 &nbsp;
+&nbsp;
 
 #### [3] Prompt Design
 
@@ -61,20 +63,135 @@ Berikut merupakan prompt design yang digunakan:
 
 ```python
 """
-Kamu adalah asisten kesehatan virtual untuk peserta BPJS Kesehatan Kelas 1 Indonesia.
+#Persona
+You are a virtual health assistant for BPJS Kesehatan Class 1 members in Indonesia.
 
-Bantu pengguna memahami gejala umum, panduan pertolongan pertama, dan kapan harus
-ke dokter atau fasilitas kesehatan terdekat.
+#Scope
+Only answer questions related to:
+- Common health symptoms and complaints
+- Basic first-aid steps
+- BPJS Class 1 service procedures and information
+- Recommendations for primary healthcare facilities (puskesmas, clinics)
 
-Jawab hanya pertanyaan seputar kesehatan
-umum dan informasi BPJS. Jangan pernah mendiagnosis penyakit secara langsung.
+#Format
+Structure every answer as follows:
+1. Brief explanation of the symptom (1-2 sentences)
+2. Steps the user can take (bullet points)
+3. Action recommendation (visit a facility or manage at home)
 
-Selalu sarankan konsultasi dokter untuk kondisi serius. Respond dalam Bahasa Indonesia
-yang ramah dan mudah dipahami. Kembalikan jawaban dalam format poin-poin singkat
-diikuti rekomendasi tindakan.
+#Language
+- Always respond in Bahasa Indonesia.
+- Use a friendly, empathetic tone that is easy for the general public to understand.
+- Avoid overly technical medical terminology.
+
+#Refusal
+- NEVER directly diagnose any disease or medical condition
+- NEVER recommend prescription drug dosages
+- NEVER answer questions outside the topics of health and BPJS
+- Always recommend consulting a doctor for serious or unclear conditions
 """
 ```
 
 &nbsp;
 
 **B - Context / RAG Injection**
+
+```HTML
+<context>
+[FAQ Kesehatan Umum Kemenkes RI, WHO, Research Paper — ~300 token per chunk]
+[Panduan Faskes BPJS Kelas 1 — ~200 token per chunk]
+</context>
+```
+
+&nbsp;
+
+**C - Sample User Messages**
+
+```
+MSG1: "Anak saya demam 38.5 derajat sejak kemarin, apa yang harus saya lakukan?"
+MSG2: "Apakah saya dapat menggunakan BPJS untuk cek kuping yang berinfeksi di THT?"
+MSG3: "Saya merasa pusing dan terlihat pucat serta gemetaran, apa ada obat yang bisa membantu?"
+```
+
+&nbsp;
+
+**D - Expected Ouput Definition**
+| Komponen | Jawaban |
+|----------|-------------------------|
+|Format | bullet list |
+|Length | medium ~200 |
+|Tone | friendly and empathetic |
+|Language | Bahasa Indonesia |
+
+```
+Sample OK:
+Ya, kamu dapat menggunakan BPJS kelas 1 kamu untuk ke dokter THT, namun dengan alur berikut:
+1. Kunjungi faskes tingkat pertama terdaftar di kartu BPJS kamu,
+2. Minta surat rujukan ke dokter spesialis THT,
+3. Datang ke poliklinik THT rumah sakit dengan surat rujukan tersebut.
+```
+
+&nbsp;
+&nbsp;
+
+#### [4] Token Estimation
+
+| Measure           | Token |
+| ----------------- | ----- |
+| System Prompt     | 200   |
+| Avg. User Message | 22    |
+| Avg. Context/RAG  | 500   |
+| Expected Output   | 250   |
+
+```
+Total Tokens = Sys + User + Context + Output = 200 + 22 + 500 + 250 =  972
+```
+
+&nbsp;
+&nbsp;
+
+#### [5] Cost Estimation
+
+Terdapat 2 case, yaitu high volume dan low volume. Berikut merupakan perhitungan cost dari dua case tersebut.
+
+Pricing terdapat pada dokumentasi [Official Claude Pricing](https://platform.claude.com/docs/en/about-claude/pricing)
+
+**Low Volume**
+| Measure | Token and Price |
+| ----------------- | ----- |
+| System Prompt | 200 Tokens |
+| Avg. User Message | 22 Tokens |
+| Avg. Context/RAG | 500 Tokens |
+| Expected Output | 250 Tokens |
+| Total input | 722 Tokens |
+| Total Output | 250 Tokens |
+| Expected Calls | 300 |
+| Call per Month | 9000 |
+| Input Price | $3 |
+| Output Price | $15 |
+
+```
+Monthly Cost  =  ( Input tokens/call × calls/month ÷ 1,000,000 × input price )  +  ( Output tokens/call × calls/month ÷ 1,000,000 × output price )
+
+Monthly Cost  =  ( 722 × 9000 ÷ 1,000,000 × 3 )  +  ( 250 × 9000 ÷ 1,000,000 × 15 ) = $19.5 + $33.75 = $53.25
+```
+
+**High Volume**
+| Measure | Token and Price |
+| ----------------- | ----- |
+| System Prompt | 200 Tokens |
+| Avg. User Message | 22 Tokens |
+| Avg. Context/RAG | 500 Tokens |
+| Expected Output | 250 Tokens |
+| Total input | 722 Tokens |
+| Total Output | 250 Tokens |
+| Expected Calls | 3000 |
+| Call per Month | 90000 |
+| Input Price | $3 |
+| Output Price | $15 |
+
+```
+Monthly Cost  =  ( Input tokens/call × calls/month ÷ 1,000,000 × input price )  +  ( Output tokens/call × calls/month ÷ 1,000,000 × output price )
+
+Monthly Cost  =  ( 722 × 90000 ÷ 1,000,000 × 3 )  +  ( 250 × 90000 ÷ 1,000,000 × 15 ) = $195 + $3375 = $3570
+```
