@@ -1,0 +1,2851 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Algorithms Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --bg2: #111318;
+    --bg3: #1a1d24;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --text: #e8eaf0;
+    --muted: #7a7f8e;
+    --accent: #6c8fff;
+
+    --clf: #3ecf8e;
+    --clf-bg: rgba(62,207,142,0.1);
+    --reg: #f7a94b;
+    --reg-bg: rgba(247,169,75,0.1);
+    --both: #a78bfa;
+    --both-bg: rgba(167,139,250,0.1);
+
+    --overfit: #ff6b6b;
+    --underfit: #4fc3f7;
+    --neutral: #7a7f8e;
+
+    --star: #f7c948;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    min-height: 100vh;
+    padding: 32px 24px 80px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  header .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #e8eaf0 40%, #6c8fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 16px 24px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+  }
+
+  .legend-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .legend-title {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot-clf { background: var(--clf); }
+  .dot-reg { background: var(--reg); }
+  .dot-both { background: var(--both); }
+  .dot-over { background: var(--overfit); }
+  .dot-under { background: var(--underfit); }
+  .dot-neutral { background: var(--neutral); }
+
+  .star-legend { color: var(--star); font-size: 12px; }
+
+  .filters {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 7px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover { border-color: var(--border2); transform: translateY(-2px); }
+
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+  }
+
+  .card-title-group {}
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .card-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .badge-group { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+  }
+  .badge-clf { background: var(--clf-bg); color: var(--clf); border: 1px solid rgba(62,207,142,0.25); }
+  .badge-reg { background: var(--reg-bg); color: var(--reg); border: 1px solid rgba(247,169,75,0.25); }
+  .badge-both { background: var(--both-bg); color: var(--both); border: 1px solid rgba(167,139,250,0.25); }
+
+  .params { padding: 12px 18px 16px; }
+
+  .param-row {
+    display: grid;
+    grid-template-columns: 14px 1fr auto;
+    align-items: start;
+    gap: 8px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: background 0.15s;
+  }
+  .param-row:hover { background: rgba(255,255,255,0.03); }
+
+  .stars { font-size: 11px; color: var(--star); line-height: 1; margin-top: 2px; }
+
+  .param-info {}
+  .param-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #c8cfe0;
+    margin-bottom: 3px;
+  }
+  .param-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+  .param-impacts { display: flex; flex-direction: column; gap: 3px; align-items: flex-end; min-width: 110px; }
+
+  .impact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10.5px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  .impact-arrow { font-weight: 700; font-size: 11px; }
+  .impact-label { font-size: 10px; }
+
+  .over { background: rgba(255,107,107,0.12); color: #ff8a8a; }
+  .under { background: rgba(79,195,247,0.12); color: #7dd4f0; }
+  .neutral-imp { background: rgba(122,127,142,0.12); color: #9aa0b0; }
+  .complex { background: rgba(248,150,30,0.12); color: #f8a54e; }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 8px 0;
+  }
+
+  .param-section-label {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    margin-top: 4px;
+    padding: 0 10px;
+  }
+
+  .tip-box {
+    margin: 0 18px 14px;
+    padding: 9px 12px;
+    background: rgba(108,143,255,0.07);
+    border: 1px solid rgba(108,143,255,0.15);
+    border-radius: 8px;
+    font-size: 11px;
+    color: #9aacdb;
+    line-height: 1.55;
+  }
+  .tip-box b { color: #8ba8f0; }
+
+  .hidden { display: none !important; }
+
+  .code-block {
+    margin: 0 18px 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 12px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .code-lang {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .copy-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .copy-btn:hover { color: var(--text); background: rgba(255,255,255,0.07); }
+  .copy-btn.copied { color: #3ecf8e; }
+
+  pre {
+    margin: 0;
+    padding: 12px 14px;
+    background: rgba(0,0,0,0.3);
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: #c8d0e8;
+  }
+
+  .kw { color: #a78bfa; }
+  .fn { color: #6c8fff; }
+  .cls { color: #3ecf8e; }
+  .cm { color: #4a5068; }
+  .str { color: #f7c948; }
+  .num { color: #f7a94b; }
+
+  @media (max-width: 480px) {
+    .grid { grid-template-columns: 1fr; }
+    .param-impacts { min-width: 90px; }
+  }
+
+  /* ── Model Finder ─────────────────────────────── */
+  .finder {
+    max-width: 1000px;
+    margin: 0 auto 48px;
+    background: var(--bg2);
+    border: 1px solid rgba(108,143,255,0.2);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .finder-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(108,143,255,0.05);
+  }
+
+  .finder-icon {
+    width: 36px; height: 36px;
+    background: rgba(108,143,255,0.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+
+  .finder-title { font-size: 15px; font-weight: 600; color: var(--text); }
+  .finder-sub   { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .finder-reset {
+    margin-left: auto;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .finder-reset:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+  .finder-body { padding: 20px 24px 24px; }
+
+  .criteria-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .criteria-group {}
+  .criteria-group-label {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .criterion {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 8px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .criterion:hover { background: rgba(255,255,255,0.04); }
+
+  .criterion input[type="checkbox"] { display: none; }
+
+  .check-box {
+    width: 16px; height: 16px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    font-size: 10px;
+  }
+  .criterion.checked .check-box {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .criterion-label {
+    font-size: 12.5px;
+    color: #a8afc0;
+    line-height: 1.3;
+  }
+  .criterion.checked .criterion-label { color: var(--text); font-weight: 500; }
+
+  /* ── Results bar ────────────────────────────── */
+  .finder-results {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    background: rgba(0,0,0,0.2);
+    border-top: 1px solid var(--border);
+    min-height: 54px;
+  }
+
+  .results-label {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  .result-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+  }
+  .result-chip:hover { filter: brightness(1.15); transform: translateY(-1px); }
+  .result-chip .chip-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  .chip-both  { background: rgba(167,139,250,0.15); color: var(--both); border-color: rgba(167,139,250,0.25); }
+  .chip-clf   { background: rgba(62,207,142,0.12);  color: var(--clf);  border-color: rgba(62,207,142,0.25); }
+  .chip-reg   { background: rgba(247,169,75,0.12);  color: var(--reg);  border-color: rgba(247,169,75,0.25); }
+
+  .no-match {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── Card match state ───────────────────────── */
+  .card.finder-dim {
+    opacity: 0.2;
+    filter: saturate(0.2);
+    transform: none !important;
+    pointer-events: none;
+  }
+  .card.finder-match {
+    border-color: rgba(108,143,255,0.5) !important;
+    box-shadow: 0 0 0 1px rgba(108,143,255,0.2), 0 4px 24px rgba(108,143,255,0.08);
+  }
+  .card.finder-match .card-head { background: rgba(108,143,255,0.04); }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Machine Learning Reference</div>
+  <h1>Hyperparameter Tuning Cheat Sheet</h1>
+  <p>Panduan lengkap parameter penting di setiap algoritma ML — urutan prioritas tuning, dan efek naik/turun terhadap overfit & underfit.</p>
+</header>
+
+
+<!-- ===== MODEL FINDER ===== -->
+<div class="finder" id="finder">
+  <div class="finder-header">
+    <div class="finder-icon">🔍</div>
+    <div>
+      <div class="finder-title">Model Finder</div>
+      <div class="finder-sub">Centang kebutuhan proyekmu — model yang sesuai akan ditampilkan</div>
+    </div>
+    <button class="finder-reset" onclick="resetFinder()">Reset semua</button>
+  </div>
+
+  <div class="finder-body">
+    <div class="criteria-groups">
+
+      <div class="criteria-group">
+        <div class="criteria-group-label">📊 Ukuran Dataset</div>
+        <div class="criterion" onclick="toggleCriterion(this, 'small')"><div class="check-box">✓</div>
+          <span class="criterion-label">Dataset kecil (&lt;5K baris)</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'medium')"><div class="check-box">✓</div>
+          <span class="criterion-label">Dataset sedang (5K–100K)</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'large')"><div class="check-box">✓</div>
+          <span class="criterion-label">Dataset besar (&gt;100K baris)</span></div>
+      </div>
+
+      <div class="criteria-group">
+        <div class="criteria-group-label">🎯 Task</div>
+        <div class="criterion" onclick="toggleCriterion(this, 'task-clf')"><div class="check-box">✓</div>
+          <span class="criterion-label">Classification</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'task-reg')"><div class="check-box">✓</div>
+          <span class="criterion-label">Regression</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'nonlinear')"><div class="check-box">✓</div>
+          <span class="criterion-label">Pola non-linear</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'linear')"><div class="check-box">✓</div>
+          <span class="criterion-label">Hubungan linear</span></div>
+      </div>
+
+      <div class="criteria-group">
+        <div class="criteria-group-label">🏗️ Output & Interpretasi</div>
+        <div class="criterion" onclick="toggleCriterion(this, 'interpretable')"><div class="check-box">✓</div>
+          <span class="criterion-label">Mudah diinterpretasi</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'feat-importance')"><div class="check-box">✓</div>
+          <span class="criterion-label">Feature importance</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'prob-output')"><div class="check-box">✓</div>
+          <span class="criterion-label">Probability output</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'feat-select')"><div class="check-box">✓</div>
+          <span class="criterion-label">Feature selection otomatis</span></div>
+      </div>
+
+      <div class="criteria-group">
+        <div class="criteria-group-label">⚡ Performa & Constraints</div>
+        <div class="criterion" onclick="toggleCriterion(this, 'fast-train')"><div class="check-box">✓</div>
+          <span class="criterion-label">Training cepat</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'fast-predict')"><div class="check-box">✓</div>
+          <span class="criterion-label">Prediksi cepat (produksi)</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'no-tuning')"><div class="check-box">✓</div>
+          <span class="criterion-label">Bagus tanpa banyak tuning</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'nan-native')"><div class="check-box">✓</div>
+          <span class="criterion-label">Handle missing values native</span></div>
+        <div class="criterion" onclick="toggleCriterion(this, 'imbalanced')"><div class="check-box">✓</div>
+          <span class="criterion-label">Imbalanced class</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="finder-results" id="finder-results">
+    <span class="results-label">Model →</span>
+    <span class="no-match" id="finder-hint">Pilih kriteria di atas untuk melihat rekomendasi model</span>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-group">
+    <span class="legend-title">Task</span>
+    <span class="legend-item"><span class="dot dot-clf"></span> Classification</span>
+    <span class="legend-item"><span class="dot dot-reg"></span> Regression</span>
+    <span class="legend-item"><span class="dot dot-both"></span> Both</span>
+  </div>
+  <div class="legend-group">
+    <span class="legend-title">Efek</span>
+    <span class="legend-item"><span class="dot dot-over"></span> → Overfit</span>
+    <span class="legend-item"><span class="dot dot-under"></span> → Underfit</span>
+    <span class="legend-item"><span class="dot dot-neutral"></span> Tergantung data</span>
+  </div>
+  <div class="legend-group">
+    <span class="legend-title">Prioritas</span>
+    <span class="legend-item"><span class="star-legend">★★★</span> Kritis</span>
+    <span class="legend-item"><span class="star-legend">★★</span> Penting</span>
+    <span class="legend-item"><span class="star-legend">★</span> Minor</span>
+  </div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filter('all', this)">Semua Algoritma</button>
+  <button class="filter-btn" onclick="filter('clf', this)">Classification</button>
+  <button class="filter-btn" onclick="filter('reg', this)">Regression</button>
+  <button class="filter-btn" onclick="filter('both', this)">Keduanya</button>
+</div>
+
+<div class="grid" id="grid">
+
+  <!-- ============ DECISION TREE ============ -->
+  <div class="card" data-task="both" data-algo="decision-tree">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Decision Tree</div>
+        <div class="card-sub">DecisionTreeClassifier / DecisionTreeRegressor</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-both">Both</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">max_depth</div>
+          <div class="param-desc">Kedalaman maksimum pohon. Parameter paling krusial.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">min_samples_split</div>
+          <div class="param-desc">Min sampel untuk split node. Default=2 (sangat mudah overfit).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">min_samples_leaf</div>
+          <div class="param-desc">Min sampel di leaf node. Mirip min_samples_split tapi lebih kuat.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">max_features</div>
+          <div class="param-desc">Jumlah fitur yang dipertimbangkan tiap split. "sqrt" untuk clf.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Variance ↓</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">max_leaf_nodes</div>
+          <div class="param-desc">Batas jumlah leaf. Alternatif kontrol kompleksitas vs max_depth.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Mulai dari max_depth=3~5. Kalau masih underfit, longgarkan min_samples_split. Jangan biarkan default — DT sangat cepat overfit.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.tree <span class="kw">import</span> <span class="cls">DecisionTreeClassifier</span>, <span class="cls">DecisionTreeRegressor</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — tree tidak perlu scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Classifier</span>
+classifier = <span class="cls">DecisionTreeClassifier</span>(
+    max_depth=<span class="num">5</span>, min_samples_split=<span class="num">10</span>,
+    min_samples_leaf=<span class="num">4</span>, max_features=<span class="str">sqrt</span>, random_state=<span class="num">42</span>
+)
+
+<span class="cm"># Pipeline</span>
+pipeline_dt = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+pipeline_dt.fit(X_train, y_train)
+y_pred = pipeline_dt.predict(X_test)
+
+<span class="cm"># Regression</span>
+regressor  = <span class="cls">DecisionTreeRegressor</span>(max_depth=<span class="num">5</span>, random_state=<span class="num">42</span>)
+pipeline_reg = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor)])
+
+<span class="cm"># Tuning — prefix "classifier__param"</span>
+param_grid = {
+    <span class="str">classifier__max_depth</span>:        [<span class="num">3</span>, <span class="num">5</span>, <span class="num">7</span>, <span class="num">10</span>],
+    <span class="str">classifier__min_samples_leaf</span>: [<span class="num">2</span>, <span class="num">5</span>, <span class="num">10</span>],
+}
+search = <span class="cls">GridSearchCV</span>(pipeline_dt, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">f1_weighted</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ RANDOM FOREST ============ -->
+  <div class="card" data-task="both" data-algo="random-forest">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Random Forest</div>
+        <div class="card-sub">RandomForestClassifier / RandomForestRegressor</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-both">Both</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">n_estimators</div>
+          <div class="param-desc">Jumlah pohon. Lebih banyak = lebih stabil, tapi lambat. Minimal 100.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Variance ↓</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">↓</span><span class="impact-label">Instabil</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">max_depth</div>
+          <div class="param-desc">Kedalaman tiap pohon. RF lebih toleran overfit tapi tetap perlu dijaga.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">max_features</div>
+          <div class="param-desc">"sqrt" (clf) / "1/3" (reg). Kontrol diversitas antar pohon.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Bias ↑</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">min_samples_leaf</div>
+          <div class="param-desc">Min sampel di leaf. Naik ke 4-10 untuk dataset kecil/noisy.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">bootstrap / max_samples</div>
+          <div class="param-desc">Proporsi data untuk tiap pohon. Kurangi untuk lebih random.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">↓</span><span class="impact-label">Diversitas ↑</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Set n_estimators=200+ dulu. Lalu tuning max_features & min_samples_leaf. RF biasanya out-of-the-box bagus, tidak perlu tuning ekstrem.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">RandomForestClassifier</span>, <span class="cls">RandomForestRegressor</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">RandomizedSearchCV</span>
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> <span class="cls">randint</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — tree tidak perlu scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Classifier</span>
+classifier = <span class="cls">RandomForestClassifier</span>(
+    n_estimators=<span class="num">200</span>, max_features=<span class="str">sqrt</span>,
+    min_samples_leaf=<span class="num">2</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>
+)
+
+<span class="cm"># Pipeline</span>
+pipeline_rf = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+pipeline_rf.fit(X_train, y_train)
+
+<span class="cm"># Regression</span>
+regressor    = <span class="cls">RandomForestRegressor</span>(n_estimators=<span class="num">200</span>, max_features=<span class="num">0.33</span>, n_jobs=<span class="num">-1</span>)
+pipeline_reg = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor)])
+
+<span class="cm"># Tuning</span>
+param_dist = {
+    <span class="str">classifier__n_estimators</span>:    randint(<span class="num">100</span>, <span class="num">500</span>),
+    <span class="str">classifier__max_depth</span>:       [<span class="num">5</span>, <span class="num">10</span>, <span class="num">20</span>, <span class="kw">None</span>],
+    <span class="str">classifier__max_features</span>:    [<span class="str">sqrt</span>, <span class="str">log2</span>, <span class="num">0.3</span>],
+    <span class="str">classifier__min_samples_leaf</span>: randint(<span class="num">1</span>, <span class="num">10</span>),
+}
+search = <span class="cls">RandomizedSearchCV</span>(
+    pipeline_rf, param_dist, n_iter=<span class="num">80</span>, cv=<span class="num">5</span>,
+    scoring=<span class="str">f1_weighted</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>
+)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ GRADIENT BOOSTING ============ -->
+  <div class="card" data-task="both" data-algo="gbm">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Gradient Boosting / XGBoost</div>
+        <div class="card-sub">GradientBoostingClassifier / XGBClassifier / LightGBM</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-both">Both</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">learning_rate (eta)</div>
+          <div class="param-desc">Kontrol kontribusi tiap pohon. Kecil = perlu n_estimators lebih banyak.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">n_estimators</div>
+          <div class="param-desc">Jumlah boosting rounds. Harus seimbang dengan learning_rate.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">max_depth</div>
+          <div class="param-desc">GBM sensitif depth. Biasanya cukup 3-6. XGB default=6.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">subsample</div>
+          <div class="param-desc">Proporsi data per pohon (stochastic GBM). 0.5-0.8 bagus.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑→1.0</span><span class="impact-label">Overfit</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">↓</span><span class="impact-label">Regularisasi</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">reg_alpha / reg_lambda</div>
+          <div class="param-desc">L1 (alpha) dan L2 (lambda) regularisasi. Default lambda=1.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓→0</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">colsample_bytree</div>
+          <div class="param-desc">Fraksi fitur per pohon. 0.5-0.8 untuk regularisasi fitur.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑→1.0</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Bias ↑</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">min_child_weight</div>
+          <div class="param-desc">Min sum of instance weight in child. Mirip min_samples_leaf.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Mulai lr=0.1, cari n_estimators optimal dengan early_stopping. Lalu turunkan lr=0.01-0.05 dan naikkan n_estimators. Gunakan GridSearch/Optuna untuk max_depth + subsample.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">GradientBoostingClassifier</span>
+<span class="kw">from</span> xgboost <span class="kw">import</span> <span class="cls">XGBClassifier</span>
+<span class="kw">from</span> lightgbm <span class="kw">import</span> <span class="cls">LGBMClassifier</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">RandomizedSearchCV</span>
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> <span class="cls">loguniform</span>, <span class="cls">randint</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — tree tidak perlu scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># ── Sklearn GBM ─────────────────────────────</span>
+classifier_gbm = <span class="cls">GradientBoostingClassifier</span>(
+    n_estimators=<span class="num">300</span>, learning_rate=<span class="num">0.05</span>,
+    max_depth=<span class="num">4</span>, subsample=<span class="num">0.8</span>, random_state=<span class="num">42</span>
+)
+pipeline_gbm = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier_gbm)])
+pipeline_gbm.fit(X_train, y_train)
+
+<span class="cm"># ── XGBoost ──────────────────────────────────</span>
+classifier_xgb = <span class="cls">XGBClassifier</span>(
+    n_estimators=<span class="num">300</span>, learning_rate=<span class="num">0.05</span>, max_depth=<span class="num">4</span>,
+    subsample=<span class="num">0.8</span>, colsample_bytree=<span class="num">0.8</span>, reg_lambda=<span class="num">1</span>,
+    eval_metric=<span class="str">logloss</span>, random_state=<span class="num">42</span>
+)
+pipeline_xgb = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier_xgb)])
+
+<span class="cm"># ── LightGBM ─────────────────────────────────</span>
+classifier_lgbm = <span class="cls">LGBMClassifier</span>(
+    n_estimators=<span class="num">300</span>, learning_rate=<span class="num">0.05</span>, num_leaves=<span class="num">31</span>, subsample=<span class="num">0.8</span>
+)
+pipeline_lgbm = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier_lgbm)])
+
+<span class="cm"># ── Tuning XGBoost ───────────────────────────</span>
+param_dist = {
+    <span class="str">classifier__n_estimators</span>:    randint(<span class="num">100</span>, <span class="num">500</span>),
+    <span class="str">classifier__learning_rate</span>:   loguniform(<span class="num">0.01</span>, <span class="num">0.3</span>),
+    <span class="str">classifier__max_depth</span>:       randint(<span class="num">3</span>, <span class="num">8</span>),
+    <span class="str">classifier__subsample</span>:       [<span class="num">0.6</span>, <span class="num">0.7</span>, <span class="num">0.8</span>, <span class="num">1.0</span>],
+    <span class="str">classifier__colsample_bytree</span>:[<span class="num">0.6</span>, <span class="num">0.8</span>, <span class="num">1.0</span>],
+    <span class="str">classifier__reg_lambda</span>:      loguniform(<span class="num">1e-3</span>, <span class="num">10</span>),
+}
+search = <span class="cls">RandomizedSearchCV</span>(
+    pipeline_xgb, param_dist, n_iter=<span class="num">80</span>, cv=<span class="num">5</span>,
+    scoring=<span class="str">roc_auc</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>
+)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ SVM ============ -->
+  <div class="card" data-task="both" data-algo="svm">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Support Vector Machine</div>
+        <div class="card-sub">SVC / SVR</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-both">Both</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">C</div>
+          <div class="param-desc">Regularisasi. Nilai besar = fit data lebih ketat (penalty misclassify besar).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">kernel</div>
+          <div class="param-desc">Tipe kernel: linear / rbf / poly / sigmoid. RBF paling umum.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">rbf/poly</span><span class="impact-label">Non-linear</span></span>
+          <span class="impact under"><span class="impact-arrow">linear</span><span class="impact-label">Simple</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">gamma</div>
+          <div class="param-desc">Jangkauan pengaruh satu sampel (untuk rbf/poly). "scale" = 1/(n_feat×var).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">degree (poly kernel)</div>
+          <div class="param-desc">Derajat polynomial. Hanya relevan jika kernel="poly".</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">epsilon (SVR only)</div>
+          <div class="param-desc">Lebar "tube" toleransi error. Besar = lebih toleran, model lebih smooth.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> SVM wajib feature scaling dulu! GridSearch pada C=[0.01, 0.1, 1, 10, 100] dan gamma=['scale', 0.001, 0.01, 0.1]. Lambat untuk dataset besar (>10k baris).</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.svm <span class="kw">import</span> <span class="cls">SVC</span>, <span class="cls">SVR</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Classifier</span>
+classifier = <span class="cls">SVC</span>(C=<span class="num">1.0</span>, kernel=<span class="str">rbf</span>, gamma=<span class="str">scale</span>, probability=<span class="kw">True</span>)
+
+<span class="cm"># Pipeline — scaling aman dari leakage karena ada dalam pipeline</span>
+pipeline_svc = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+pipeline_svc.fit(X_train, y_train)
+y_pred  = pipeline_svc.predict(X_test)
+y_proba = pipeline_svc.predict_proba(X_test)[:, <span class="num">1</span>]
+
+<span class="cm"># Regression</span>
+regressor    = <span class="cls">SVR</span>(C=<span class="num">1.0</span>, kernel=<span class="str">rbf</span>, epsilon=<span class="num">0.1</span>)
+pipeline_svr = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor)])
+
+<span class="cm"># Tuning</span>
+param_grid = {
+    <span class="str">classifier__C</span>:     [<span class="num">0.01</span>, <span class="num">0.1</span>, <span class="num">1</span>, <span class="num">10</span>, <span class="num">100</span>],
+    <span class="str">classifier__gamma</span>: [<span class="str">scale</span>, <span class="num">0.001</span>, <span class="num">0.01</span>, <span class="num">0.1</span>],
+}
+search = <span class="cls">GridSearchCV</span>(pipeline_svc, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">roc_auc</span>, n_jobs=<span class="num">-1</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ KNN ============ -->
+  <div class="card" data-task="both" data-algo="knn">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">K-Nearest Neighbors</div>
+        <div class="card-sub">KNeighborsClassifier / KNeighborsRegressor</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-both">Both</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">n_neighbors (k)</div>
+          <div class="param-desc">Jumlah tetangga. Parameter paling kritis. Coba k=1..20.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓ (k=1)</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">weights</div>
+          <div class="param-desc">"uniform" vs "distance". Distance beri bobot tetangga terdekat lebih besar.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">distance</span><span class="impact-label">Overfit ↑</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">uniform</span><span class="impact-label">Generalize</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">metric</div>
+          <div class="param-desc">Euclidean (p=2) default. Manhattan (p=1) untuk data high-dim/sparse.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Data-dependent</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">algorithm</div>
+          <div class="param-desc">ball_tree / kd_tree / brute. Hanya pengaruhi speed, bukan akurasi.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Speed only</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Wajib scaling! Gunakan k ganjil untuk binary clf. Rule of thumb: k = √(n_samples). Performa KNN drop drastis di high-dimensional data (curse of dimensionality).</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.neighbors <span class="kw">import</span> <span class="cls">KNeighborsClassifier</span>, <span class="cls">KNeighborsRegressor</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Classifier</span>
+classifier = <span class="cls">KNeighborsClassifier</span>(n_neighbors=<span class="num">5</span>, weights=<span class="str">uniform</span>)
+
+<span class="cm"># Pipeline</span>
+pipeline_knn = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+pipeline_knn.fit(X_train, y_train)
+
+<span class="cm"># Regression</span>
+regressor    = <span class="cls">KNeighborsRegressor</span>(n_neighbors=<span class="num">5</span>, weights=<span class="str">distance</span>)
+pipeline_reg = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor)])
+
+<span class="cm"># Tuning</span>
+param_grid = {
+    <span class="str">classifier__n_neighbors</span>: list(range(<span class="num">1</span>, <span class="num">21</span>, <span class="num">2</span>)),
+    <span class="str">classifier__weights</span>:     [<span class="str">uniform</span>, <span class="str">distance</span>],
+    <span class="str">classifier__metric</span>:      [<span class="str">euclidean</span>, <span class="str">manhattan</span>],
+}
+search = <span class="cls">GridSearchCV</span>(pipeline_knn, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">f1_weighted</span>, n_jobs=<span class="num">-1</span>)
+search.fit(X_train, y_train)
+<span class="kw">print</span>(<span class="str">Best k:</span>, search.best_params_[<span class="str">classifier__n_neighbors</span>])</pre>
+    </div>
+  </div>
+
+  <!-- ============ LOGISTIC REGRESSION ============ -->
+  <div class="card" data-task="clf" data-algo="logistic">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Logistic Regression</div>
+        <div class="card-sub">LogisticRegression</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-clf">Classification</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">C</div>
+          <div class="param-desc">Inverse of regularization strength. Kecil = regularisasi kuat.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">penalty</div>
+          <div class="param-desc">'l1' (sparsity/feature selection), 'l2' (default), 'elasticnet', 'none'.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">l1</span><span class="impact-label">Sparse coef</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">l2</span><span class="impact-label">Shrink coef</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">solver</div>
+          <div class="param-desc">'lbfgs' (default), 'liblinear' (l1 kecil), 'saga' (besar+sparse).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Speed & compat</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">class_weight</div>
+          <div class="param-desc">'balanced' untuk imbalanced dataset. Pengaruhi recall tiap class.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">balanced</span><span class="impact-label">Recall ↑</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">max_iter</div>
+          <div class="param-desc">Maksimum iterasi optimasi. Naikkan jika ada ConvergenceWarning.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">↑</span><span class="impact-label">Konvergen</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Baseline terbaik untuk clf linear. Selalu scale fitur. Coba C=[0.001, 0.01, 0.1, 1, 10]. Kalau banyak fitur irrelevant → penalty='l1'.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> <span class="cls">LogisticRegression</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Classifier L2 (default)</span>
+classifier = <span class="cls">LogisticRegression</span>(
+    C=<span class="num">1.0</span>, penalty=<span class="str">l2</span>, solver=<span class="str">lbfgs</span>,
+    max_iter=<span class="num">1000</span>, random_state=<span class="num">42</span>
+)
+
+<span class="cm"># Pipeline</span>
+pipeline_lr = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+pipeline_lr.fit(X_train, y_train)
+
+<span class="cm"># L1 untuk feature selection — ganti solver ke liblinear</span>
+classifier_l1  = <span class="cls">LogisticRegression</span>(penalty=<span class="str">l1</span>, solver=<span class="str">liblinear</span>, C=<span class="num">0.1</span>, max_iter=<span class="num">1000</span>)
+pipeline_lr_l1 = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier_l1)])
+
+<span class="cm"># Tuning</span>
+param_grid = {
+    <span class="str">classifier__C</span>:       [<span class="num">0.001</span>, <span class="num">0.01</span>, <span class="num">0.1</span>, <span class="num">1</span>, <span class="num">10</span>],
+    <span class="str">classifier__penalty</span>: [<span class="str">l1</span>, <span class="str">l2</span>],
+    <span class="str">classifier__solver</span>:  [<span class="str">liblinear</span>],
+}
+search = <span class="cls">GridSearchCV</span>(pipeline_lr, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">roc_auc</span>, n_jobs=<span class="num">-1</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ LINEAR REGRESSION ============ -->
+  <div class="card" data-task="reg" data-algo="linear-reg">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Linear Regression</div>
+        <div class="card-sub">LinearRegression (OLS)</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-reg">Regression</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">fit_intercept</div>
+          <div class="param-desc">Apakah model belajar intercept/bias. Hampir selalu True.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Necessary</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">Feature Engineering</div>
+          <div class="param-desc">Polynomial features, interaksi, log transform — jauh lebih impactful dari hyperparameter.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">+poly</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">-feat</span><span class="impact-label">Underfit</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> OLS tidak punya regularisasi — gunakan Ridge/Lasso sebagai gantinya untuk data dengan banyak fitur. Periksa asumsi: linearitas, homoskedastisitas, no multicollinearity.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> <span class="cls">LinearRegression</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">PolynomialFeatures</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Regressor</span>
+regressor = <span class="cls">LinearRegression</span>(fit_intercept=<span class="kw">True</span>)
+
+<span class="cm"># Pipeline OLS</span>
+pipeline_lr = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">regressor</span>,    regressor)
+])
+pipeline_lr.fit(X_train, y_train)
+
+<span class="cm"># Pipeline Polynomial — tambah PolynomialFeatures sebelum scaler</span>
+poly = <span class="cls">PolynomialFeatures</span>(degree=<span class="num">2</span>, include_bias=<span class="kw">False</span>)
+numeric_poly = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">poly</span>,    poly),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+preprocessor_poly = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_poly,       num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+pipeline_poly = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor_poly), (<span class="str">regressor</span>, regressor)])
+pipeline_poly.fit(X_train, y_train)
+
+<span class="cm"># Tuning degree polynomial</span>
+param_grid = {<span class="str">preprocessor__num__poly__degree</span>: [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]}
+search = <span class="cls">GridSearchCV</span>(pipeline_poly, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">r2</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ RIDGE ============ -->
+  <div class="card" data-task="reg" data-algo="ridge">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Ridge Regression (L2)</div>
+        <div class="card-sub">Ridge / RidgeClassifier</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-reg">Regression</span>
+        <span class="badge badge-clf">Classification</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">alpha (λ)</div>
+          <div class="param-desc">Kekuatan L2 regularisasi. Shrink semua koefisien mendekati nol.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓→0</span><span class="impact-label">→ OLS</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">fit_intercept</div>
+          <div class="param-desc">Intercept tidak diregularisasi. Selalu True kecuali data sudah centered.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Standard</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">solver</div>
+          <div class="param-desc">'auto', 'svd', 'cholesky', 'saga'. Auto pilih terbaik berdasarkan data.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Speed only</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Gunakan RidgeCV untuk auto-tune alpha. Bagus saat ada multicollinearity. Tidak nol-kan koefisien — gunakan Lasso untuk feature selection.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> <span class="cls">Ridge</span>, <span class="cls">RidgeCV</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Regressor</span>
+regressor = <span class="cls">Ridge</span>(alpha=<span class="num">1.0</span>)
+
+<span class="cm"># Pipeline</span>
+pipeline_ridge = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">regressor</span>,    regressor)
+])
+pipeline_ridge.fit(X_train, y_train)
+
+<span class="cm"># RidgeCV — auto-tune alpha</span>
+regressor_cv    = <span class="cls">RidgeCV</span>(alphas=[<span class="num">0.001</span>, <span class="num">0.01</span>, <span class="num">0.1</span>, <span class="num">1.0</span>, <span class="num">10</span>, <span class="num">100</span>], cv=<span class="num">5</span>)
+pipeline_ridge_cv = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor_cv)])
+pipeline_ridge_cv.fit(X_train, y_train)
+<span class="kw">print</span>(<span class="str">Best alpha:</span>, pipeline_ridge_cv.named_steps[<span class="str">regressor</span>].alpha_)
+
+<span class="cm"># Tuning via GridSearchCV</span>
+param_grid = {<span class="str">regressor__alpha</span>: [<span class="num">0.001</span>, <span class="num">0.01</span>, <span class="num">0.1</span>, <span class="num">1</span>, <span class="num">10</span>, <span class="num">100</span>]}
+search = <span class="cls">GridSearchCV</span>(pipeline_ridge, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">r2</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ LASSO ============ -->
+  <div class="card" data-task="reg" data-algo="lasso">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Lasso Regression (L1)</div>
+        <div class="card-sub">Lasso / LassoCV</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-reg">Regression</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">alpha (λ)</div>
+          <div class="param-desc">Kekuatan L1 regularisasi. Bisa membuat koefisien tepat nol (feature selection!).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Sparse/Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓→0</span><span class="impact-label">→ OLS</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">max_iter</div>
+          <div class="param-desc">Iterasi koordinat descent. Naikkan jika ConvergenceWarning muncul.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">↑</span><span class="impact-label">Konvergen</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★</div>
+        <div class="param-info">
+          <div class="param-name">selection</div>
+          <div class="param-desc">'cyclic' (default) vs 'random'. Random lebih cepat konvergen untuk besar.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Speed</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Gunakan LassoCV untuk auto-tune alpha via cross-validation. Kalau ingin balance L1+L2, pakai ElasticNet. Lasso bisa gagal jika ada banyak correlated features.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> <span class="cls">Lasso</span>, <span class="cls">LassoCV</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+import numpy as np
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Regressor</span>
+regressor = <span class="cls">Lasso</span>(alpha=<span class="num">0.1</span>, max_iter=<span class="num">10000</span>)
+
+<span class="cm"># Pipeline</span>
+pipeline_lasso = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">regressor</span>,    regressor)
+])
+pipeline_lasso.fit(X_train, y_train)
+
+<span class="cm"># LassoCV — auto-tune alpha</span>
+regressor_cv      = <span class="cls">LassoCV</span>(cv=<span class="num">5</span>, max_iter=<span class="num">10000</span>)
+pipeline_lasso_cv = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor_cv)])
+pipeline_lasso_cv.fit(X_train, y_train)
+lasso_step = pipeline_lasso_cv.named_steps[<span class="str">regressor</span>]
+<span class="kw">print</span>(<span class="str">Best alpha:</span>, lasso_step.alpha_)
+
+<span class="cm"># Lihat fitur yang lolos seleksi</span>
+selected_idx = np.where(lasso_step.coef_ != <span class="num">0</span>)[<span class="num">0</span>]
+<span class="kw">print</span>(<span class="str">Fitur terpilih: </span>, len(selected_idx))
+
+<span class="cm"># Tuning via GridSearchCV</span>
+param_grid = {<span class="str">regressor__alpha</span>: [<span class="num">0.0001</span>, <span class="num">0.001</span>, <span class="num">0.01</span>, <span class="num">0.1</span>, <span class="num">1.0</span>]}
+search = <span class="cls">GridSearchCV</span>(pipeline_lasso, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">r2</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ ELASTICNET ============ -->
+  <div class="card" data-task="reg" data-algo="elasticnet">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">ElasticNet</div>
+        <div class="card-sub">ElasticNet / ElasticNetCV</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-reg">Regression</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">alpha</div>
+          <div class="param-desc">Kekuatan total regularisasi (L1+L2). Mirip Ridge/Lasso.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">l1_ratio</div>
+          <div class="param-desc">Balance L1 vs L2. 0=Ridge, 1=Lasso, 0.5=campuran merata.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">→1</span><span class="impact-label">Sparse</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">→0</span><span class="impact-label">Shrink</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Terbaik saat ada banyak correlated features. Grid search l1_ratio=[0.1, 0.5, 0.7, 0.9, 0.95, 1.0] dengan ElasticNetCV.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.linear_model <span class="kw">import</span> <span class="cls">ElasticNet</span>, <span class="cls">ElasticNetCV</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — imputer → scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Regressor</span>
+regressor = <span class="cls">ElasticNet</span>(alpha=<span class="num">0.1</span>, l1_ratio=<span class="num">0.5</span>, max_iter=<span class="num">10000</span>)
+
+<span class="cm"># Pipeline</span>
+pipeline_en = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">regressor</span>,    regressor)
+])
+pipeline_en.fit(X_train, y_train)
+
+<span class="cm"># ElasticNetCV — auto-tune alpha & l1_ratio</span>
+regressor_cv  = <span class="cls">ElasticNetCV</span>(
+    l1_ratio=[<span class="num">0.1</span>, <span class="num">0.5</span>, <span class="num">0.7</span>, <span class="num">0.9</span>, <span class="num">0.95</span>, <span class="num">1.0</span>],
+    cv=<span class="num">5</span>, max_iter=<span class="num">10000</span>
+)
+pipeline_en_cv = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor_cv)])
+pipeline_en_cv.fit(X_train, y_train)
+en_step = pipeline_en_cv.named_steps[<span class="str">regressor</span>]
+<span class="kw">print</span>(<span class="str">Best alpha  :</span>, en_step.alpha_)
+<span class="kw">print</span>(<span class="str">Best l1_ratio:</span>, en_step.l1_ratio_)
+
+<span class="cm"># Tuning via GridSearchCV</span>
+param_grid = {
+    <span class="str">regressor__alpha</span>:    [<span class="num">0.001</span>, <span class="num">0.01</span>, <span class="num">0.1</span>, <span class="num">1.0</span>],
+    <span class="str">regressor__l1_ratio</span>: [<span class="num">0.1</span>, <span class="num">0.5</span>, <span class="num">0.9</span>, <span class="num">1.0</span>],
+}
+search = <span class="cls">GridSearchCV</span>(pipeline_en, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">r2</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ NAIVE BAYES ============ -->
+  <div class="card" data-task="clf" data-algo="naive-bayes">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Naive Bayes</div>
+        <div class="card-sub">GaussianNB / MultinomialNB / BernoulliNB</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-clf">Classification</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">var_smoothing (GaussianNB)</div>
+          <div class="param-desc">Stabilisasi kalkulasi numerik. Umumnya sudah bagus di default (1e-9).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Regularisasi</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit ↑</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">alpha (MultinomialNB)</div>
+          <div class="param-desc">Laplace/Lidstone smoothing. Cegah probabilitas nol untuk kata tak terlihat.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓→0</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">Pilihan Varian</div>
+          <div class="param-desc">GaussianNB (kontinu), MultinomialNB (count/teks), BernoulliNB (binary).</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact neutral-imp"><span class="impact-arrow">~</span><span class="impact-label">Data type</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Asumsi conditional independence sangat strong — sering dilanggar data nyata, tapi tetap bekerja baik untuk text clf. Cepat dan efisien memory. Bagus sebagai baseline kuat.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.naive_bayes <span class="kw">import</span> <span class="cls">GaussianNB</span>, <span class="cls">MultinomialNB</span>, <span class="cls">BernoulliNB</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">StandardScaler</span>, <span class="cls">MinMaxScaler</span>, <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+import numpy as np
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># ── GaussianNB — fitur kontinu ───────────────</span>
+num_transformer_gnb = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">StandardScaler</span>())
+])
+cat_transformer_gnb = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+preprocessor_gnb = <span class="cls">ColumnTransformer</span>([(<span class="str">num</span>, num_transformer_gnb, num_cols), (<span class="str">cat</span>, cat_transformer_gnb, cat_cols)])
+classifier_gnb = <span class="cls">GaussianNB</span>(var_smoothing=<span class="num">1e-9</span>)
+pipeline_gnb = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor_gnb), (<span class="str">classifier</span>, classifier_gnb)])
+pipeline_gnb.fit(X_train, y_train)
+
+<span class="cm"># ── MultinomialNB — fitur count, wajib >= 0 ─</span>
+num_transformer_mnb = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">constant</span>, fill_value=<span class="num">0</span>)),
+    (<span class="str">scaler</span>,  <span class="cls">MinMaxScaler</span>())
+])
+preprocessor_mnb = <span class="cls">ColumnTransformer</span>([(<span class="str">num</span>, num_transformer_mnb, num_cols)])
+classifier_mnb = <span class="cls">MultinomialNB</span>(alpha=<span class="num">1.0</span>)
+pipeline_mnb = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor_mnb), (<span class="str">classifier</span>, classifier_mnb)])
+pipeline_mnb.fit(X_train, y_train)
+
+<span class="cm"># ── Tuning GaussianNB ────────────────────────</span>
+param_grid = {<span class="str">classifier__var_smoothing</span>: np.logspace(<span class="num">-12</span>, <span class="num">-6</span>, <span class="num">7</span>)}
+search = <span class="cls">GridSearchCV</span>(pipeline_gnb, param_grid, cv=<span class="num">5</span>, scoring=<span class="str">f1_weighted</span>)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+  <!-- ============ EXTRA TREES ============ -->
+  <div class="card" data-task="both" data-algo="extra-trees">
+    <div class="card-head">
+      <div class="card-title-group">
+        <div class="card-title">Extra Trees</div>
+        <div class="card-sub">ExtraTreesClassifier / ExtraTreesRegressor</div>
+      </div>
+      <div class="badge-group">
+        <span class="badge badge-both">Both</span>
+      </div>
+    </div>
+    <div class="params">
+      <div class="param-section-label">Urutan Tuning ↓</div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">n_estimators</div>
+          <div class="param-desc">Jumlah pohon. Extra Trees lebih cepat dari RF karena split random.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Variance ↓</span></span>
+          <span class="impact neutral-imp"><span class="impact-arrow">↓</span><span class="impact-label">Instabil</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★★</div>
+        <div class="param-info">
+          <div class="param-name">max_features</div>
+          <div class="param-desc">Fraksi fitur per split. Extra Trees paling sensitive di parameter ini.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact over"><span class="impact-arrow">↑→1.0</span><span class="impact-label">Overfit</span></span>
+          <span class="impact under"><span class="impact-arrow">↓</span><span class="impact-label">Bias ↑</span></span>
+        </div>
+      </div>
+
+      <div class="param-row">
+        <div class="stars">★★</div>
+        <div class="param-info">
+          <div class="param-name">min_samples_leaf</div>
+          <div class="param-desc">Sama seperti RF. Naikkan untuk mengurangi overfit pada dataset kecil.</div>
+        </div>
+        <div class="param-impacts">
+          <span class="impact under"><span class="impact-arrow">↑</span><span class="impact-label">Underfit</span></span>
+          <span class="impact over"><span class="impact-arrow">↓</span><span class="impact-label">Overfit</span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="tip-box">💡 <b>Praktik:</b> Lebih cepat dari RF karena threshold random. Kadang lebih baik di data noisy karena randomness ekstra mencegah overfit. Tuning mirip RF.</div>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+      <pre><span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">ExtraTreesClassifier</span>, <span class="cls">ExtraTreesRegressor</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">RandomizedSearchCV</span>
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> <span class="cls">randint</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># Numeric transformer — tree tidak perlu scaling</span>
+numeric_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))
+])
+
+<span class="cm"># Categorical transformer</span>
+categorical_transformer = <span class="cls">Pipeline</span>([
+    (<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))
+])
+
+<span class="cm"># Preprocessor</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer, num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># Classifier</span>
+classifier = <span class="cls">ExtraTreesClassifier</span>(
+    n_estimators=<span class="num">200</span>, max_features=<span class="str">sqrt</span>,
+    min_samples_leaf=<span class="num">2</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>
+)
+
+<span class="cm"># Pipeline</span>
+pipeline_et = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+pipeline_et.fit(X_train, y_train)
+
+<span class="cm"># Regression</span>
+regressor    = <span class="cls">ExtraTreesRegressor</span>(n_estimators=<span class="num">200</span>, max_features=<span class="num">0.33</span>, n_jobs=<span class="num">-1</span>)
+pipeline_reg = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">regressor</span>, regressor)])
+
+<span class="cm"># Tuning</span>
+param_dist = {
+    <span class="str">classifier__n_estimators</span>:    randint(<span class="num">100</span>, <span class="num">400</span>),
+    <span class="str">classifier__max_features</span>:    [<span class="str">sqrt</span>, <span class="str">log2</span>, <span class="num">0.3</span>, <span class="num">0.5</span>],
+    <span class="str">classifier__min_samples_leaf</span>: randint(<span class="num">1</span>, <span class="num">8</span>),
+}
+search = <span class="cls">RandomizedSearchCV</span>(
+    pipeline_et, param_dist, n_iter=<span class="num">50</span>, cv=<span class="num">5</span>,
+    scoring=<span class="str">f1_weighted</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>
+)
+search.fit(X_train, y_train)</pre>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== TUNING METHODS SECTION ===== -->
+<div style="max-width:1400px;margin:56px auto 0;padding:0 0 16px;">
+  <div style="text-align:center;margin-bottom:32px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Hyperparameter Tuning</div>
+    <h2 style="font-size:clamp(20px,3vw,32px);font-weight:700;letter-spacing:-0.5px;color:var(--text);margin-bottom:8px;">Metode Tuning & Cara Pakainya</h2>
+    <p style="font-size:13px;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.6;">Pilih metode tuning berdasarkan jumlah parameter, ukuran dataset, dan budget waktu komputasi.</p>
+  </div>
+
+  <!-- Decision flowchart -->
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px 24px;margin-bottom:20px;">
+    <div style="font-size:10px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Cara pilih metode</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+      <div style="background:rgba(108,143,255,0.1);border:1px solid rgba(108,143,255,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:#8ba8f0;font-family:'JetBrains Mono',monospace;">≤3 param & grid kecil</div>
+      <div style="color:var(--muted);font-size:14px;">→</div>
+      <div style="background:rgba(62,207,142,0.1);border:1px solid rgba(62,207,142,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:var(--clf);font-weight:600;">GridSearchCV</div>
+      <div style="width:100%;height:0;"></div>
+      <div style="background:rgba(108,143,255,0.1);border:1px solid rgba(108,143,255,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:#8ba8f0;font-family:'JetBrains Mono',monospace;">4+ param / grid besar</div>
+      <div style="color:var(--muted);font-size:14px;">→</div>
+      <div style="background:rgba(247,169,75,0.1);border:1px solid rgba(247,169,75,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:var(--reg);font-weight:600;">RandomizedSearchCV</div>
+      <div style="width:100%;height:0;"></div>
+      <div style="background:rgba(108,143,255,0.1);border:1px solid rgba(108,143,255,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:#8ba8f0;font-family:'JetBrains Mono',monospace;">Budget terbatas / efisien</div>
+      <div style="color:var(--muted);font-size:14px;">→</div>
+      <div style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:var(--both);font-weight:600;">Optuna / Bayesian</div>
+      <div style="width:100%;height:0;"></div>
+      <div style="background:rgba(108,143,255,0.1);border:1px solid rgba(108,143,255,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:#8ba8f0;font-family:'JetBrains Mono',monospace;">Dataset sangat besar</div>
+      <div style="color:var(--muted);font-size:14px;">→</div>
+      <div style="background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);border-radius:8px;padding:8px 14px;font-size:12px;color:#ff8a8a;font-weight:600;">HalvingSearchCV</div>
+    </div>
+  </div>
+
+  <!-- Tuning cards grid -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:16px;">
+
+    <!-- GridSearchCV -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-group">
+          <div class="card-title">GridSearchCV</div>
+          <div class="card-sub">sklearn.model_selection</div>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:rgba(62,207,142,0.1);color:var(--clf);border:1px solid rgba(62,207,142,0.25);">Exhaustive</span>
+        </div>
+      </div>
+      <div class="params">
+        <div class="param-section-label">Karakteristik</div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Coba semua kombinasi</div><div class="param-desc">Hasil paling reproducible & terpercaya karena exhaustive search.</div></div>
+          <div class="param-impacts"><span class="impact under">Thorough</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars" style="color:#ff6b6b;">✗</div>
+          <div class="param-info"><div class="param-name">Eksponensial complexity</div><div class="param-desc">3 param × 5 nilai = 125 fit. Cepat meledak untuk grid besar.</div></div>
+          <div class="param-impacts"><span class="impact over">Lambat</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">param_grid</div><div class="param-desc">Dict berisi list nilai yang akan dicoba. Kunci = nama param model.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Wajib</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">cv</div><div class="param-desc">Jumlah fold cross-validation. 5 adalah standar; 10 untuk dataset kecil.</div></div>
+          <div class="param-impacts"><span class="impact under"><span class="impact-arrow">↑</span>Reliable</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★</div>
+          <div class="param-info"><div class="param-name">scoring</div><div class="param-desc">'accuracy', 'f1', 'roc_auc', 'r2', 'neg_mean_squared_error', dll.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Task-based</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★</div>
+          <div class="param-info"><div class="param-name">n_jobs</div><div class="param-desc">Parallelisasi. n_jobs=-1 pakai semua core CPU. Hemat waktu signifikan.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Speed</span></div>
+        </div>
+      </div>
+      <div class="tip-box">💡 <b>Gunakan saat:</b> Grid kecil (≤3 param, ≤5 nilai tiap param). Penting untuk final model validation setelah Randomized/Optuna narrowing.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+        <pre><span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+<span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">RandomForestClassifier</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># ── Sub-pipelines ───────────────────────────</span>
+numeric_transformer    = <span class="cls">Pipeline</span>([(<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))])
+categorical_transformer = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+
+<span class="cm"># ── Preprocessor ────────────────────────────</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer,    num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># ── Classifier ──────────────────────────────</span>
+classifier = <span class="cls">RandomForestClassifier</span>(random_state=<span class="num">42</span>)
+
+<span class="cm"># ── Pipeline ────────────────────────────────</span>
+pipeline_rf = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+
+<span class="cm"># ── GridSearch — key: "classifier__param" ───</span>
+param_grid_rf = {
+    <span class="str">classifier__n_estimators</span>:    [<span class="num">80</span>, <span class="num">90</span>, <span class="num">100</span>, <span class="num">110</span>, <span class="num">120</span>],
+    <span class="str">classifier__min_samples_split</span>: [<span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>],
+    <span class="str">classifier__min_samples_leaf</span>:  [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>],
+}
+grid_rf = <span class="cls">GridSearchCV</span>(
+    pipeline_rf, param_grid=param_grid_rf,
+    verbose=<span class="num">3</span>, refit=<span class="kw">True</span>, scoring=<span class="str">precision</span>, cv=<span class="num">5</span>,
+    return_train_score=<span class="kw">True</span>, n_jobs=<span class="num">2</span>
+)
+grid_rf.fit(X_train, y_train)
+
+<span class="kw">print</span>(<span class="str">Best parameters:</span>, grid_rf.best_params_)
+<span class="kw">print</span>(<span class="str">Best Precision score:</span>, grid_rf.best_score_)
+best_pipe = grid_rf.best_estimator_  <span class="cm"># Pipeline lengkap</span>
+y_pred    = best_pipe.predict(X_test)</pre>
+      </div>
+    </div>
+
+    <!-- RandomizedSearchCV -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-group">
+          <div class="card-title">RandomizedSearchCV</div>
+          <div class="card-sub">sklearn.model_selection</div>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:rgba(247,169,75,0.1);color:var(--reg);border:1px solid rgba(247,169,75,0.25);">Stochastic</span>
+        </div>
+      </div>
+      <div class="params">
+        <div class="param-section-label">Karakteristik</div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Scalable untuk ruang besar</div><div class="param-desc">Sample n_iter kombinasi random. Lebih efisien dari Grid untuk 5+ param.</div></div>
+          <div class="param-impacts"><span class="impact under">Efisien</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Bisa pakai distribusi kontinu</div><div class="param-desc">Pakai scipy.stats distributions (loguniform, randint) bukan hanya list.</div></div>
+          <div class="param-impacts"><span class="impact under">Flexible</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">n_iter</div><div class="param-desc">Berapa banyak kombinasi dicoba. 50-200 biasanya cukup. Tukar dengan waktu.</div></div>
+          <div class="param-impacts"><span class="impact under"><span class="impact-arrow">↑</span>Thorough</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">param_distributions</div><div class="param-desc">Dict berisi list atau distribusi scipy. Bisa mix keduanya.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Wajib</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★</div>
+          <div class="param-info"><div class="param-name">random_state</div><div class="param-desc">Seed untuk reproducibility. Selalu set untuk hasil konsisten.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Reproduce</span></div>
+        </div>
+      </div>
+      <div class="tip-box">💡 <b>Gunakan saat:</b> Banyak parameter atau range nilai lebar. Default pilihan pertama untuk GBM/XGBoost yang punya 7+ hyperparameter.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+        <pre><span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">RandomizedSearchCV</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> <span class="cls">loguniform</span>, <span class="cls">randint</span>
+<span class="kw">from</span> xgboost <span class="kw">import</span> <span class="cls">XGBClassifier</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># ── Sub-pipelines ───────────────────────────</span>
+numeric_transformer    = <span class="cls">Pipeline</span>([(<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))])
+categorical_transformer = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+
+<span class="cm"># ── Preprocessor ────────────────────────────</span>
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer,    num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+<span class="cm"># ── Classifier ──────────────────────────────</span>
+classifier = <span class="cls">XGBClassifier</span>(eval_metric=<span class="str">logloss</span>, random_state=<span class="num">42</span>)
+
+<span class="cm"># ── Pipeline ────────────────────────────────</span>
+pipeline_xgb = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+
+<span class="cm"># ── RandomizedSearch — key: "classifier__param" ──</span>
+param_dist_xgb = {
+    <span class="str">classifier__n_estimators</span>:    randint(<span class="num">100</span>, <span class="num">500</span>),
+    <span class="str">classifier__learning_rate</span>:   loguniform(<span class="num">0.01</span>, <span class="num">0.3</span>),
+    <span class="str">classifier__max_depth</span>:       randint(<span class="num">3</span>, <span class="num">8</span>),
+    <span class="str">classifier__subsample</span>:       [<span class="num">0.6</span>, <span class="num">0.7</span>, <span class="num">0.8</span>, <span class="num">0.9</span>, <span class="num">1.0</span>],
+    <span class="str">classifier__colsample_bytree</span>:[<span class="num">0.6</span>, <span class="num">0.7</span>, <span class="num">0.8</span>, <span class="num">1.0</span>],
+    <span class="str">classifier__reg_alpha</span>:       loguniform(<span class="num">1e-4</span>, <span class="num">10</span>),
+    <span class="str">classifier__reg_lambda</span>:      loguniform(<span class="num">1e-4</span>, <span class="num">10</span>),
+}
+search = <span class="cls">RandomizedSearchCV</span>(
+    pipeline_xgb, param_distributions=param_dist_xgb,
+    n_iter=<span class="num">100</span>, cv=<span class="num">5</span>, scoring=<span class="str">roc_auc</span>,
+    n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>, verbose=<span class="num">1</span>
+)
+search.fit(X_train, y_train)
+
+<span class="kw">print</span>(search.best_params_)
+best_pipe = search.best_estimator_  <span class="cm"># Pipeline lengkap</span></pre>
+      </div>
+    </div>
+
+    <!-- Optuna -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-group">
+          <div class="card-title">Optuna</div>
+          <div class="card-sub">pip install optuna</div>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:rgba(167,139,250,0.1);color:var(--both);border:1px solid rgba(167,139,250,0.25);">Bayesian</span>
+          <span class="badge" style="background:rgba(62,207,142,0.1);color:var(--clf);border:1px solid rgba(62,207,142,0.25);">Best</span>
+        </div>
+      </div>
+      <div class="params">
+        <div class="param-section-label">Karakteristik</div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Bayesian Optimization (TPE)</div><div class="param-desc">Belajar dari trial sebelumnya untuk fokus ke area promising. Jauh lebih efisien dari random.</div></div>
+          <div class="param-impacts"><span class="impact under">Cerdas</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Early pruning</div><div class="param-desc">Hentikan trial yang tidak promising lebih awal → hemat waktu drastis.</div></div>
+          <div class="param-impacts"><span class="impact under">Cepat</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Visualisasi & logging bawaan</div><div class="param-desc">optuna.visualization untuk importance plot, parallel coordinate, dll.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Rich</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">n_trials</div><div class="param-desc">Jumlah trial Optuna. 50-200 biasanya optimal. Tambah untuk ruang besar.</div></div>
+          <div class="param-impacts"><span class="impact under"><span class="impact-arrow">↑</span>Better</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★</div>
+          <div class="param-info"><div class="param-name">direction</div><div class="param-desc">"minimize" (loss/error) atau "maximize" (accuracy/AUC).</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Wajib</span></div>
+        </div>
+      </div>
+      <div class="tip-box">💡 <b>Gunakan saat:</b> Serius optimasi model produksi. Paling efisien untuk GBM, XGBoost, LightGBM. Juga support multi-objective optimization.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+        <pre><span class="kw">import</span> optuna
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">cross_val_score</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> xgboost <span class="kw">import</span> <span class="cls">XGBClassifier</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># ── Sub-pipelines (reusable di tiap trial) ──</span>
+numeric_transformer    = <span class="cls">Pipeline</span>([(<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))])
+categorical_transformer = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+preprocessor = <span class="cls">ColumnTransformer</span>([(<span class="str">num</span>, numeric_transformer, num_cols), (<span class="str">cat</span>, categorical_transformer, cat_cols)])
+
+<span class="cm"># ── Objective — classifier baru tiap trial ──</span>
+<span class="kw">def</span> <span class="fn">objective</span>(trial):
+    classifier = <span class="cls">XGBClassifier</span>(
+        n_estimators     = trial.suggest_int(<span class="str">n_estimators</span>, <span class="num">100</span>, <span class="num">500</span>),
+        learning_rate    = trial.suggest_float(<span class="str">learning_rate</span>, <span class="num">0.01</span>, <span class="num">0.3</span>, log=<span class="kw">True</span>),
+        max_depth        = trial.suggest_int(<span class="str">max_depth</span>, <span class="num">3</span>, <span class="num">8</span>),
+        subsample        = trial.suggest_float(<span class="str">subsample</span>, <span class="num">0.5</span>, <span class="num">1.0</span>),
+        colsample_bytree = trial.suggest_float(<span class="str">colsample_bytree</span>, <span class="num">0.5</span>, <span class="num">1.0</span>),
+        reg_alpha        = trial.suggest_float(<span class="str">reg_alpha</span>, <span class="num">1e-4</span>, <span class="num">10</span>, log=<span class="kw">True</span>),
+        reg_lambda       = trial.suggest_float(<span class="str">reg_lambda</span>, <span class="num">1e-4</span>, <span class="num">10</span>, log=<span class="kw">True</span>),
+        eval_metric=<span class="str">logloss</span>, random_state=<span class="num">42</span>
+    )
+    pipeline = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier)])
+    scores = cross_val_score(pipeline, X_train, y_train, cv=<span class="num">5</span>, scoring=<span class="str">roc_auc</span>)
+    <span class="kw">return</span> scores.mean()
+
+<span class="cm"># ── Optimize ─────────────────────────────────</span>
+study = optuna.create_study(direction=<span class="str">maximize</span>)
+study.optimize(objective, n_trials=<span class="num">100</span>, show_progress_bar=<span class="kw">True</span>)
+<span class="kw">print</span>(<span class="str">Best params:</span>, study.best_params)
+
+<span class="cm"># ── Build final Pipeline dengan best params ──</span>
+best_classifier = <span class="cls">XGBClassifier</span>(**study.best_params, random_state=<span class="num">42</span>)
+best_pipeline   = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, best_classifier)])
+best_pipeline.fit(X_train, y_train)
+
+optuna.visualization.plot_param_importances(study).show()
+optuna.visualization.plot_optimization_history(study).show()</pre>
+      </div>
+    </div>
+
+    <!-- HalvingSearchCV -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-group">
+          <div class="card-title">HalvingRandomSearchCV</div>
+          <div class="card-sub">sklearn.model_selection (sklearn ≥ 0.24)</div>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:rgba(255,107,107,0.1);color:#ff8a8a;border:1px solid rgba(255,107,107,0.25);">Successive Halving</span>
+        </div>
+      </div>
+      <div class="params">
+        <div class="param-section-label">Karakteristik</div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Eleminasi bertahap</div><div class="param-desc">Round 1: semua kandidat dengan data sedikit. Round berikut: hanya top 1/factor yang lolos, dengan lebih banyak data.</div></div>
+          <div class="param-impacts"><span class="impact under">Hemat</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars" style="color:#3ecf8e;">✓</div>
+          <div class="param-info"><div class="param-name">Ideal dataset besar</div><div class="param-desc">Kandidat jelek dieliminasi lebih awal sebelum pakai data penuh.</div></div>
+          <div class="param-impacts"><span class="impact under">Scalable</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">factor</div><div class="param-desc">Proporsi kandidat yang dieliminasi tiap round. Default=3 (1/3 yang lolos).</div></div>
+          <div class="param-impacts"><span class="impact over"><span class="impact-arrow">↑</span>Agresif</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★</div>
+          <div class="param-info"><div class="param-name">min_resources</div><div class="param-desc">Jumlah sampel di round pertama. 'smallest' = otomatis minimal.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Auto</span></div>
+        </div>
+      </div>
+      <div class="tip-box">💡 <b>Gunakan saat:</b> Dataset sangat besar (>100k baris) dan RandomizedSearch terlalu lambat. Trade-off: kandidat buruk dieliminasi cepat, tapi butuh cukup data untuk estimasi awal yang reliable.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+        <pre><span class="kw">from</span> sklearn.experimental <span class="kw">import</span> enable_halving_search_cv
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">HalvingRandomSearchCV</span>
+<span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">GradientBoostingClassifier</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> <span class="cls">randint</span>, <span class="cls">loguniform</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+<span class="cm"># ── Sub-pipelines ───────────────────────────</span>
+numeric_transformer    = <span class="cls">Pipeline</span>([(<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))])
+categorical_transformer = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+preprocessor = <span class="cls">ColumnTransformer</span>([(<span class="str">num</span>, numeric_transformer, num_cols), (<span class="str">cat</span>, categorical_transformer, cat_cols)])
+
+<span class="cm"># ── Classifier ──────────────────────────────</span>
+classifier = <span class="cls">GradientBoostingClassifier</span>(random_state=<span class="num">42</span>)
+
+<span class="cm"># ── Pipeline ────────────────────────────────</span>
+pipeline_gbm = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+
+<span class="cm"># ── HalvingSearch — key: "classifier__param" ─</span>
+param_dist = {
+    <span class="str">classifier__n_estimators</span>:  randint(<span class="num">50</span>, <span class="num">400</span>),
+    <span class="str">classifier__learning_rate</span>: loguniform(<span class="num">0.01</span>, <span class="num">0.3</span>),
+    <span class="str">classifier__max_depth</span>:     randint(<span class="num">2</span>, <span class="num">7</span>),
+    <span class="str">classifier__subsample</span>:     [<span class="num">0.6</span>, <span class="num">0.7</span>, <span class="num">0.8</span>, <span class="num">1.0</span>],
+}
+search = <span class="cls">HalvingRandomSearchCV</span>(
+    estimator=pipeline_gbm,
+    param_distributions=param_dist,
+    factor=<span class="num">3</span>, min_resources=<span class="str">smallest</span>,
+    cv=<span class="num">5</span>, scoring=<span class="str">roc_auc</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>
+)
+search.fit(X_train, y_train)
+
+<span class="kw">print</span>(<span class="str">Best params:</span>, search.best_params_)
+<span class="kw">print</span>(<span class="str">N rounds  :</span>, search.n_iterations_)
+best_pipe = search.best_estimator_</pre>
+      </div>
+    </div>
+
+    <!-- Cross-Validation Strategies -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title-group">
+          <div class="card-title">Strategi Cross-Validation</div>
+          <div class="card-sub">KFold · StratifiedKFold · TimeSeriesSplit · LOOCV</div>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:rgba(79,195,247,0.1);color:#7dd4f0;border:1px solid rgba(79,195,247,0.25);">Evaluation</span>
+        </div>
+      </div>
+      <div class="params">
+        <div class="param-section-label">Pilih berdasarkan tipe data</div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">StratifiedKFold</div><div class="param-desc">Default untuk classification. Jaga proporsi class di tiap fold. Wajib untuk imbalanced.</div></div>
+          <div class="param-impacts"><span class="impact under">Clf</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">KFold</div><div class="param-desc">Default untuk regression. Shuffle=True untuk data yang terurut secara random.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Reg</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★★★</div>
+          <div class="param-info"><div class="param-name">TimeSeriesSplit</div><div class="param-desc">Data time series: train selalu sebelum test. Tidak boleh random shuffle!</div></div>
+          <div class="param-impacts"><span class="impact over">Time</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★</div>
+          <div class="param-info"><div class="param-name">LeaveOneOut (LOOCV)</div><div class="param-desc">Tiap sampel jadi test set sendiri. Akurat tapi sangat lambat untuk N besar.</div></div>
+          <div class="param-impacts"><span class="impact neutral-imp">Kecil</span></div>
+        </div>
+        <div class="param-row">
+          <div class="stars">★</div>
+          <div class="param-info"><div class="param-name">GroupKFold</div><div class="param-desc">Saat ada grup/cluster dalam data (misal pasien berbeda). Cegah data leakage antar grup.</div></div>
+          <div class="param-impacts"><span class="impact under">Group</span></div>
+        </div>
+      </div>
+      <div class="tip-box">💡 <b>Aturan emas:</b> cv=5 untuk dataset sedang. cv=10 untuk dataset kecil (<1000 baris). Selalu gunakan StratifiedKFold untuk classification — KFold biasa bisa beri estimasi bias pada imbalanced data.</div>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">python</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+        <pre><span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">KFold</span>, <span class="cls">StratifiedKFold</span>, <span class="cls">TimeSeriesSplit</span>, <span class="cls">GroupKFold</span>, <span class="cls">cross_val_score</span>
+<span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">RandomForestClassifier</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+
+<span class="cm"># Column definitions — sesuaikan dengan dataset</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]  <span class="cm"># numeric columns</span>
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]  <span class="cm"># categorical columns</span>
+
+numeric_transformer    = <span class="cls">Pipeline</span>([(<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))])
+categorical_transformer = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+preprocessor = <span class="cls">ColumnTransformer</span>([(<span class="str">num</span>, numeric_transformer, num_cols), (<span class="str">cat</span>, categorical_transformer, cat_cols)])
+
+classifier = <span class="cls">RandomForestClassifier</span>(random_state=<span class="num">42</span>)
+pipeline   = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier)])
+
+<span class="cm"># Classification — StratifiedKFold</span>
+cv = <span class="cls">StratifiedKFold</span>(n_splits=<span class="num">5</span>, shuffle=<span class="kw">True</span>, random_state=<span class="num">42</span>)
+scores = cross_val_score(pipeline, X, y, cv=cv, scoring=<span class="str">f1_weighted</span>)
+<span class="kw">print</span>(<span class="str">F1: </span>, <span class="str">{scores.mean():.3f} ± {scores.std():.3f}</span>)
+
+<span class="cm"># Regression — KFold</span>
+cv = <span class="cls">KFold</span>(n_splits=<span class="num">5</span>, shuffle=<span class="kw">True</span>, random_state=<span class="num">42</span>)
+scores = cross_val_score(pipeline, X, y, cv=cv, scoring=<span class="str">neg_root_mean_squared_error</span>)
+<span class="kw">print</span>(<span class="str">RMSE:</span>, -scores.mean())
+
+<span class="cm"># Time series — TimeSeriesSplit (no shuffle!)</span>
+cv = <span class="cls">TimeSeriesSplit</span>(n_splits=<span class="num">5</span>, gap=<span class="num">0</span>)
+<span class="kw">for</span> train_idx, test_idx <span class="kw">in</span> cv.split(X):
+    X_tr, X_te = X[train_idx], X[test_idx]
+    y_tr, y_te = y[train_idx], y[test_idx]
+    pipeline.fit(X_tr, y_tr)
+
+<span class="cm"># cv juga bisa dipakai langsung di GridSearch/Randomized</span>
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+search = <span class="cls">GridSearchCV</span>(pipeline, param_grid, cv=cv, scoring=<span class="str">r2</span>)</pre>
+      </div>
+    </div>
+
+    <!-- Workflow lengkap -->
+    <div class="card" style="grid-column: 1 / -1;">
+      <div class="card-head">
+        <div class="card-title-group">
+          <div class="card-title">Workflow Tuning End-to-End</div>
+          <div class="card-sub">Template praktis dari raw data ke model tertuning</div>
+        </div>
+        <div class="badge-group">
+          <span class="badge" style="background:rgba(108,143,255,0.1);color:#8ba8f0;border:1px solid rgba(108,143,255,0.25);">Full Pipeline</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:16px 18px 6px;">
+        <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:12px 14px;border-left:3px solid var(--accent);">
+          <div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--accent);margin-bottom:6px;">STEP 1</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Baseline dulu</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">Fit model dengan default params. Ini jadi reference score sebelum tuning dimulai.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:12px 14px;border-left:3px solid var(--clf);">
+          <div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--clf);margin-bottom:6px;">STEP 2</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">RandomizedSearch lebar</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">Range nilai lebar, n_iter=50-100. Cari region parameter yang promising.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:12px 14px;border-left:3px solid var(--reg);">
+          <div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--reg);margin-bottom:6px;">STEP 3</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">GridSearch fokus</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">Persempit ke area best dari step 2. Grid kecil, exhaustive untuk konfirmasi.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:12px 14px;border-left:3px solid var(--both);">
+          <div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--both);margin-bottom:6px;">STEP 4</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Evaluasi final</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;">Test set hanya disentuh sekali di akhir. Laporkan metric + confidence interval.</div>
+        </div>
+      </div>
+      <div class="code-block" style="margin-top:12px;">
+        <div class="code-header"><span class="code-lang">python — full workflow</span><button class="copy-btn" onclick="copyCode(this)">copy</button></div>
+        <pre><span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">train_test_split</span>, <span class="cls">StratifiedKFold</span>, <span class="cls">RandomizedSearchCV</span>, <span class="cls">GridSearchCV</span>, <span class="cls">cross_val_score</span>
+<span class="kw">from</span> sklearn.impute <span class="kw">import</span> <span class="cls">SimpleImputer</span>
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> <span class="cls">OneHotEncoder</span>
+<span class="kw">from</span> sklearn.pipeline <span class="kw">import</span> <span class="cls">Pipeline</span>
+<span class="kw">from</span> sklearn.compose <span class="kw">import</span> <span class="cls">ColumnTransformer</span>
+<span class="kw">from</span> sklearn.ensemble <span class="kw">import</span> <span class="cls">RandomForestClassifier</span>
+<span class="kw">from</span> sklearn.metrics <span class="kw">import</span> <span class="cls">classification_report</span>
+<span class="kw">from</span> scipy.stats <span class="kw">import</span> <span class="cls">randint</span>
+
+<span class="cm"># ── 0. Split — test set tidak disentuh sampai akhir ──</span>
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=<span class="num">0.2</span>, stratify=y, random_state=<span class="num">42</span>
+)
+
+<span class="cm"># ── 1. Definisikan komponen — semua sebagai variabel ──</span>
+num_cols = [<span class="str">num1</span>, <span class="str">num2</span>]
+cat_cols = [<span class="str">cat1</span>, <span class="str">cat2</span>]
+
+numeric_transformer    = <span class="cls">Pipeline</span>([(<span class="str">imputer</span>, <span class="cls">SimpleImputer</span>(strategy=<span class="str">median</span>))])
+categorical_transformer = <span class="cls">Pipeline</span>([(<span class="str">encoder</span>, <span class="cls">OneHotEncoder</span>(handle_unknown=<span class="str">ignore</span>))])
+preprocessor = <span class="cls">ColumnTransformer</span>(transformers=[
+    (<span class="str">num</span>, numeric_transformer,    num_cols),
+    (<span class="str">cat</span>, categorical_transformer, cat_cols)
+])
+
+classifier = <span class="cls">RandomForestClassifier</span>(random_state=<span class="num">42</span>)
+
+<span class="cm"># ── 2. Baseline Pipeline ──────────────────────────────</span>
+pipeline_base = <span class="cls">Pipeline</span>([
+    (<span class="str">preprocessor</span>, preprocessor),
+    (<span class="str">classifier</span>,   classifier)
+])
+cv = <span class="cls">StratifiedKFold</span>(n_splits=<span class="num">5</span>, shuffle=<span class="kw">True</span>, random_state=<span class="num">42</span>)
+base_scores = cross_val_score(pipeline_base, X_train, y_train, cv=cv, scoring=<span class="str">f1_weighted</span>)
+<span class="kw">print</span>(<span class="str">Baseline F1: {base_scores.mean():.4f} ± {base_scores.std():.4f}</span>)
+
+<span class="cm"># ── 3. RandomizedSearch — prefix "classifier__" ───────</span>
+param_dist_rf = {
+    <span class="str">classifier__n_estimators</span>:    randint(<span class="num">50</span>, <span class="num">500</span>),
+    <span class="str">classifier__max_depth</span>:       [<span class="num">3</span>, <span class="num">5</span>, <span class="num">7</span>, <span class="num">10</span>, <span class="kw">None</span>],
+    <span class="str">classifier__max_features</span>:    [<span class="str">sqrt</span>, <span class="str">log2</span>, <span class="num">0.3</span>, <span class="num">0.5</span>],
+    <span class="str">classifier__min_samples_leaf</span>: randint(<span class="num">1</span>, <span class="num">10</span>),
+}
+rand_search = <span class="cls">RandomizedSearchCV</span>(
+    pipeline_base, param_dist_rf,
+    n_iter=<span class="num">80</span>, cv=cv, scoring=<span class="str">f1_weighted</span>, n_jobs=<span class="num">-1</span>, random_state=<span class="num">42</span>, verbose=<span class="num">1</span>
+)
+rand_search.fit(X_train, y_train)
+best = rand_search.best_params_
+<span class="kw">print</span>(<span class="str">Best random params:</span>, best)
+
+<span class="cm"># ── 4. GridSearch fokus ───────────────────────────────</span>
+classifier_tuned = <span class="cls">RandomForestClassifier</span>(random_state=<span class="num">42</span>)
+pipeline_tuned   = <span class="cls">Pipeline</span>([(<span class="str">preprocessor</span>, preprocessor), (<span class="str">classifier</span>, classifier_tuned)])
+param_grid_rf = {
+    <span class="str">classifier__n_estimators</span>:    [best[<span class="str">classifier__n_estimators</span>] - <span class="num">50</span>,
+                                best[<span class="str">classifier__n_estimators</span>],
+                                best[<span class="str">classifier__n_estimators</span>] + <span class="num">50</span>],
+    <span class="str">classifier__max_depth</span>:       [best[<span class="str">classifier__max_depth</span>]],
+    <span class="str">classifier__max_features</span>:    [best[<span class="str">classifier__max_features</span>]],
+    <span class="str">classifier__min_samples_leaf</span>: [max(<span class="num">1</span>, best[<span class="str">classifier__min_samples_leaf</span>] - <span class="num">1</span>),
+                                  best[<span class="str">classifier__min_samples_leaf</span>],
+                                  best[<span class="str">classifier__min_samples_leaf</span>] + <span class="num">1</span>],
+}
+grid_rf = <span class="cls">GridSearchCV</span>(
+    pipeline_tuned, param_grid=param_grid_rf,
+    verbose=<span class="num">3</span>, refit=<span class="kw">True</span>, scoring=<span class="str">precision</span>, cv=<span class="num">5</span>,
+    return_train_score=<span class="kw">True</span>, n_jobs=<span class="num">2</span>
+)
+grid_rf.fit(X_train, y_train)
+
+<span class="kw">print</span>(<span class="str">Best parameters:</span>, grid_rf.best_params_)
+<span class="kw">print</span>(<span class="str">Best Precision score:</span>, grid_rf.best_score_)
+
+<span class="cm"># ── 5. Evaluasi final di test set (satu kali!) ────────</span>
+final_pipeline = grid_rf.best_estimator_  <span class="cm"># Pipeline lengkap</span>
+y_pred = final_pipeline.predict(X_test)
+<span class="kw">print</span>(classification_report(y_test, y_pred))
+<span class="kw">print</span>(<span class="str">Test Score: {final_pipeline.score(X_test, y_test):.4f}</span>)
+
+<span class="cm"># ── Akses komponen setelah fit ────────────────────────</span>
+fitted_preprocessor = final_pipeline.named_steps[<span class="str">preprocessor</span>]
+fitted_classifier   = final_pipeline.named_steps[<span class="str">classifier</span>]
+<span class="kw">print</span>(<span class="str">Feature importances:</span>, fitted_classifier.feature_importances_)</pre>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function filter(task, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(card => {
+    if (task === 'all') {
+      card.classList.remove('hidden');
+    } else {
+      const cardTask = card.dataset.task;
+      if (cardTask === task || (task === 'both' && cardTask === 'both') || (task === 'clf' && (cardTask === 'clf' || cardTask === 'both')) || (task === 'reg' && (cardTask === 'reg' || cardTask === 'both'))) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    }
+  });
+}
+
+
+// ── Model Finder ─────────────────────────────────────────────────────────
+const ALGO_PROPS = {
+  'decision-tree': {
+    label: 'Decision Tree',
+    task: ['clf','reg'],
+    props: ['small','medium','nonlinear','interpretable','feat-importance','fast-train','fast-predict','no-tuning']
+  },
+  'random-forest': {
+    label: 'Random Forest',
+    task: ['clf','reg'],
+    props: ['small','medium','nonlinear','feat-importance','prob-output','no-tuning','imbalanced']
+  },
+  'gbm': {
+    label: 'GBM / XGBoost',
+    task: ['clf','reg'],
+    props: ['small','medium','large','nonlinear','feat-importance','prob-output','nan-native','imbalanced']
+  },
+  'svm': {
+    label: 'SVM',
+    task: ['clf','reg'],
+    props: ['small','nonlinear','linear','prob-output','fast-predict']
+  },
+  'knn': {
+    label: 'K-Nearest Neighbors',
+    task: ['clf','reg'],
+    props: ['small','nonlinear','interpretable','no-tuning','fast-train']
+  },
+  'logistic': {
+    label: 'Logistic Regression',
+    task: ['clf'],
+    props: ['small','medium','large','linear','interpretable','feat-importance','prob-output','fast-train','fast-predict','imbalanced']
+  },
+  'linear-reg': {
+    label: 'Linear Regression',
+    task: ['reg'],
+    props: ['small','medium','large','linear','interpretable','feat-importance','fast-train','fast-predict']
+  },
+  'ridge': {
+    label: 'Ridge (L2)',
+    task: ['reg'],
+    props: ['small','medium','large','linear','interpretable','feat-importance','fast-train','fast-predict']
+  },
+  'lasso': {
+    label: 'Lasso (L1)',
+    task: ['reg'],
+    props: ['small','medium','large','linear','interpretable','feat-importance','feat-select','fast-train','fast-predict']
+  },
+  'elasticnet': {
+    label: 'ElasticNet',
+    task: ['reg'],
+    props: ['small','medium','large','linear','interpretable','feat-importance','feat-select','fast-train','fast-predict']
+  },
+  'naive-bayes': {
+    label: 'Naive Bayes',
+    task: ['clf'],
+    props: ['small','medium','large','interpretable','prob-output','fast-train','fast-predict','no-tuning','imbalanced']
+  },
+  'extra-trees': {
+    label: 'Extra Trees',
+    task: ['clf','reg'],
+    props: ['small','medium','nonlinear','feat-importance','prob-output','no-tuning','fast-train','imbalanced']
+  }
+};
+
+let activeCriteria = new Set();
+
+function toggleCriterion(el, key) {
+  el.classList.toggle('checked');
+  if (el.classList.contains('checked')) {
+    activeCriteria.add(key);
+  } else {
+    activeCriteria.delete(key);
+  }
+  applyFinder();
+}
+
+function resetFinder() {
+  activeCriteria.clear();
+  document.querySelectorAll('.criterion').forEach(el => el.classList.remove('checked'));
+  document.querySelectorAll('.card[data-algo]').forEach(card => {
+    card.classList.remove('finder-match','finder-dim');
+  });
+  const results = document.getElementById('finder-results');
+  results.innerHTML = `<span class="results-label">Model →</span>
+    <span class="no-match" id="finder-hint">Pilih kriteria di atas untuk melihat rekomendasi model</span>`;
+}
+
+function algoMatches(algoKey) {
+  const algo = ALGO_PROPS[algoKey];
+  if (!algo) return false;
+
+  // Separate task criteria from prop criteria
+  const taskCriteria = [...activeCriteria].filter(c => c.startsWith('task-'));
+  const propCriteria = [...activeCriteria].filter(c => !c.startsWith('task-'));
+
+  // If any task is selected, algo must support at least one selected task
+  if (taskCriteria.length > 0) {
+    const selectedTasks = taskCriteria.map(c => c.replace('task-',''));
+    const hasTask = selectedTasks.some(t => algo.task.includes(t));
+    if (!hasTask) return false;
+  }
+
+  // All prop criteria must be in algo.props
+  for (const prop of propCriteria) {
+    if (!algo.props.includes(prop)) return false;
+  }
+
+  return true;
+}
+
+function applyFinder() {
+  if (activeCriteria.size === 0) {
+    resetFinder();
+    return;
+  }
+
+  const matching = [];
+  const cards = document.querySelectorAll('.card[data-algo]');
+
+  cards.forEach(card => {
+    const algo = card.dataset.algo;
+    if (algoMatches(algo)) {
+      card.classList.add('finder-match');
+      card.classList.remove('finder-dim');
+      matching.push(algo);
+    } else {
+      card.classList.add('finder-dim');
+      card.classList.remove('finder-match');
+    }
+  });
+
+  // Update results bar
+  const results = document.getElementById('finder-results');
+  if (matching.length === 0) {
+    results.innerHTML = `<span class="results-label">Model →</span>
+      <span class="no-match">Tidak ada model yang memenuhi semua kriteria — coba kurangi filter</span>`;
+    return;
+  }
+
+  let chips = `<span class="results-label">${matching.length} model →</span>`;
+  matching.forEach(algoKey => {
+    const algo = ALGO_PROPS[algoKey];
+    const tasks = algo.task;
+    let chipClass = tasks.length > 1 ? 'chip-both' : tasks[0] === 'clf' ? 'chip-clf' : 'chip-reg';
+    chips += `<span class="result-chip ${chipClass}" onclick="scrollToCard('${algoKey}')">${algo.label}</span>`;
+  });
+
+  results.innerHTML = chips;
+}
+
+function scrollToCard(algoKey) {
+  const card = document.querySelector(`.card[data-algo="${algoKey}"]`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.style.transition = 'box-shadow 0.3s';
+    card.style.boxShadow = '0 0 0 2px #6c8fff, 0 0 32px rgba(108,143,255,0.3)';
+    setTimeout(() => { card.style.boxShadow = ''; }, 1800);
+  }
+}
+
+function copyCode(btn) {
+  const pre = btn.closest('.code-block').querySelector('pre');
+  const text = pre.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
