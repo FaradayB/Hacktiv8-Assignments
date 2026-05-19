@@ -1,372 +1,200 @@
-# Brosur Mitsubishi Motors Indonesia
+# Brosur Mitsubishi Motors Indonesia — Parsed
 
 ---
 
-# 1. MITSUBISHI DELICA (2015)
+# MITSUBISHI XFORCE (2025)
 
 ## Tagline
-**"The World's First Sport Utility MPV"**
-
----
-
-## Varian
-- **Delica** (standar)
-- **Delica ROYAL**
-
----
-
-## Keunggulan Utama
-
-### The World's First MPV in Dakar
-Mitsubishi Delica adalah satu-satunya MPV yang mengikuti ajang Rally Dakar sebagai supporting car tim rally Mitsubishi.
-
-### Go Tour with Royal Pleasure (Delica ROYAL)
-Arungi petualangan seru bersama keluarga dengan Mitsubishi Delica ROYAL. Sport Utility MPV kini hadir dengan fitur-fitur mewah untuk sebuah kenyamanan premium sekaligus tangguh di berbagai medan.
-
----
-
-## Fitur Unggulan (Delica ROYAL — ditandai NEW*)
-
-| Fitur | Keterangan |
-|---|---|
-| **18" Alloy Wheels** | Desain baru velg 18" yang mewah dan kokoh untuk menambah ketangguhan |
-| **Rear Parking Sensor** | Dilengkapi rear camera untuk memaksimalkan keamanan saat berkendara |
-| **Chromed Mirror & Door Handles** | Sentuhan chrome di kaca spion samping dan door handle |
-| **Audio Steering Switch** | Mengatur sistem multimedia dari lingkar kemudi |
-| **Leather Seat** | Balutan leather seat untuk kenyamanan pengemudi dan keluarga |
-
----
-
-## Desain Eksterior — An Elegant Bold Design
-
-| No. | Bagian | Keterangan |
-|---|---|---|
-| 1 | **Front Grille** | Tampilan grille depan bergaya khas SUV |
-| 2 | **Front Bumper** | Dilengkapi Front Body Protection yang berkarakter |
-| 3 | **HID Headlamps + ACL** | Lampu depan berdaya jangkau luas dengan Active Cornering Light |
-| 4 | **Fog Lamp** | Lampu kabut berdaya sorot maksimal di bumper depan |
-| 5 | **Electric Retractable Mirror** | Spion utama otomatis, dilengkapi spion tambahan di sisi kiri |
-| 6 | **Rear Combination Lamp + Rear Camera** | Desain modern dan kamera belakang untuk kemudahan parkir |
-| 7 | **Rear Bumper** | Tampilan kokoh dengan Rear Body Protection |
-| — | **Power Sliding Door** | Pintu penumpang geser, dioperasikan dengan KOS atau tarik handle |
-
----
-
-## Fitur Teknologi — Smart Driving Experience
-
-| Fitur | Keterangan |
-|---|---|
-| **ASC** – Active Stability Control | Menjaga kestabilan kendaraan di jalan licin |
-| **ADA** – Approach & Departure Angle | Sudut kemiringan besar di bumper depan & belakang untuk medan terjal |
-| **AS&G** – Auto Stop & Go | Menonaktifkan mesin otomatis saat pedal rem diinjak dan mobil berhenti |
-| **HSA** – Hill Start Assist | Menahan mobil beberapa detik saat pedal rem dilepas di tanjakan |
-| **CC** – Cruise Control | Mengendalikan mobil tanpa menekan pedal gas terus-menerus |
-| **LSS** – Long Stroke Suspension | Suspensi tinggi yang bekerja secara independen |
-| **HGC** – High Ground Clearance | Jarak tinggi 190mm dari permukaan tanah |
-| **RBF** – Rib Bone Frame | Desain rangka tangguh dan kokoh |
-
----
-
-## Kabin — First Class Cabin for Adventure
-
-| Fitur | Keterangan |
-|---|---|
-| **Steering Wheel** | Desain kemudi elegan dilengkapi Cruise Control |
-| **High Contrast Meter Cluster with MID** | Multi Information Display dengan LCD berwarna |
-| **Smart Entertainment System** | Audio dengan navigasi, Finger Gesture Recognition, Miracast |
-| **Paddle Shift** | Perpindahan gigi secara manual dari posisi tangan di kemudi |
-| **Transmission** | INVECS-III CVT 6 speed |
-| **Automatic Air Conditioner** | Mengatur besarnya hembusan udara dan waktu pendinginan |
-| **Captain Seat** | Bangku tengah model Captain Seat |
-| **Multi-Function Storages** | Berbagai kompartemen penyimpanan di kabin |
-| **Dual SRS Airbag + Driver Knee Airbag** | Airbag pengemudi, penumpang depan, dan lutut pengemudi |
-
----
-
-## Konfigurasi Kursi & Bagasi
-
-| Konfigurasi | Panjang Bagasi |
-|---|---|
-| 7 Seaters (penuh penumpang) | 380mm x 140mm |
-| 4 Seaters (bangku belakang dilipat) | 1.200mm |
-| 2 Seaters (bangku tengah + belakang dilipat/digeser) | 1.610mm |
-
----
-
-## Spesifikasi Teknis
-
-| Spesifikasi | Delica | Delica ROYAL |
-|---|---|---|
-| **Dimensi** | | |
-| Panjang (mm) | 4.730 | 4.730 |
-| Lebar (mm) | 1.795 | 1.795 |
-| Tinggi (mm) | 1.850 | 1.850 |
-| Wheelbase (mm) | 2.850 | 2.850 |
-| Ground Clearance (mm) | 190 | 190 |
-| Curb Weight (kg) | 1.685 | 1.690 |
-| Kapasitas Penumpang | 7 | 7 |
-| Turning Radius (m) | 5,7 | 5,7 |
-| **Mesin** | | |
-| Tipe | 4J11 (2.0L) S4 MPI S-MIVEC AS&G | sama |
-| Bahan Bakar | Bensin (RON Min. 90) | sama |
-| Displacement (cc) | 1.998 | sama |
-| Kompresi | 10,5 : 1 | sama |
-| Tenaga Maks. (ps/rpm) | 150 (110 kW) / 6.000 | sama |
-| Torsi Maks. (kg.m/rpm) | 19,4 (190 Nm) / 4.200 | sama |
-| **Bahan Bakar** | | |
-| Sistem | Multi Point Injection (MPI) | sama |
-| **Transmisi** | | |
-| Tipe | INVECS-III 6-speed CVT | sama |
-| Gear Ratio (1st–6th) | 2,349 – 0,394 | sama |
-| Reverse | 1,750 | sama |
-| Final Gear Ratio | 6,456 | sama |
-| **Chassis** | | |
-| Kemudi | Rack & Pinion (power-assisted) | sama |
-| Suspensi Depan | MacPherson strut, coil springs with stabilizer | sama |
-| Suspensi Belakang | Multi-link, coil springs with stabilizer | sama |
-| Rem Depan | Ventilated disc 16" | sama |
-| Rem Belakang | Disc 16" | sama |
-| Rem Parkir | Pedal type | sama |
-| Ban Depan | 215/70R16 | 225/55R18 |
-| Ban Belakang | 215/70R16 | 225/55R18 |
-| **Eksterior** | | |
-| Headlamp | HID with auto-leveling | sama |
-| Active Cornering Light | Tersedia | sama |
-| Front Fog Lamp | Tersedia | sama |
-| Rear Door Power Slide (kedua sisi) | Tersedia | sama |
-| Outer Door Mirror | Electric + Retractable, Color key with turning lamp | Chrome with turning lamp |
-| Side Under View Mirror | Tersedia | sama |
-| Outer Door Handle | Color key | Chrome |
-| **Interior** | | |
-| Glovebox | Upper & Lower | sama |
-| Combination Meter Cluster | High contrast meter | sama |
-| MID | Tersedia (with color) | sama |
-| Steering | 4 spoke, leather strapped | sama |
-| Steering Switch | Cruise control switch | Audio + Cruise control switch |
-| Paddle Shift | — | Tersedia |
-| Audio | 6.95" digital capacitive touch screen, DVD/CD/Radio/USB/SD/iPod/iPhone playback, Aux-In, WiFi Display (w/o Wire), Finger Gesture Recognition | sama |
-| Seat Material | Fabric, water repellent, soil resistant | Leather |
-| Height Adjuster | Driver side, lever type | sama |
-| Reclining & Sliding 1st row | Tersedia | sama |
-| Reclining & Sliding 2nd row | Tersedia | sama |
-| Reclining & Sliding 3rd row | Tersedia | sama |
-| Seat Type 1st row | Captain | sama |
-| Seat Type 2nd row | Captain | sama |
-| Seat Type 3rd row | Bench 50:50 fold, split side fold | sama |
-| Seat Belt 1st row | 3P ELR x 2 (pretensioner) | sama |
-| Seat Belt 2nd row | 3P ELR x 2 | sama |
-| Seat Belt 3rd row | 3P ELR x 3 | sama |
-| Floor Center Console Box | Standard type with lid and bottle holders | sama |
-| Keyless Entry | Tersedia | sama |
-| Immobilizer | Tersedia | sama |
-| Keyless Operation System | Tersedia | sama |
-| Engine Start/Stop | Tersedia | sama |
-| Parking Sensor | Tidak tersedia | Tersedia |
-| Rear Camera | Tersedia | sama |
-| Air Conditioner | 1st row auto A/C, Rear Manual cooler, Anti odor air filter | sama |
-| Door Handle (assist grip) | Retractable x5 Fixed grip at front & rear door x4 | sama |
-| **Keselamatan** | | |
-| Airbag | Driver, Passenger, Driver Knee SRS dual stage | sama |
-| ABS with EBD + BA | Tersedia | sama |
-| TCS (includes TCL function) | Tersedia | sama |
-| Hill Start Assist System | Tersedia | sama |
-| Collapsible Steering Shaft | Tersedia | sama |
-| Side Impact Door Beams | Tersedia | sama |
-
----
-
-## Pilihan Warna
-
-- Warm White Pearl
-- Cool Silver Metallic
-- Eiger Gray Metallic
-- Diamond Black Mica
-
----
----
-
-# 2. MITSUBISHI DESTINATOR (2025)
-
-## Tagline
-**"Grand Destinations Await"**  
+**"Futuristic Look Designed to Impress"**
 **"Drive your Ambition"**
 
 ---
 
 ## Varian
-- **Ultimate CVT**
-- **Exceed CVT**
-- **GLS CVT**
+- **Ultimate with DIAMOND SENSE** — Fitur paling lengkap, termasuk FCM, LCDN, AHB, TPMS, 6 Airbags, Curtain Airbags, Wireless Android Auto/CarPlay, Drive Mode
+- **Ultimate CVT** — Fitur lengkap tanpa DIAMOND SENSE features (FCM, LCDN, AHB), tanpa TPMS & Curtain Airbags
+- **Exceed CVT** — Fitur standar, tanpa Drive Mode, Wireless Charger, Ambient Lighting, Handsfree Power Liftgate
 
 ---
 
 ## Keunggulan Utama
 
-### The Confidence Booster for Every Destination
-Desain eksterior yang memukau meningkatkan rasa percaya diri Anda dan keluarga dalam setiap petualangan.
+### Futuristic Look Designed to Impress
+Desain futuristik yang menggabungkan kesan canggih dan kokoh khas SUV lewat lekukan bodi yang tegas, sukses menjadikan pusat perhatian.
 
-### Diamond Sense
-Melambangkan komitmen Mitsubishi Motors terhadap inovasi, keandalan, dan keamanan untuk memberikan proteksi maksimal.
+### Your New Standard of Elegance
+Inovasi kemewahan berkelas lewat 12,3 inch Smartphone-Link Display Audio dan 8 inch Digital Driver Display berpadu dengan desain dashboard hitam elegan dan sentuhan soft pad yang memberikan kesan premium. Fitur Ambient Lighting membuat suasana berkendara lebih mewah dan nyaman *(Ultimate)*.
 
-**Fitur Diamond Sense (tersedia di varian tertentu):**
-- Forward Collision Mitigation System (FCM)
-- Leading Car Departure Notification (LCDN)
-- Rear Cross Traffic Alert (RCTA)
-- Multi Around Monitor
-- Adaptive Cruise Control (ACC)
-- Automatic High Beam (AHB)
-- Blind Spot Warning (BSW)
-- Front Rain Sensing Wiper
+### Diamond Sense — The Future of Safety System
+Diamond Sense melambangkan komitmen Mitsubishi Motors terhadap inovasi, keandalan, dan keamanan. Fitur ini didesain untuk memberikan proteksi maksimal dan menyeluruh di setiap adventure.
 
 ---
 
-## Fitur Premium & Teknologi
+## Desain Eksterior
 
-### Level Up Your Journey — Premium Options (Ultimate)
 | Fitur | Keterangan |
 |---|---|
-| **Panoramic Sunroof** | Tersedia di varian ULTIMATE |
-| **Hands Free Electric Power Tailgate** | Opsi Premium, hanya di ULTIMATE |
-| **Power Seat Adjuster** | Hanya di ULTIMATE PREMIUM |
-| **Dynamic Sound YAMAHA Premium (8 Speakers)** | Hanya di ULTIMATE PREMIUM |
-
-### Mitsubishi Connect
-Berbagai layanan terhubung untuk pengalaman berkendara yang aman, nyaman, dan tanpa batas jarak.
-
-**Safety:**
-- Automatic Collision Notification
-- SOS Emergency Assistance
-- Roadside Assistance
-
-**Security:**
-- Alarm Notification
-- Stolen Vehicle Tracking
-- Parental Control
-
-**Comfort & Convenience:**
-- Remote Climate Control
-- Remote Light
-- Remote Door Lock/Unlock
-- Car Finder & Horn
-- Mileage Tracker
-- Vehicle Status Report
-- Information Assistance
+| **New Generation Dynamic Shield** | Desain grille generasi terbaru, lebih modern dan kokoh |
+| **T-Shaped Headlight** | Lampu depan LED berkarakter bentuk T |
+| **T-Shaped Rear Combination Light** | Lampu belakang LED berkarakter bentuk T |
+| **Distinctive Wheel Design** | Velg Two-Tone Alloy 225/50 R18 |
+| **Tailgate Spoiler** | Tersedia di Ultimate with DIAMOND SENSE |
+| **Roof Rail** | Tersedia di Ultimate with DIAMOND SENSE |
+| **High Ground Clearance** | 222 mm |
+| **Small Turning Radius** | 5,2 meter |
+| **Handsfree Power Liftgate with Kick Sensor** | Ultimate with DIAMOND SENSE & Ultimate CVT |
+| **Auto Headlight** | Ultimate with DIAMOND SENSE & Ultimate CVT |
+| **Auto Rain Sensor** | Ultimate with DIAMOND SENSE & Ultimate CVT |
+| **Daytime Running Light (LED)** | Semua varian |
+| **Fog Lamp (LED)** | Semua varian |
 
 ---
 
 ## Interior & Kenyamanan
 
-| Fitur | Keterangan |
+| Fitur | Ketersediaan |
 |---|---|
-| **12.3-Inch Smartphone-Link Display Audio** | Tersedia di varian ULTIMATE (8-Inch di EXCEED) |
-| **Dual Zone AC** | Tersedia di ULTIMATE & EXCEED |
-| **Ambient Lights** | Multicolor 64 warna (ULTIMATE) |
-| **Versatile Seat Arrangement** | Pengaturan kursi fleksibel |
-| **Seatback Foldable Table** | Tersedia di ULTIMATE & EXCEED |
-| **Synthetic Leather Seat** | Anti-temperature rise function (ULTIMATE & EXCEED) |
-| **Fabric Seat** | Tersedia di GLS |
+| **12,3 Inch Smartphone-Link Display Audio** | Ultimate with DS & Ultimate CVT |
+| **8 Inch Smartphone-Link Display Audio** | Exceed CVT |
+| **8 Inch Digital Driver Display** | Ultimate with DS & Ultimate CVT |
+| **High Contrast Meter with 4,2 Inch MID** | Exceed CVT |
+| **Android Auto / Apple CarPlay (Wired/Wireless)** | Ultimate with DS & Ultimate CVT |
+| **Android Auto / Apple CarPlay (Wired only)** | Exceed CVT |
+| **Smartphone Wireless Charger** | Ultimate with DS & Ultimate CVT |
+| **Dual Zone Auto Climate Control with Nanoe™ X** | Semua varian |
+| **Dynamic Sound YAMAHA Premium (8 Speakers)** | Ultimate with DS & Ultimate CVT |
+| **6 Speakers** | Exceed CVT |
+| **Ambient Lighting** | Ultimate with DS & Ultimate CVT |
+| **Floor Center Console Box with Armrest & Cooling Function** | Semua varian |
+| **Synthetic Leather Seat with Anti-temperature Rise Function** | Semua varian |
+| **Rear Seat with 8-step Reclining** | Semua varian |
+| **Instrument & Door Trim Panel** | Black with Soft Pad (semua varian) |
+| **Drive Mode (Normal/Wet/Gravel/Mud)** | Ultimate with DS & Ultimate CVT |
 
 ---
 
-## Performa & Handling
+## Teknologi Keselamatan (DIAMOND SENSE)
 
-| Spesifikasi | Keterangan |
+| Fitur | Ketersediaan |
 |---|---|
-| **Mesin** | 4B40 1.5L Turbo — DOHC 16 Valve |
-| **Minimum Turning Radius** | 5,4 meter |
-| **High Ground Clearance** | 244 mm* |
-| **Active Yaw Control (AYC)** | Tersedia di semua varian |
-| **Special Tuned Suspension** | Tersedia |
-| **Electric Parking Brake with Auto Hold** | Tersedia di semua varian |
-| **Drive Mode** | Normal / Wet / Gravel / Tarmac / Mud (tidak tersedia di GLS) |
-
----
-
-## Aksesoris Genuine
-
-- Engine Hood Emblem
-- Front Corner Extension
-- Tailgate Spoiler
-- Scuff Plate with Illumination Light
-- Luggage Tray
-- Rear Corner Extension
-- Dashcam
+| **Forward Collision Mitigation System (FCM)** | Ultimate with DIAMOND SENSE |
+| **Leading Car Departure Notification (LCDN)** | Ultimate with DIAMOND SENSE |
+| **Adaptive Cruise Control (ACC)** | Ultimate with DIAMOND SENSE |
+| **Automatic High Beam (AHB)** | Ultimate with DIAMOND SENSE |
+| **6 SRS Airbags (Driver, Passenger, Side, Curtain)** | Ultimate with DIAMOND SENSE |
+| **Blind Spot Warning (BSW)** | Ultimate with DS & Ultimate CVT |
+| **Rear Cross Traffic Alert (RCTA)** | Ultimate with DS & Ultimate CVT |
+| **Active Yaw Control (AYC)** | Semua varian |
+| **Active Stability Control (ASC)** | Semua varian |
+| **Hill Start Assist (HSA)** | Semua varian |
+| **Electric Parking Brake with Auto Hold** | Semua varian |
+| **ABS + EBD + Brake Assist (BA)** | Semua varian |
+| **Rear View Camera** | Semua varian |
+| **Speed Sensing Door Lock** | Semua varian |
+| **Immobilizer** | Semua varian |
+| **Tire Pressure Monitoring System (TPMS)** | Ultimate with DS & Ultimate CVT |
+| **Front SRS Airbags (Driver & Passenger)** | Semua varian |
+| **Side Airbags** | Semua varian |
+| **Curtain Airbags** | Ultimate with DIAMOND SENSE |
 
 ---
 
 ## Spesifikasi Teknis
 
-| Spesifikasi | Ultimate CVT | Exceed CVT | GLS CVT |
+| Spesifikasi | Ultimate with DS | Ultimate CVT | Exceed CVT |
 |---|---|---|---|
-| **DIMENSI & BERAT** | | | |
-| Panjang (mm) | 4.680 | 4.680 | 4.680 |
-| Lebar (mm) | 1.840 | 1.840 | 1.840 |
-| Tinggi (mm) | 1.780 | 1.780 | 1.780 |
-| Ground Clearance (mm) | 244** | 244** | 244** |
-| Kapasitas Penumpang | 7 | 7 | 7 |
-| **MESIN** | | | |
-| Tipe | 4B40 1.5L Turbo — DOHC 16 Valve | sama | sama |
+| **DIMENSI** | | | |
+| Overall Length (mm) | 4.390 | 4.390 | 4.390 |
+| Overall Width (mm) | 1.810 | 1.810 | 1.810 |
+| Overall Height (mm) | 1.660 | 1.660 | 1.660 |
+| Wheelbase (mm) | 2.650 | 2.650 | 2.650 |
+| Ground Clearance (mm) | 222 | 222 | 222 |
+| **MESIN & PERFORMA** | | | |
+| Engine | 4A91 1.5L MIVEC DOHC 16 Valve | sama | sama |
 | Displacement (cc) | 1.499 | sama | sama |
-| Tenaga Maks. kW (PS)/rpm | 120 (163) / 5.000 | sama | sama |
-| Torsi Maks. Nm/rpm | 250 / 2.500–4.000 | sama | sama |
-| Kapasitas Tangki (Liter) | 45 | sama | sama |
-| **PERFORMA** | | | |
-| Transmisi | CVT | CVT | CVT |
-| Drive Mode Selector | Tersedia | Tersedia | Tidak tersedia |
-| Minimum Turning Radius | 5,4 m | sama | sama |
-| Suspensi Depan | MacPherson Strut | sama | sama |
-| Suspensi Belakang | Torsion Beam | sama | sama |
-| Rem Depan | Ventilated Disc | sama | sama |
-| Rem Belakang | Ventilated Disc | sama | sama |
+| Max Horse Power kW (PS)/rpm | 77 (105) / 6.000 | sama | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama | sama |
+| Transmission | CVT | CVT | CVT |
+| Drive Mode Selector | Normal/Wet/Gravel/Mud | Normal/Wet/Gravel/Mud | Tidak tersedia |
+| Min. Turning Radius (m) | 5,2 | 5,2 | 5,2 |
+| **SUSPENSI** | | | |
+| Depan | MacPherson Strut Type, Independent Axle | sama | sama |
+| Belakang | Torsion Beam | sama | sama |
+| **REM** | | | |
+| Depan | Ventilated Disc | sama | sama |
+| Belakang | Solid Disc | sama | sama |
 | **EKSTERIOR** | | | |
-| Wheel & Tire | Two-tone Alloy Wheel 225/55 R18 | Single-tone Alloy Wheel 225/55 R18 | sama |
-| Front Headlamp | LED | LED | LED |
-| Daytime Running Light | LED | LED | Tidak tersedia |
-| Fog Lamp | LED | LED | Tidak tersedia |
+| Headlamp | LED | sama | sama |
+| Daytime Running Light | LED | sama | sama |
+| Auto Headlight | Tersedia | Tersedia | Tidak tersedia |
+| Auto Rain Sensor | Tersedia | Tersedia | Tidak tersedia |
+| Fog Lamp | LED | sama | sama |
+| Rear Lamp | LED | sama | sama |
+| Wheel & Tire | 225/50 R18 Two-Tone Alloy Wheel | sama | sama |
+| Handsfree Power Liftgate with Kick Sensor | Tersedia | Tersedia | Tidak tersedia |
 | **INTERIOR** | | | |
-| Digital Meter Cluster | 8-Inch Digital Driver Display | 8-Inch Digital Driver Display | 4.2-Inch Multi-information Display |
-| USB Port | Type A & Type C (All Rows) | Type A & Type C (All Rows) | Type A & C (1st & 2nd Rows) |
-| Seat Material | Synthetic Leather (Anti-temperature Rise) | Synthetic Leather (Anti-temperature Rise) | Fabric Seat |
-| Air Conditioner | Dual Zone Automatic with Digital Display | Dual Zone Automatic with Digital Display | Front Digital Display Manual Cooler |
-| Parking Brake | Electronic Parking Brake with Autohold | sama | sama |
-| Smartphone Display Audio | 12.3-Inch | 8-Inch | 8-Inch |
-| Android Auto & Apple CarPlay | Tersedia | Tersedia | Tersedia |
-| Panoramic Sunroof | Tersedia | Tidak tersedia | Tidak tersedia |
-| Ambient Lights | Multicolor (64 warna) | Tidak tersedia | Tidak tersedia |
-| Audio System | 6 Speakers | 6 Speakers | 4 Speakers |
-| Mitsubishi Connect | Tersedia | Tidak tersedia | Tidak tersedia |
-| **SAFETY & SECURITY** | | | |
-| FCM (Forward Collision Mitigation) | Tersedia | Tidak tersedia | Tidak tersedia |
-| Adaptive Cruise Control | Tersedia | Cruise Control | Tidak tersedia |
-| Blind Spot Warning (BSW) + LCA | Tersedia | Tidak tersedia | Tidak tersedia |
-| Automatic High Beam (AHB) | Tersedia | Tidak tersedia | Tidak tersedia |
-| Rear Cross Traffic Alert (RCTA) | Tersedia | Tidak tersedia | Tidak tersedia |
-| Auto Head Light & Front Rain Sensor Wiper | Tersedia | Tidak tersedia | Tidak tersedia |
-| Multi Around Monitor | Tersedia | Rear View Camera | Rear View Camera |
-| Active Yaw Control (AYC) | Tersedia | Tersedia | Tersedia |
-| Front SRS Airbags | Driver & Passenger | sama | sama |
-| Side Airbags | Tersedia | Tersedia | Tersedia |
+| Instrument & Door Trim Panel | Black with Soft Pad | sama | sama |
+| Seat Material | Synthetic Leather Seat with Anti-temperature Rise Function | sama | sama |
+| Rear Seat with 8-step Reclining | Tersedia | sama | sama |
+| Speedometer | 8 Inch Digital Driver Display | sama | High Contrast Meter with 4,2 Inch MID |
+| Display Size (Audio) | 12,3 Inch | 12,3 Inch | 8 Inch |
+| Weblink | Tersedia | sama | sama |
+| Android Auto / Apple CarPlay | Wired/Wireless | Wired/Wireless | Wired only |
+| Smartphone Wireless Charger | Tersedia | Tersedia | Tidak tersedia |
+| Air Conditioner | Dual Zone Auto | sama | sama |
+| Nanoe™ X | Tersedia | sama | sama |
+| Audio System | Dynamic Sound YAMAHA Premium, 8 Speakers | sama | 6 Speakers |
+| Floor Center Console Box | with Armrest & Cooling Function | sama | sama |
+| Ambient Lighting | Tersedia | Tersedia | Tidak tersedia |
+| **KESELAMATAN & KEAMANAN** | | | |
+| Front SRS Airbags (Driver & Passenger) | Tersedia | sama | sama |
+| Side Airbags | Tersedia | sama | sama |
 | Curtain Airbags | Tersedia | Tidak tersedia | Tidak tersedia |
-| Keyless Operation System | Tersedia | Tersedia | Tersedia |
-| Immobilizer | Tersedia | Tersedia | Tersedia |
-| **PREMIUM PACKAGES** | | | |
-| Hands Free Electric Power Tailgate | — (opsi) | — | — |
-| Power Seat Adjuster | Hanya ULTIMATE PREMIUM | — | — |
-| Dynamic Sound YAMAHA Premium (8 Speakers) | Hanya ULTIMATE PREMIUM | — | — |
+| Hill Start Assist (HSA) | Tersedia | sama | sama |
+| Active Stability Control (ASC) | Tersedia | sama | sama |
+| Cruise Control | Adaptive | Adaptive | Standard |
+| Auto High Beam (AHB) | Tersedia | Tidak tersedia | Tidak tersedia |
+| Blind Spot Warning (BSW) | Tersedia | Tersedia | Tidak tersedia (N/A per brochure — BSW tersedia) |
+| Forward Collision Mitigation System (FCM) | Tersedia | Tidak tersedia | Tidak tersedia |
+| Leading Car Departure Notification (LCDN) | Tersedia | Tidak tersedia | Tidak tersedia |
+| Rear Cross Traffic Alert (RCTA) | Tersedia | sama | sama |
+| Active Yaw Control (AYC) | Tersedia | sama | sama |
+| Speed Sensing Door Lock | Tersedia | sama | sama |
+| Rear View Camera | Tersedia | sama | sama |
+| Immobilizer | Tersedia | sama | sama |
+| Tire Pressure Monitoring System (TPMS) | Tersedia | Tersedia | Tidak tersedia |
 
-*\*\*Tanpa engine under cover*
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
 
 ---
 
 ## Pilihan Warna
 
-| Warna | Ketersediaan |
-|---|---|
-| Jet Black Mica | Semua varian |
-| Quartz White Pearl | Semua varian |
-| Blade Silver Metallic | Semua varian |
-| Graphite Grey Metallic | Semua varian |
-| Lunar Blue | Hanya ULTIMATE |
+- Quartz White Pearl (Two-tone) — Ultimate with DS
+- Blade Silver Metallic (Two-tone) — Ultimate with DS
+- Energetic Yellow (Two-tone) — Ultimate with DS
+- Red Metallic (Two-tone) — Ultimate with DS
+- Graphite Gray Metallic — Ultimate with DS
+- Jet Black Mica — Ultimate with DS
+
+*Warna two-tone hanya tersedia pada varian Ultimate with DIAMOND SENSE.*
+
+---
+
+## Aksesori Genuine
+
+| Aksesori |
+|---|
+| Engine Hood Emblem |
+| Side Visor |
+| Front Under Garnish |
+| Rear Under Garnish |
+| Side Door Garnish |
+| Tailgate Spoiler |
+| Luggage Tray |
+| Mud Guard |
+| Wheel Lock Nut |
+| Dashcam |
 
 ---
 
@@ -374,985 +202,946 @@ Berbagai layanan terhubung untuk pengalaman berkendara yang aman, nyaman, dan ta
 
 | Layanan | Detail |
 |---|---|
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Website | www.mitsubishi-motors.co.id |
 | Customer Care | 0804-1-300-300 |
-| Gratis Biaya Jasa | 60.000 KM / 4 Tahun |
-| Garansi | 100.000 KM / 3 Tahun + 20.000 KM/1 Tahun |
-| Express Service | Tersedia |
-| Fast Booking | Tersedia |
-| Layanan 24 Jam | 0804-1-300-300 |
-| Authorized Bodi & Cat | Tersedia |
+| Gratis Biaya Jasa | 50.000 KM / 4 Tahun |
+| Garansi | 100.000 KM / 3 Tahun |
 
 ---
 ---
 
-# 3. MITSUBISHI ECLIPSE CROSS (2019)
+# MITSUBISHI XPANDER (2020)
 
 ## Tagline
-**"Drive your Ambition"**  
-**"Ready for Action"**
+**"More than just a smart MPV, but also the right one for everyone."**
+
+---
+
+## Varian
+- **Ultimate A/T**
+- **Sport A/T & M/T**
+- **Exceed A/T & M/T**
+- **GLS A/T & M/T**
+- **GLX M/T**
 
 ---
 
 ## Keunggulan Utama
 
-### Ready for Action
-Desain futuristik dan garis tegas yang mewah membuat tampilan Eclipse Cross menjadi pusat perhatian, di mana pun Anda melintas.
+### Attractive and Dynamic Design
+Tampilan eksterior yang atraktif dan dinamis dengan LED Headlamp, Dynamic Shield Design, Shark Fin Antenna, 16-inch Two Tone Alloy Wheel, dan Rear Window Defogger (tipe Ultimate, Sport, dan Exceed).
 
-### Responsive Acceleration — More Power from Every Drop of Fuel
-**1.5L Direct-Injection Turbocharged Gasoline Engine**  
-Kapasitas mesin diminimalkan untuk menambah efisiensi. Turbocharged membuat torsi lebih bertenaga pada RPM rendah. Teknologi mesin terbaru memungkinkan akselerasi responsif yang didukung direct fuel injection dengan satu cylinder head sahwat manifold-integrated, sodium-filled exhaust valve, MIVEC, dan berbagai kecanggihan lainnya.
+### Comfortable & Luxurious Interior
+Kabin mewah dengan 7-inch Audio Head Unit with Smartphone Connectivity (tipe Ultimate dan Sport), kursi baris ke-3 yang luas, dan interior premium.
+
+### Top Class High Ground Clearance
+Mitsubishi Xpander memiliki ground clearance tertinggi di kelasnya — 205 mm (tipe Ultimate, Sport, dan Exceed).
+
+### Kabin Senyap
+Dilengkapi peredam suara maksimal untuk pengalaman berkendara yang nyaman.
 
 ---
 
-## Fitur Eksterior
+## Desain Eksterior
 
-| Fitur | Keterangan |
+| Fitur | Ketersediaan |
 |---|---|
-| **Projector LED Headlamp** | Lampu depan proyektor LED |
-| **Dynamic Shield** | Desain grille depan khas Mitsubishi |
-| **Heads Up Display** | Informasi berkendara ditampilkan di kaca depan |
-| **Power Panoramic Sunroof** | Sunroof panoramik bertenaga |
+| **LED Headlamp** | Ultimate, Sport, Exceed |
+| **Dynamic Shield Design + Front Grille** | Semua varian |
+| **LED Rear Combination Lamp** | Semua varian |
+| **Shark Fin Antenna** | Ultimate, Sport, Exceed |
+| **Rear Window Defogger** | Ultimate, Sport, Exceed |
+| **16-inch Two Tone Alloy Wheel 205/55 R16** | Ultimate, Sport, Exceed |
+| **Alloy Wheel 185/65 R15** | GLS |
+| **Steel Wheel with Cover 185/65 R15** | GLX |
+| **Fog Lamp (LED)** | Ultimate, Sport, Exceed |
 
 ---
 
-## Fitur Interior & Teknologi
+## Interior & Kenyamanan
 
-| Fitur | Keterangan |
+| Fitur | Ketersediaan |
 |---|---|
-| **Paddle Shift** | Perpindahan gigi manual dari kemudi |
-| **Touchpad Controller** | Kontrol layar sentuh |
-| **Adaptive Cruise Control** | Pengaturan kecepatan adaptif |
-| **Electric Parking Brake with Brake Auto Hold** | Rem parkir elektrik dengan auto hold |
-| **Heated Seat** | Kursi berpemanas (Driver & Front Passenger) |
-| **Dual Zone Automatic Climate Control** | AC dua zona otomatis |
-| **6 Speakers** | Sistem audio dengan 6 speaker |
-| **7 SRS Airbags** | Front, side, curtain, dan knee airbag |
-| **INVECS-III CVT with 8-Speed Sport Mode** | Transmisi CVT dengan mode sport |
+| **7-inch Audio Head Unit with Smartphone Connectivity** | Ultimate, Sport |
+| **Wide 2DIN Audio (CD/MP3/USB/AUX)** | Exceed, GLS |
+| **Audioless** | GLX |
+| **Leather-wrapped Steering Wheel with Handsfree Switch** | Ultimate, Sport, Exceed |
+| **Audio Steering Switch** | Ultimate, Sport |
+| **Tilt & Telescopic Steering** | Ultimate, Sport, Exceed |
+| **High Contrast Meter with Color MID** | Semua varian |
+| **Leather Seat** | Ultimate |
+| **High Grade Fabric Seat** | Sport, Exceed, GLS |
+| **Fabric Seat** | GLX |
+| **Seating Capacity** | 7 |
+| **Ground Clearance** | 205 mm |
 
----
+### Functional Interior & Utilities (19 kompartemen penyimpanan)
+Xpander dilengkapi banyak kompartemen penyimpanan di seluruh kabin: Glove Box, Instrument Panel Side Pocket, Coin Box, Instrument Panel Tray & Lower Tray, Cup Holder Depan, Front Door Pocket, Kotak Penyimpanan Tertutup, Floor Console Box, Laci Bawah Kursi, Seat Back Pocket Multifungsi, Gantungan Serbaguna, Rear Door Pocket, AC Double Blower, Ruang Penyimpanan Bagasi, Tempat Smartphone, 3rd Row Bottle Holder, dan Ruang Bagasi Luas.
 
-## Fitur Keselamatan — Reassuring All Around Safety
-
-| Fitur | Keterangan |
+### Konfigurasi Kursi
+| Konfigurasi | Kapasitas |
 |---|---|
-| **FCM** — Forward Collision Mitigation System | Mengurangi risiko tabrakan depan |
-| **AHB** — Automatic High Beam | Mengatur lampu jauh secara otomatis |
-| **HSA** — Hill Start Assist | Menahan mobil di tanjakan saat rem dilepas |
-| **UMS** — Ultrasonic Misacceleration Mitigation System | Mengurangi risiko salah injak pedal gas |
-| **ACC** — Adaptive Cruise Control | Menjaga jarak aman dengan kendaraan di depan |
-| **BSW** — Blind Spot Warning | Peringatan kendaraan di titik buta |
-| **RCTA** — Rear Cross Traffic Alert | Peringatan kendaraan dari samping saat mundur |
-| **ASTC** — Active Stability & Traction Control | Menjaga stabilitas dan traksi kendaraan |
+| 7 Penumpang (default) | Semua baris terisi |
+| 6 Penumpang + Sandaran Lengan | Baris kedua dengan armrest |
+| 4 Penumpang + Sandaran Lengan | Baris kedua dengan armrest |
+| 4 Penumpang | Baris pertama + kedua |
+| 2 Penumpang | Baris ketiga dilipat |
+
+*Keunggulan: Kursi baris kedua dan ketiga bisa dilipat hingga rata lantai tanpa jeda.*
 
 ---
 
-## Pilihan Warna Eksterior
-
-- Red Diamond
-- Silky White
-- Amethyst Black
-
----
-
-## Spesifikasi Teknis
+## Performa & Suspensi
 
 | Spesifikasi | Keterangan |
 |---|---|
-| **DIMENSI & BERAT** | |
-| Panjang (mm) | 4.405 |
-| Lebar (mm) | 1.805 |
-| Tinggi (mm) | 1.674 |
-| Wheelbase (mm) | 2.670 |
-| Ground Clearance (mm) | 183 |
-| Kapasitas Penumpang | 5 |
-| **MESIN** | |
-| Tipe | 4B40 DOHC MIVEC |
-| Displacement (cc) | 1.499 |
-| Tenaga Maks. kW(PS)/rpm | 110 (150) / 5.500 |
-| Torsi Maks. N.m(kgf.m)/rpm | 250 (25,5) / 2.000–3.500 |
-| **BAHAN BAKAR** | |
-| Jenis | Bensin (RON Min. 95) |
-| Kapasitas Tangki (Liter) | 63 |
-| **PERFORMA** | |
-| Minimum Turning Radius (m) | 5,3 |
-| **TRANSMISI** | |
-| Tipe | CVT |
-| Drive Range | 2,631 – 0,378 |
-| Reverse | 1,960 |
-| **SUSPENSI** | |
-| Depan | MacPherson Strut, Coil Spring, Twin Tube Shock Absorber, Torsion Bar Stabilizer |
-| Belakang | Multi-link, Coil Spring, Twin Tube Shock Absorber, Torsion Bar Stabilizer |
-| **REM** | |
-| Depan | Ventilated Disc |
-| Belakang | Solid Disc |
-| Tipe Rem Parkir | Electric Parking Brake |
-| Brake Auto Hold | Tersedia |
-| **BAN** | |
-| Depan & Belakang | 225/55 R18 Alloy Wheel |
-| **KEMUDI** | |
-| Tipe | Electric Power Steering |
-| Tilt & Telescopic | Tersedia |
-| Cruise Control | Adaptive Cruise Control |
-| Paddle Shift | Tersedia |
-| Steering Switch | Audio Switch, Hands Free Switch, Voice Control System |
-| **EKSTERIOR** | |
-| Sunroof | Power Panoramic Sunroof |
-| Antena | Shark Fin |
-| **INTERIOR** | |
-| Instrument Panel | Soft type on the Upper Surface |
-| Seat Material | Leather Seat |
-| Seat Adjuster (Driver) | Power Seat with Height Adjuster & Lumbar Support |
-| Seat Adjuster (Passenger) | Sliding & Reclining Seatback Function |
-| Seat Heater | Driver & Front Passenger |
-| **AIR CONDITIONER** | |
-| Tipe | Dual Zone Automatic Climate Control |
-| **AUDIO** | |
-| Tipe | Thin Display Audio, AM/FM, Bluetooth, USB |
-| Speaker | 6 Speakers |
-| Commander Control | Touch Pad |
-| **ELEKTRIKAL** | |
-| Front Headlamp | Projector LED with Auto Leveling |
-| Auto On/Off Headlamp | Tersedia |
-| Auto High Beam | Tersedia |
-| Welcome Light | Tersedia |
-| Coming Home Light | Tersedia |
-| Daytime Running Light (DRL) | LED |
-| Fog Lamp | Tersedia |
-| Rear Combination Lamp | LED |
-| High Mounted Stop Lamp | LED |
-| Meter Cluster | High Contrast Type with LCD Multi Information Display |
-| Head Up Display | Tersedia |
-| Keyless Operation System (KOS) | Tersedia |
-| Parking Sensor | Tersedia |
-| Rear View Camera | Tersedia |
-| **KESELAMATAN** | |
-| 7 SRS Airbags | Tersedia |
-| Seatbelt 1st Row | 3P ELR with Pretensioner & Force Limiter x 2 |
-| Seatbelt 2nd Row | 3P ELR x 3 |
-| ISO-FIX with Tether Anchor | Tersedia |
-| Child Proof Lock | Tersedia |
-| ABS, EBD & BA | Tersedia |
-| Advanced Safety Features | ASTC, HSA, FCM, UMS, BSW, LCA, RCTA, AYC |
-| Immobilizer | Tersedia |
-| Security Alarm | Tersedia |
-
----
----
-
-# 4. MITSUBISHI L100 EV (2024)
-
-## Tagline
-**"Mobil Niaga Listrik Jepang Pertama di Indonesia"**  
-**"Drive your Ambition"**
+| **Mesin** | 1.5L MIVEC DOHC 16-Valve |
+| **Max Power** | 77 kW (105 PS) / 6.000 rpm |
+| **Max Torque** | 141 Nm / 4.000 rpm |
+| **Standar Emisi** | Euro 4 |
+| **Suspensi Depan** | MacPherson Strut with Coil Spring |
+| **Suspensi Belakang** | Torsion Beam |
+| **Peredam Guncangan** | Dilengkapi katup peredam guncangan |
 
 ---
 
-## Varian
-- **2-Seater Blind Van**
+## Teknologi Keselamatan
 
----
-
-## Keunggulan Utama
-
-### Solusi Efisiensi Bisnis Anda
-Keunggulan radius putar kecil dan body yang compact memudahkan menjelajah ke mana saja sehingga waktu operasional jadi lebih efisien.
-
-### Efisien untuk bisnis, ramah untuk bumi
-Emisi karbon yang dihasilkan dari penggunaan L100 EV sebesar **0%**, sehingga berkontribusi mengurangi emisi karbon dan polusi lingkungan.
-
----
-
-## Fitur Unggulan
-
-| Fitur | Keterangan |
+| Fitur | Ketersediaan |
 |---|---|
-| **Electronic Power Steering** | Kemudi ringan dan responsif |
-| **Small Turning Radius** | 4,3 meter |
-| **Maximum Torque** | 195 Nm |
-| **Maximum Load** | 425 kg |
-| **Fast Charging** | Pengisian 0–80% hanya dalam 42 menit |
-| **EV Range** | 180 km (WLTC) |
-
----
-
-## Efisiensi Baterai
-
-Hanya dalam satu kali pengisian baterai penuh dapat mencakup semua kebutuhan bisnis Anda. Rata-rata daya tempuh kendaraan operasional per hari 50 km, sedangkan daya tempuh baterai penuh mencapai **180 km** (WLTC).
-
----
-
-## Kegunaan Bisnis
-
-- Package Delivery
-- Sparepart Logistic
-- Emergency Services
-- Food Truck
-
----
-
-## Fitur Keselamatan
-
-| Fitur | Keterangan |
-|---|---|
-| **Dual SRS Airbags** | Driver & Passenger |
-| **Active Stability Control (ASC)** | Tersedia |
-| **Anti-lock Braking System (ABS)** | Tersedia |
-| **Electronic Brakeforce Distribution (EBD)** | Tersedia |
-| **Brake Assist (BA)** | Tersedia |
-| **Traction & Active Stability Control** | Tersedia |
-| **Immobilizer** | Tersedia |
-| **Seatbelt Warning** | Tersedia |
+| **RISE Body** (Reinforced Impact Safety Evolution) | Semua varian |
+| **Dual SRS Airbags** | Semua varian |
+| **ABS + EBD** | Semua varian |
+| **Brake Assist (BA)** | Semua varian |
+| **ASC** (Active Stability Control) | Ultimate, Sport |
+| **HSA** (Hill Start Assist) | Ultimate, Sport |
+| **ESS** (Emergency Stop Signal) | Semua varian |
+| **Pedestrian Protection** | Semua varian |
+| **ISO-FIX Child Seat Anchor x2 (2nd Row)** | Semua varian |
+| **Parking Sensor** | Ultimate |
+| **Rear View Camera** | Ultimate |
+| **Keyless Operation System** | Ultimate, Sport, Exceed |
+| **Immobilizer with Security Alarm** | Ultimate, Sport |
+| **Immobilizer only** | Exceed, GLS |
+| **Cruise Control** | Ultimate |
 
 ---
 
 ## Spesifikasi Teknis
 
-| Spesifikasi | L100 EV |
+| Spesifikasi | Ultimate A/T | Sport A/T | Sport M/T | Exceed A/T | Exceed M/T | GLS A/T | GLS M/T | GLX M/T |
+|---|---|---|---|---|---|---|---|---|
+| **DIMENSI** | | | | | | | | |
+| Overall Length (mm) | 4.475 | sama | sama | sama | sama | sama | sama | sama |
+| Overall Width (mm) | 1.750 | sama | sama | sama | sama | sama | sama | sama |
+| Overall Height (mm) | 1.730 | sama | sama | sama | sama | sama | 1.695 | 1.695 |
+| Ground Clearance (mm) | 205 | sama | sama | sama | sama | sama | 200 | 200 |
+| Seating Capacity | 7 | sama | sama | sama | sama | sama | sama | sama |
+| **MESIN** | | | | | | | | |
+| Engine Type | 1.5L MIVEC DOHC 16 Valve | sama | sama | sama | sama | sama | sama | sama |
+| Displacement (cc) | 1.499 | sama | sama | sama | sama | sama | sama | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama | sama | sama | sama | sama | sama | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama | sama | sama | sama | sama | sama | sama |
+| Fuel Tank Capacity (L) | 45 | sama | sama | sama | sama | sama | sama | sama |
+| **PERFORMA** | | | | | | | | |
+| Transmisi | 4 Speed A/T | 4 Speed A/T | 5 Speed M/T | 4 Speed A/T | 5 Speed M/T | 4 Speed A/T | 5 Speed M/T | 5 Speed M/T |
+| Suspensi Depan | MacPherson Strut with Coil Spring | sama | sama | sama | sama | sama | sama | sama |
+| Suspensi Belakang | Torsion Beam | sama | sama | sama | sama | sama | sama | sama |
+| Rem Depan | Disc Brake | sama | sama | sama | sama | sama | sama | sama |
+| Rem Belakang | Drum Brake | sama | sama | sama | sama | sama | sama | sama |
+| Cruise Control | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak | Tidak | Tidak |
+| **EKSTERIOR** | | | | | | | | |
+| Wheel & Tire | Two-tone Alloy Wheel 205/55 R16 | sama | sama | sama | sama | Alloy 185/65 R15 | Alloy 185/65 R15 | Steel 185/65 R15 |
+| Front Headlamp | LED | sama | sama | sama | sama | LED | Halogen | Halogen |
+| Fog Lamp | LED | sama | sama | sama | sama | LED | — | — |
+| Antenna | Shark Fin | sama | sama | sama | sama | Shark Fin | Short Pole | Short Pole |
+| Rear Defogger | Tersedia | sama | sama | sama | sama | sama | sama | Tidak |
+| **INTERIOR** | | | | | | | | |
+| Steering Wheel | Leather-wrapped | sama | sama | sama | sama | Leather-wrapped | Urethane | Urethane |
+| Audio Steering Switch | Tersedia | sama | sama | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Seat Material | Leather | High Grade Fabric | sama | sama | sama | sama | sama | Fabric |
+| Audio System | Wide 2DIN Touchscreen (AM/FM, USB, iPhone/iPad, Voice, BT, SmartPhone) | sama | sama | Wide 2DIN (AM/FM, CD/MP3, USB, AUX) | sama | sama | sama | Audioless |
+| **KESELAMATAN** | | | | | | | | |
+| ABS + EBD + BA | Tersedia | sama | sama | sama | sama | sama | sama | sama |
+| Dual SRS Airbags | Tersedia | sama | sama | sama | sama | sama | sama | sama |
+| ASC + TCL | Tersedia | sama | sama | Tidak | Tidak | Tidak | Tidak | Tidak |
+| HSA | Tersedia | sama | sama | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Parking Sensor + Rear View Camera | Tersedia | Parking Sensor only | Parking Sensor only | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Keyless Operation System | Tersedia | sama | sama | sama | sama | Tidak | Tidak | Tidak |
+| Immobilizer with Security Alarm | Tersedia | sama | sama | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Immobilizer only | — | — | — | Tersedia | sama | sama | sama | sama |
+
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
+
+---
+
+## Pilihan Warna
+
+| Warna | Ketersediaan Varian |
 |---|---|
-| **MODEL** | L100 EV — 2-Seater Blind Van |
-| **DIMENSI** | |
-| Panjang x Lebar x Tinggi (mm) | 3.395 x 1.475 x 1.915 |
-| Cargo L x W x H (mm) | 1.830 x 1.370 x 1.230 |
-| Wheelbase (mm) | 2.390 |
-| Min. Turning Radius (m) | 4,3 |
-| Curb Vehicle Weight (kg) | 1.125 |
-| Total Capacity Load (kg) | 425 (1 driver only) |
-| Ground Clearance (mm) | 165 |
-| **EV SYSTEMS** | |
-| Power Train | Electric Motor |
-| Power kW (PS) | 31 (42) |
-| Torque kgf.m (Nm) | 20 (195) |
-| Max. Speed (km/h) | 100 |
-| Battery Type | Lithium Ion |
-| Battery Capacity (kWh) | 20,1 |
-| EV Range (km) | 180 (WLTC) |
-| AC Charging Socket (Normal) | Type 1 |
-| DC Charging Socket (Quick) | CHAdeMO |
-| AC Charging Time (Normal, jam) | 7,5 |
-| DC Charging Time (Quick, menit) | 42 |
-| Transmisi | CVT |
-| **CHASSIS** | |
-| Body Type | Monocoque |
-| Drive System | 4x2 |
-| Front Suspension | MacPherson Strut |
-| Rear Suspension | 3 Link De Dion |
-| **REM** | |
-| Depan / Belakang | Disc / Drum |
-| **EKSTERIOR** | |
-| Headlamp | Halogen with Manual Leveling & Auto Light Control |
-| Rear Lamp | Halogen |
-| Wheel & Tire | 145R12-8PR LT Steel |
-| Rear Wiper and Nozzle | Tersedia |
-| Rear Mounted Stop Lamp | Tersedia |
-| Rear Defogger | Tersedia |
-| **INTERIOR** | |
-| Air Conditioner | Tersedia |
-| Wiper with Intermittent Speed | Tersedia |
-| Seat Heater (Driver) | Tersedia |
-| Cup Holder (Driver & Passenger) | Tersedia |
-| Power Window | Tersedia |
-| Assist Grip (Pillar A) | Tersedia |
-| Temporary Spare Tire | Tersedia |
+| Quartz White Pearl | Ultimate, Sport, Exceed, GLS, GLX |
+| Sterling Silver Metallic | Ultimate, Sport, Exceed, GLS |
+| Graphite Gray Metallic | Ultimate, Sport |
+| Jet Black Mica | Ultimate, Sport, Exceed, GLS, GLX |
+| Red Metallic | Ultimate, Sport |
+| Deep Bronze Metallic | Ultimate, Sport |
 
 ---
 
-## Paket Smart
-
-| Jaminan | Detail |
-|---|---|
-| Garansi Kendaraan | 5 Tahun / 100.000 KM |
-| Garansi Baterai | 8 Tahun / 160.000 KM |
-| SOH Baterai | 66% (4 Tahun, opsional) |
-| Gratis Perawatan | 4 Tahun / 50.000 KM |
-
----
----
-
-# 5. MITSUBISHI COLT L300 (2015)
-
-## Tagline
-**"Tangguh Melewati Tanjakan. Menjawab Semua Kebutuhan"**  
-**"Mitra Usaha Andalan Anda!"**
-
----
-
-## Varian
-- **L300 Standard** (Pickup)
-- **L300 FlatDeck** (Pickup)
-- **L300 Bus Chassis**
-
----
-
-## Keunggulan Utama
-
-### Tangguh untuk Segala Kebutuhan Usaha
-Ruang kargo luas yang didukung mesin bertenaga sehingga dapat mengangkut muatan secara maksimal dan cepat sampai tujuan. Tersedia dalam pilihan kargo Standard, FlatDeck, maupun Bus Chassis.
-
-### Mesin Diesel 4D56 — IRIT dan BERTENAGA
-Mesin Diesel legendaris Cyclone 2.500cc sudah teruji ketangguhannya. Dengan suara mesin yang halus menghasilkan tenaga yang maksimal dan handal di tanjakan namun irit bahan bakar. Mesin Diesel 4D56 low maintenance sehingga membuat usaha semakin menguntungkan.
-
-### L300 Bus Chassis
-Sebuah pilihan yang tangguh, bertenaga dan penuh kepraktisan. Bebas menyesuaikan kendaraan dengan bidang dan jenis usaha Anda.
-
----
-
-## Fitur Unggulan
-
-| Fitur | Keterangan |
-|---|---|
-| **Kabin Luas dan Lega** | Memuat 3 penumpang dengan nyaman |
-| **Power Steering** | Kemudi lebih ringan dan nyaman |
-| **CD / MP3 Player** | Audio dapat memutar CD/MP3 |
-| **Speedometer** | Fungsional dan mudah terbaca |
-
----
-
-## Spesifikasi Teknis
-
-| Spesifikasi | Standard | FlatDeck | Bus Chassis |
-|---|---|---|---|
-| **DIMENSI** | | | |
-| Panjang (mm) | 4.170 | 4.170 | 4.195 |
-| Lebar (mm) | 1.700 | 1.700 | 1.695 |
-| Tinggi (mm) | 1.845 | 1.845 | 1.820 |
-| **DIMENSI BAK KARGO** | | | |
-| Interior Length (mm) | 2.425 | 2.425 | — |
-| Interior Width (mm) | 1.600 | 1.600 | — |
-| Interior Height (mm) | 310 | 310 | — |
-| Cargo Size (m²) | 3.880 | 3.880 | — |
-| **DETAIL** | | | |
-| Wheelbase (mm) | 2.200 | 2.200 | 2.200 |
-| Ground Clearance (mm) | 200 | 200 | 200 |
-| **BERAT** | | | |
-| Curb Weight (kg) | 1.165 | 1.165 | 1.090 |
-| **PERFORMA** | | | |
-| Kapasitas Penumpang | 3 | 3 | 3 |
-| Min. Turning Radius (m) | 4,4 | 4,4 | 4,4 |
-| **MESIN** | | | |
-| Tipe | 4D56 — 4 Cylinder Inline | sama | sama |
-| Cylinder Volume (cc) | 2.477 | sama | sama |
-| Diameter x Step (mm) | 91,1 x 95,0 | sama | sama |
-| Torsi Maks. (kg-m/rpm) | 13,6 / 2.500 | sama | sama |
-| **TRANSMISI** | | | |
-| Tipe | 5 speed, manual transmission, floorshift | sama | sama |
-| **CHASSIS** | | | |
-| Steering | Recirculating Ball type with Power Steering | sama | sama |
-| Rem Depan | Ventilated Disc | sama | sama |
-| Rem Belakang | Drum, Leading, Trailing | sama | sama |
-| Suspensi Depan | Double Wishbone, Coil Spring | sama | sama |
-| Suspensi Belakang | Semi Eliptic Leaf Spring | sama | sama |
-| Kapasitas Tangki (Liter) | 47 | 47 | 47 |
-
----
-
-*Spesifikasi dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu.*
-
----
-
-## Informasi Dealer & Layanan
-
-| Informasi | Detail |
-|---|---|
-| Distributor (Delica/L300) | PT. Krama Yudha Tiga Berlian Motors |
-| Distributor (Destinator/Eclipse Cross/L100 EV) | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
-| Website | www.mitsubishi-motors.co.id / www.ktb-mitsubishi.co.id |
-| Media Sosial | @KTBMitsubishi / @mitsubishimotorsid / @mitsubishi.ID |
-
----
-
-*Dokumen ini dirangkum dari brosur resmi Mitsubishi Motors Indonesia.*
-
----
----
-
-# 6. MITSUBISHI COLT L300 (2019)
-
-## Tagline
-**"Drive your Ambition"**
-
----
-
-## Varian
-- **Pick Up Standard Deck**
-- **Pick Up Flatbed**
-- **Cab Chassis**
-
----
-
-## Keunggulan Utama
-
-### Mesin Diesel Legendaris 4D56 — IRIT dan BERTENAGA
-Mesin Diesel legendaris Cyclone 2.500cc sudah teruji ketangguhannya. Dengan suara mesin yang halus menghasilkan tenaga yang maksimal dan handal di tanjakan namun irit bahan bakar. Mesin Diesel 4D56 mudah perawatannya, sehingga membuat usaha semakin menguntungkan.
-
-### Colt L300 Pick Up — Tangguh untuk Segala Kebutuhan Usaha
-Lebih efisien karena memiliki ruang kargo luas yang didukung mesin bertenaga sehingga dapat mengangkut muatan secara maksimal dan cepat sampai tujuan. Tersedia dalam pilihan kargo Standard dan FlatDeck yang dapat disesuaikan dengan kebutuhan usaha.
-
-### Colt L300 Cab Chassis — Praktis untuk Bisnis Anda
-Mitsubishi mengerti kebutuhan dalam usaha. Varian Cab Chassis menghadirkan pilihan lebih ekonomis yang dapat disesuaikan dengan bidang usaha, seperti Box Sliding Door, Box Cooler, dan Box Multi Door.
-
----
-
-## Fitur Unggulan
-
-| Fitur | Keterangan |
-|---|---|
-| **Kabin Luas dan Lega** | Memuat 3 penumpang dengan nyaman |
-| **Power Steering** | Kemudi lebih ringan dan nyaman |
-| **Audio Head Unit** | Memutar radio AM/FM, MP3, WMA/WAV (USB) |
-| **Speedometer** | Fungsional dan mudah terbaca |
-
----
-
-## Pilihan Kargo (Cab Chassis)
-- Box Sliding Door
-- Box Cooler
-- Box Multi Door
-
----
-
-## Spesifikasi Teknis
-
-| Spesifikasi | Pick Up Standard | Pick Up Flatbed | Cab Chassis |
-|---|---|---|---|
-| **DIMENSI** | | | |
-| Overall Length (mm) | 4.170 | 4.170 | 4.015 |
-| Overall Width (mm) | 1.700 | 1.700 | 1.695 |
-| Overall Height (mm) | 1.845 | 1.935 | 1.810 |
-| **DIMENSI BAK KARGO** | | | |
-| Interior Length (mm) | 2.430 | 2.430 | — |
-| Interior Width (mm) | 1.600 | 1.600 | — |
-| Interior Height (mm) | 360 | 310 | — |
-| **DETAIL** | | | |
-| Wheelbase (mm) | 2.200 | 2.200 | 2.200 |
-| Ground Clearance (mm) | 200 | 200 | 200 |
-| GVW (kg) | 2.345 | 2.345 | 2.345 |
-| **PERFORMA** | | | |
-| Min. Turning Radius (m) | 4,4 | 4,4 | 4,4 |
-| **MESIN** | | | |
-| Tipe | 4D56 — SOHC 4 Cylinder Inline | sama | sama |
-| Cylinder Volume (cc) | 2.477 | sama | sama |
-| Torsi Maks. Kg.m (N.m) / rpm | 13,6 (133,4) / 2.500 | sama | sama |
-| **TRANSMISI** | | | |
-| Tipe | 5 Speed Manual Transmission | sama | sama |
-| **CHASSIS** | | | |
-| Steering | Ball & Nut Type with Power Steering | sama | sama |
-| Rem Depan | Ventilated Disc | sama | sama |
-| Rem Belakang | Drum, Leading, Trailing | sama | sama |
-| Suspensi Depan | Double Wishbone, Coil Spring | sama | sama |
-| Suspensi Belakang | Semi Eliptic Leaf Spring | sama | sama |
-| Kapasitas Tangki (Liter) | 47 | sama | sama |
-| **PRODUKSI** | | | |
-| Diproduksi oleh | PT Mitsubishi Motors Krama Yudha Indonesia (MMKI) | sama | sama |
-
-*Spesifikasi dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu.*
-
----
----
-
-# 7. MITSUBISHI NEW COLT L300 (2021)
-
-## Tagline
-**"Drive your Ambition"**
-
----
-
-## Varian
-- **Chassis Cabin**
-- **Flat Deck** (Pick Up)
-
----
-
-## Keunggulan Utama
-
-### Mesin Baru 4N14 — Lebih Bertenaga & Efisien
-Mesin diesel DOHC 16 Valve 4 cylinder inline 2.268cc dengan teknologi Direct Injection, Inter Cooler, Common Rail, dan Turbocharger. Menghasilkan tenaga hingga 99,25 PS (73 kW) pada 3.500 rpm dan torsi maksimal 20,4 kg.m (200 Nm) pada 1.000–3.500 rpm.
-
-### Lebih Mudah dan Fleksibel
-Beragam pilihan kargo yang dapat disesuaikan dengan kebutuhan bisnis, lebih ekonomis dan menguntungkan.
-
----
-
-## Layanan & Jaringan
+## Layanan & Jaminan
 
 | Layanan | Detail |
 |---|---|
-| Jaringan Penjualan | 305 jaringan (data Mei 2022) |
-| Layanan Siaga | 0804-1-300-300 |
-| Service Booking | Tersedia |
-| Garansi | 3 Tahun / 100.000 KM |
-| Customer Care | 0804-1-300-300 |
-
----
-
-## Spesifikasi Teknis
-
-| Spesifikasi | Chassis Cabin | Flat Deck |
-|---|---|---|
-| **DIMENSI** | | |
-| Overall Length (mm) | 4.165 | 4.370 |
-| Overall Width (mm) | 1.695 | 1.700 |
-| Overall Height (mm) | 1.915 | 1.985 |
-| Wheel Base (mm) | 2.350 | 2.350 |
-| Ground Clearance (mm) | 195 | 195 |
-| Gross Vehicle Weight / GVW (kg) | 2.345 | 2.345 |
-| **DIMENSI BAK KARGO** | | |
-| Bed Interior Length (mm) | — | 2.630 |
-| Bed Interior Width (mm) | — | 1.600 |
-| Bed Interior Height (mm) | — | 310 |
-| **MESIN** | | |
-| Model | 4N14 | sama |
-| Tipe | DOHC 16 Valve (4 Cylinder Inline), Direct Injection, Inter Cooler, Common Rail, Turbocharger | sama |
-| Displacement (CC) | 2.268 | sama |
-| Max Power Output PS(kW)/rpm | 99,25 (73) / 3.500 | sama |
-| Max Torque Output Kg.m(N.m)/rpm | 20,4 (200) / 1.000–3.500 | sama |
-| Tank Capacity (ltr) | 47 | sama |
-| **PERFORMA** | | |
-| Min. Turning Radius (m) | 4,9 | 4,9 |
-| **TRANSMISI** | | |
-| Tipe | 5 Speed M/T | sama |
-| **SUSPENSI** | | |
-| Front Type | Double Wishbone, Coilspring | sama |
-| Rear Type | Rigid Leaf Spring Type | sama |
-| **REM** | | |
-| Depan | Ventilated Disc | sama |
-| Belakang | Drum | sama |
-| **BAN** | | |
-| Size (Depan) | 185R14C 102/100P 8PR Steel | sama |
-| **KEMUDI** | | |
-| Tipe | Recirculating Ball Nut type with PS | sama |
-
-*Spesifikasi dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu.*
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Jaringan Penjualan | 300* (*Data per Januari 2020) |
+| Website | www.mitsubishi-motors.co.id |
 
 ---
 ---
 
-# 8. MITSUBISHI ALL NEW LANCER (2002)
+# MITSUBISHI XPANDER (2024)
 
 ## Tagline
-**"The New Luxurious Elegant Driving Spirit"**  
-**"Luxury Driving"**
-
-*Nikmati sukses yang Anda capai. Rasakan kemewahan dan keunggulan teknologi Mitsubishi.*
-
----
-
-## Varian
-- **GLXi** — Mesin 1.600cc, transmisi manual 5 speed
-- **SEi Limited CVT** — Mesin 1.800cc, transmisi INVECS III CVT Sports Mode 6 Speed
-
----
-
-## Keunggulan Utama
-
-### INVECS III CVT — Sports Mode 6 Speed (SEi Limited CVT)
-Teknologi transmisi otomatis paling mutakhir yang dikembangkan oleh Mitsubishi Motors. Mempersembahkan respons yang sangat halus pada tiap perubahan gear rasio. Kerja mesin lebih efisien, bahan bakar lebih irit, namun tenaga yang dihasilkan tetap besar. Dilengkapi Sports Mode 6 Speed dengan perpindahan tingkat percepatan secara manual.
-
-### Mesin Tangguh
-Mesin 1.800cc ECI Multi, 16 Valve dengan transmisi otomatis INVECS III-CVT. Juga tersedia mesin 1.600cc ECI Multi 16 Valve transmisi manual.
-
----
-
-## Luxury Style — Desain Eksterior & Interior
-
-| Fitur | Keterangan |
-|---|---|
-| **Grill Depan** | Desain baru tampak lebih gagah dengan garis-garis tegak lurus yang tegas |
-| **Rancangan Bodi Belakang** | Lebih manis dipadu dengan lampu berdisain lengkung. Emblem Lancer mencolok tegas, lebih elegan |
-| **Handel Pintu** | Dirancang agar mudah dipegang dan mewah penampilannya |
-| **Lampu Kabut** | Meningkatkan keamanan berkendara dengan sorot lampu lebih terang serta menambah kemewahan *(SEi Limited CVT)* |
-| **Pintu Samping Belakang** | Ruang pintu belakang dirancang lebih tinggi dan lebih lebar untuk kemudahan akses |
-| **Lingkar Kemudi** | Dibalut kulit yang halus *(SEi Limited CVT)* |
-| **Meter Cluster** | Desain mewah dilengkapi indikator transmisi dan tingkat percepatan *(SEi Limited CVT)* |
-| **Console Box** | Lega dan luas, dilengkapi sandaran tangan dengan sudut kemiringan yang dapat disesuaikan *(SEi Limited CVT)* |
-| **Interior** | Lapang dan mewah untuk kenyamanan semua penumpang |
-
----
-
-## Luxury Safety — Keamanan Aktif & Pasif
-
-### Keamanan Aktif
-| Fitur | Keterangan |
-|---|---|
-| **Lampu Depan** | Halogen dengan dual reflector, lebih terang dan jelas |
-| **Hi-mount Stop Lamp** | Mudah dilihat oleh pengendara lain di belakang |
-| **Keyless Entry** | Menggunakan gelombang radio, lebih aman *(SEi Limited CVT)* |
-| **ABS + EBD** | Anti-lock Braking System + Electronic Braking-force Distribution, mencegah roda terkunci dan menyeimbangkan daya pengereman *(SEi Limited CVT)* |
-
-### Keamanan Pasif
-| Fitur | Keterangan |
-|---|---|
-| **SRS Airbag** | Melindungi pengemudi dan penumpang depan jika terjadi benturan *(SEi Limited CVT)* |
-| **Side Door Impact Bar** | Batang penguat di semua pintu untuk melindungi benturan dari samping |
-| **Struktur Rangka Bodi** | Pilar-pilar utama kokoh, setiap bagian rawan benturan diperkuat. Sistem peredam suara dan getar untuk kenyamanan dan keamanan |
-
-### Suspensi
-MacPherson Strut untuk suspensi depan dan multi link untuk suspensi belakang. Kombinasi ini membuat bantingan lembut dan menghasilkan kenyamanan berkendara di segala kondisi jalan. Minimum turning radius **4,9 m**.
-
----
-
-## Pilihan Warna — Luxury Colour
-
-- Chromatic Silver
-- Fraser Beige
-- Cryolite Silver
-- Rose Red
-- Andaman Blue
-
----
-
-## Spesifikasi Teknis
-
-| Item | GLXi | SEi Limited CVT |
-|---|---|---|
-| **DIMENSI** | | |
-| Length (mm) | 4.500 | 4.500 |
-| Width (mm) | 1.695 | 1.695 |
-| Height (mm) | 1.430 | 1.430 |
-| Wheelbase (mm) | 2.600 | 2.600 |
-| Front Tread (mm) | 1.470 | 1.470 |
-| Rear Tread (mm) | 1.470 | 1.470 |
-| Ground Clearance (mm) | 150 | 150 |
-| Kerb Weight (kg) | 1.095 | 1.150 |
-| Min. Turning Radius (m) | 4,90 | 4,90 |
-| **MESIN** | | |
-| Model | 4G18 | 4G93 |
-| Tipe | 4 cylinder inline SOHC, 16 valve, MPI | 4 cylinder inline SOHC, 16 valve, MPI |
-| Displacement (cc) | 1.584 | 1.834 |
-| Bore x Stroke (mm) | 76,0 x 87,3 | 81,0 x 89,0 |
-| Max Output EEC net (PS/rpm) | 107 / 6.000 | 124 / 6.000 |
-| Max Torque EEC net (kgm/rpm) | 14,5 / 2.750 | 16,4 / 4.500 |
-| Fuel System | ECI Multi | ECI Multi |
-| Fuel Type | Super TT | Super TT |
-| Tank Capacity (litre) | 50 | 50 |
-| **TRANSMISI** | | |
-| Clutch | Single dry plate w/ diaphragm spring | Torque Converter |
-| Tipe | Manual Transmission 5 Speed | INVECS III CVT Sports Mode 6 Speed |
-| Gear Ratio Forward | 2,319 to 0,445 | 2,319 to 0,445 |
-| — 1st | 3,583 | 2,319 |
-| — 2nd | 1,947 | 1,620 |
-| — 3rd | 1,343 | 1,266 |
-| — 4th | 0,976 | 1,000 |
-| — 5th | 0,804 | 0,700 |
-| — 6th (Sports Mode) | — | 0,445 |
-| Reverse | 3,416 | 2,588 |
-| Final Gear Ratio | 4,052 | 5,219 |
-| **SUSPENSI** | | |
-| Depan | MacPherson Strut with stabilizer | sama |
-| Belakang | Multilink with stabilizer | sama |
-| **REM** | | |
-| Brake System | Hydraulic with booster | Hydraulic with booster; ABS with EBD |
-| Depan | Ventilated Disc | sama |
-| Belakang | Leading and trailing drum | sama |
-| **BAN & VELG** | | |
-| Size | 185/65 R14 | sama |
-| Wheel | Alloy x 4 | sama |
-| **PERLENGKAPAN** | | |
-| Airbag | Tidak tersedia | Driver Side, Front Passenger Side |
-| Wood Print Panel | Tidak tersedia | Tersedia |
-| Map Lamp w/ eyeglasses pocket | Tidak tersedia | Tersedia |
-| Side Door Beam | Tersedia | Tersedia |
-| LCD Odometer/Trip Meter | Tersedia | Tersedia |
-| Central Door Lock | Tersedia (tanpa remote) | Tersedia (dengan remote) |
-| Electric Door Mirror | Tersedia (Electric Folded) | Tersedia (Electric Folded) |
-| Door Outer Handle | Grip type, Color Key | Grip type, Color Key |
-| Seat Material | Fabric | Leather |
-| Front Cup Holder | Tersedia | Tersedia |
-| Wood Grain Console | Tidak tersedia | Tersedia |
-| Floor Console | Standard | Large with armrest and compartement |
-| Fog Lamp | Tidak tersedia | Tersedia |
-
-*Catatan: Untuk peningkatan dan penyesuaian dengan perkembangan teknologi, spesifikasi ini sewaktu-waktu dapat berubah tanpa pemberitahuan dahulu.*
-
----
-
-## Informasi Distributor
-
-| Informasi | Detail |
-|---|---|
-| Distributor | PT. Krama Yudha Tiga Berlian Motors |
-| Alamat | Jl. Jend. A. Yani Proyek Pulo Mas, Jakarta |
-| Telp. | 4891608 (17 Saluran) |
-| Website | www.ktb.co.id |
-
----
-
-*Dokumen ini dirangkum dari brosur resmi Mitsubishi Motors Indonesia.*
-
----
----
-
-# 9. MITSUBISHI OUTLANDER PHEV (2019)
-
-## Tagline
+**"Be the life Xpander"**
 **"Drive your Ambition"**
 
 ---
 
 ## Varian
-- **Outlander PHEV** (Plug-In Hybrid Electric Vehicle)
+- **Ultimate CVT**
+- **Ultimate M/T**
+- **Exceed CVT**
+- **Exceed M/T**
+- **GLS CVT**
+- **GLS M/T**
 
 ---
 
-## Sistem PHEV — Innovation with a Performance Edge
+## Keunggulan Utama
 
-Outlander PHEV menggunakan sistem Twin Motor 4WD dengan komponen utama penggerak:
+### Be the Life Xpander
+Hadir dengan dashboard hitam yang menambah kesan sporty, serta dilengkapi Multi Around Monitor untuk memberikan rasa lebih aman dan nyaman saat berkendara *(Tipe Ultimate)*.
 
-| Komponen | Keterangan |
-|---|---|
-| **Front Motor** | Motor listrik penggerak roda depan |
-| **Rear Motor** | Motor listrik penggerak roda belakang |
-| **Generator** | Menghasilkan listrik dari putaran mesin bensin |
-| **Front PDU** (Power Drive Unit) | Mengatur distribusi tenaga ke roda depan |
-| **Rear EMCU** (Electric Motor Control Unit) | Mengontrol motor listrik belakang |
-| **Drive Battery** | Baterai utama penyimpan energi listrik |
-| **New 2.4 Litre Engine** | Mesin bensin 2.4L sebagai generator dan penggerak hybrid |
+### Clean and Fresh Air Anytime
+Dilengkapi dengan Micron Air Filtration yang menjaga sirkulasi kualitas udara di dalam kabin dan meningkatkan kenyamanan seluruh anggota keluarga *(Tipe Ultimate & Exceed)*.
 
 ---
 
-## Mode Berkendara
-
-### EV Drive Mode — Electric Driving
-Motor menggerakkan kendaraan dengan tenaga listrik dari baterai, sehingga tidak ada konsumsi bahan bakar dan emisi CO₂. Kabin menjadi senyap, bersih, dan bertenaga dengan kecepatan maksimum **135 km/jam**.
-
-### Series Hybrid Mode — Hybrid Driving
-Motor menggerakkan kendaraan dengan listrik yang dihasilkan mesin. Mesin akan menghasilkan listrik jika baterai lemah dan untuk menambah tenaga saat mobil berakselerasi dengan cepat.
-
-### Parallel Hybrid Mode — Hybrid Driving
-Mesin menggerakkan mobil saat melaju pada kecepatan tinggi, dengan dibantu motor listrik ketika dibutuhkan tenaga tambahan.
-
----
-
-## Fitur Unggulan — Tomorrow's Efficiency Today
+## Desain Eksterior
 
 | Fitur | Keterangan |
 |---|---|
-| **EV Switch** | Mengaktifkan EV Priority Mode untuk mencegah mesin menyala. Dapat memilih mode all-electric secara manual melalui Twin Motor 4WD |
-| **Charge and Save** | Tombol SAVE untuk mempertahankan daya baterai, atau tombol CHRG untuk mengisi ulang daya saat mobil bergerak |
-| **Regenerative Braking Level Selector (Paddle Type)** | Mengatur kekuatan regenerative braking dengan memilih 6 pengaturan kekuatan pengereman |
-| **AC 1500W Power Supply (Plug: F Type)** | Soket menyuplai listrik dari baterai hingga 1.500W untuk berbagai kebutuhan eksternal |
-| **Type 1 Charging Cable & Storage** | Kabel pengisian Type 1 tersedia dan tersimpan rapi |
-| **Regular Charging (Type 1)** | Isi ulang daya dengan nyaman di rumah |
-| **Quick Charging (CHAdeMO)** | Pengisian cepat untuk menghemat waktu saat bepergian |
+| **T-Shape Headlight** | Lampu depan LED berkarakter T yang khas |
+| **T-Shape Tail Light** | Lampu belakang LED berkarakter T |
+| **17-inch Two Tone Alloy Wheel (Tipe Ultimate)** | Velg alloy two-tone 205/55 R17 |
+| **Front Bumper Design** | Desain bumper depan yang modern |
+| **Rear Design** | Tampilan belakang yang modern |
+| **Spacious Luggage** | Ruang bagasi luas |
+| **Ground Clearance** | 220 mm (Ultimate & Exceed CVT), 225 mm (Exceed M/T), 220 mm (GLS CVT), 225 mm (GLS M/T) |
 
 ---
 
-## Penghargaan
-**ASEAN NCAP ★★★★★** (5 Bintang) — Mitsubishi Outlander PHEV
+## Interior & Kenyamanan
 
----
-
-## Informasi Dealer & Layanan
-
-| Informasi | Detail |
+| Fitur | Ketersediaan |
 |---|---|
-| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
-| Website | www.mitsubishi-motors.co.id |
-| One Stop Service | 0804-1-300-300 |
-| Garansi | 3 Tahun / 100.000 KM |
-| Media Sosial | @mitsubishi.ID / @mitsubishimotorsid |
-
----
----
-
-# 10. MITSUBISHI NEW OUTLANDER SPORT (2018)
-
-## Tagline
-**"REBORN"**  
-**"From Toughness of SUV Car and Comfort of Saloon Car"**
-
-*Dengan perpaduan dari ketangguhan SUV dan kenyamanan sedan, Mitsubishi New Outlander Sport kini terlahir kembali dengan inovasi yang semakin sempurna.*
-
----
-
-## Varian
-- **PX** — Varian tertinggi, eksterior sporty, interior premium
-- **GLS** — Varian menengah
-- **GLX** — Varian entry level
+| **9-inch Audio Head Unit with Smartphone Connectivity** | Ultimate |
+| **7-inch Audio Touchscreen** | Exceed, GLS |
+| **8-inch Digital Driver Display** | Ultimate |
+| **Modern Dashboard with Soft Touch Experience** | Ultimate |
+| **Micron Air Filtration (PM 2.5)** | Ultimate, Exceed |
+| **Digital AC** | Ultimate |
+| **Dial AC** | Exceed, GLS |
+| **Wireless Charger** | Ultimate CVT |
+| **Electric Parking Brake with Brake Auto Hold** | Ultimate CVT |
+| **Floor Console Box (Lid Type with Arm Rest)** | Ultimate CVT |
+| **Floor Console Box (Shutter Type)** | Ultimate M/T |
+| **2nd Row Armrest with Cup Holder** | Semua varian |
+| **Tilt & Telescopic Steering** | Semua varian |
+| **Leather-wrapped Steering Wheel (Hands-free Switch)** | Ultimate |
+| **Urethane Steering Wheel (Hands-free Switch)** | Exceed, GLS |
+| **High Grade Fabric Seat** | Ultimate, Exceed |
+| **Fabric Seat** | GLS |
+| **USB Front Console (Type A & C)** | Ultimate CVT |
+| **Wireless Smartphone Connectivity** | Ultimate CVT |
 
 ---
 
-## Filosofi Varian
+## Teknologi Keselamatan
 
-| Varian | Tagline | Keterangan |
-|---|---|---|
-| **PX** | *Reborn to Live the Urban Life* | Jiwa elegan yang memberikan kebanggaan bagi yang menjalani gaya hidup modern |
-| **GLS** | *Reborn to Explore Places* | Kemampuan dari perpaduan kenyamanan sedan dan ketangguhan SUV, melintasi segala medan |
-| **GLX** | *Reborn to Drive the Outdoor Challenges* | Perjalanan panjang yang elegan dan penuh kebanggaan |
-
----
-
-## New Sophisticated Soul — Interior
-
-| Fitur | Keterangan |
+| Fitur | Ketersediaan |
 |---|---|
-| **Keyless Operating System (KOS)** | Sistem kunci terintegrasi diatur ECU, buka-tutup pintu/bagasi dan start mesin tanpa kunci manual. Jarak operasi 70cm (30 inch) |
-| **Start Stop Engine Button (OSS)** | One-touch Start System, menghidupkan mesin hanya dengan menekan tombol |
-| **High Contrast Meter Cluster with MID** | Multi Information Display: jarak perjalanan, suhu luar, konsumsi bahan bakar, jadwal perawatan berkala |
-| **Premium Entertainment System** | 7" Touch Screen 2DIN DVD, CD, MP3, WMA, AM/FM Radio, USB Port, Bluetooth, Wireless Technology |
-| **New Rear Seat Adjustment** | Kursi belakang dengan sudut kemiringan 6° untuk kenyamanan lebih |
-| **Steering Wheel Design** | Desain sporty dengan panel pengendali audio |
-| **Panoramic Glass Roof** | Menambahkan sensasi baru saat mengemudi dan menikmati pemandangan dari segala arah |
-| **Carbon Printed Dashboard & Door Panel** | Kesan sporty dari carbon print pada dashboard dan door panel |
-| **High Hip Point & Good Visibility** | Posisi duduk tinggi, pandangan lebih baik, keamanan dan kemudahan masuk-keluar lebih besar |
-
----
-
-## New Stylish Appearance — Eksterior
-
-| Fitur | Keterangan |
-|---|---|
-| **Super Wide Range HID Headlamps** | S-HID 35% lebih terang dari lampu biasa, dengan fungsi auto-leveling |
-| **17" Alloy Wheel & Wheel Arch Trim** | Velg 17" sporty dengan wheel arc trim pelindung bodi dari gesekan |
-| **Retractable Door Mirror with Turning Lamp** | Spion stylish melipat otomatis, dilengkapi light guide turn lamp |
-| **Rear Combination Lamp** | Kombinasi lampu belakang LED, tajam dan tahan lama |
-
----
-
-## New Advance Performance
-
-### MIVEC Technology
-MIVEC (Mitsubishi Innovative Valve timing Electronic Control) adalah teknologi eksklusif ramah lingkungan yang menyesuaikan asupan waktu untuk kinerja optimal di seluruh rentang putaran mesin, menghasilkan daya **150 PS**.
-
-### INVECS-III CVT with 6-Step Sport Mode
-Transmisi CVT sangat responsif dan agresif di setiap kecepatan. INVECS memonitor kondisi jalan dan secara otomatis mengantisipasi setiap gerakan pengemudi.
-
-### Magnesium Paddle Shift
-Memungkinkan pengemudi memindahkan gigi secara manual dari posisi tangan tetap di kemudi tanpa kopling.
-
----
-
-## New Safety Experience
-
-| Fitur | Keterangan |
-|---|---|
-| **RISE Body** | Chassis Mitsubishi Reinforced Impact Safety Evolution, rangka kokoh yang menyerap energi benturan |
-| **Collapsible Steering Wheel** | Terlipat otomatis ke dalam saat terjadi benturan dari depan |
-| **Safety Release Brake Pedal** | Pedal rem melipat ke dalam saat benturan depan untuk menghindari himpitan kaki pengemudi |
-| **Brake Override System (Smart Pedal)** | Sensor mendeteksi pengemudian tidak normal dan memperlambat mobil secara aman |
-| **ABS** (Anti Lock Braking System) | Membantu pengemudi mempertahankan kontrol kemudi saat pengereman berat |
-| **EBD** (Electronic Brakeforce Distribution) | Meningkatkan kekuatan pengereman belakang secara otomatis sesuai beban |
-| **Front Seatbelt Pretensioner & Force Limiter** | Tersedia |
-| **The Frame** | Rangka kuat dengan kekakuan tinggi untuk perlindungan menyeluruh pada kabin |
-| **Dual SRS Airbags** | Perlindungan pengemudi dan penumpang depan saat kecelakaan |
+| **RISE Body** | Semua varian |
+| **Dual SRS Airbags** | Semua varian |
+| **ABS + EBD + Brake Assist (BA)** | Semua varian |
+| **ASC (Active Stability Control)** | Semua varian |
+| **HSA (Hill Start Assist)** | Semua varian |
+| **ESS (Emergency Stop Signal)** | Semua varian |
+| **Pedestrian Protection** | Semua varian |
+| **Multi Around Monitor** | Ultimate CVT |
+| **Rear View Camera** | Exceed CVT/M/T |
+| **Parking Sensor** | Ultimate, Exceed |
+| **Keyless Operating System** | Ultimate, Exceed |
+| **Immobilizer with Security Alarm** | Semua varian |
+| **ISO-FIX Child Seat Anchor x2 (2nd Row)** | Semua varian |
+| **Speed Sensing Door Lock** | Ultimate, Exceed |
+| **Cruise Control** | Ultimate CVT |
 
 ---
 
 ## Spesifikasi Teknis
 
-| Spesifikasi | PX | GLS | GLX |
-|---|---|---|---|
-| **DIMENSI** | | | |
-| Overall Length (mm) | 4.300 | 4.300 | 4.300 |
-| Overall Width (mm) | 1.800 | 1.800 | 1.800 |
-| Overall Height (mm) | 1.625 | 1.625 | 1.625 |
-| Wheelbase (mm) | 2.670 | 2.670 | 2.670 |
-| Ground Clearance (mm) | 195 | 195 | 195 |
-| Gross Vehicle Weight (kg) | — | 1.970 | 1.970 |
-| Curb Weight (kg) | 1.425 | 1.400 | 1.380 |
-| **PERFORMA** | | | |
-| Seating Capacity | 5 | 5 | 5 |
-| Min. Turning Radius (m) | 5,3 | 5,3 | 5,3 |
-| **MESIN** | | | |
-| Tipe | 4B11 16 Valve MIVEC DOHC | sama | sama |
-| Jumlah Silinder | 4 in Line | sama | sama |
-| Displacement (cm³) | 1.998 | sama | sama |
-| Bore x Stroke (mm) | 86,0 x 86,0 | sama | sama |
-| Max. Output (ps/rpm) | 150 (110 kW) / 6.000 | sama | sama |
-| Max. Torque (kgm/rpm) | 20,1 (197 Nm) / 4.200 | sama | sama |
-| Fuel Distribution | ECI Multi | sama | sama |
-| Fuel Tank Cap. (liter) | 63 | sama | sama |
-| **TRANSMISI** | | | |
-| Tipe | CVT INVECS III with Sport Mode | CVT INVECS III with Sport Mode | 5-speed MT |
-| Gear Ratio (CVT range) | 2,349 – 0,394 | sama | — |
-| Gear Ratio 1st (MT) | — | — | 3,833 |
-| Gear Ratio 2nd (MT) | — | — | 2,190 |
-| Gear Ratio 3rd (MT) | — | — | 1,913 |
-| Gear Ratio 4th (MT) | — | — | 1,333 |
-| Gear Ratio 5th (MT) | — | — | 1,028 |
-| Gear Ratio 6th (MT) | — | — | 0,820 |
-| Reverse | 1,750 | sama | 3,583 |
-| Final Gear Ratio | 6,120 | sama | 4,235 |
-| **CHASSIS** | | | |
-| Steering | Rack & Pinion (Electronic Power Steering) | sama | sama |
-| Suspensi Depan | MacPherson strut, Coil spring with Stabilizer bar | sama | sama |
-| Suspensi Belakang | Multi link, Coil spring with Stabilizer bar | sama | sama |
-| Rem Depan | 16" Ventilated Disc | sama | sama |
-| Rem Belakang | 16" Disc | sama | sama |
-| Tire Size | 215/60 R17 96H | sama | sama |
-| Wheel Disc | 17x6.5J Alloy | sama | sama |
-| **KESELAMATAN** | | | |
-| Air Bag | Driver & Passenger | sama | sama |
-| ABS / EBD | 4 ABS + EBD + BA | sama | sama |
-| Brake Override | Tersedia | sama | sama |
-| Child Proof | Tersedia | sama | sama |
-| **EKSTERIOR** | | | |
-| Front & Rear Bumper | Color Key (New Design) | sama | sama |
-| Radiator Front Grille | Chrome Plating (Frame) | sama | sama |
-| Headlamp | Super Wide Range HID with Auto Leveling | Super Wide Range HID with Auto Leveling | Halogen |
-| Front Fog Lamp | Tersedia | Tersedia | — |
-| Roof Rails | — | Tersedia | Tersedia |
-| Outer Door Mirror Electric & Retractable | Tersedia | Tersedia | Tersedia |
-| Rear Spoiler | Tersedia | Tersedia | Tersedia |
-| Fog Lamp Cover | Material Color with Chrome Accent | sama | sama |
-| Chrome Muffler Cutter | Tersedia | — | — |
-| Belt Line Moulding | Chrome | Chrome | Chrome |
-| Panoramic Glass Roof | Tersedia | — | — |
-| Wheel Arch Trim | Tersedia | Tersedia | — |
-| **INTERIOR** | | | |
-| Instrument Panel | Carbon (Print) + Silver Accent | Carbon (Print) + Silver Accent | Black + Silver Accent |
-| Seat Material | Leather | Leather | Fabric (New Pattern) |
-| Height Seat Adjuster (Driver) | Tersedia | Tersedia | Tersedia |
-| Headrest (Front & 2nd Row) | Tersedia | Tersedia | Tersedia |
-| 2nd Row Armrest | Tersedia | Tersedia | Tersedia |
-| Audio | 7" Touchscreen 2DIN DVD/CD/MP3/WMA/AM-FM/USB/Bluetooth/Wireless | sama | sama |
-| Speaker | 6 Speakers (4 speakers + 2 Tweeters) | sama | sama |
-| Day/Night Room Mirror | Tersedia | Tersedia | Tersedia |
-| Interior Door Handle | Chrome | Chrome | Chrome |
-| Leather Steering Wheel | Tersedia | Tersedia | Tersedia |
-| Audio Steering Control | Tersedia | Tersedia | Tersedia |
-| Paddle Shift | Tersedia | Tersedia | Tidak tersedia |
-| Gear Shift Knob | Leather Wrapped | sama | sama |
-| Gear Shift Panel | Chrome Accent | sama | sama |
-| Power Window | Carbon Print P/W switch panel | Tersedia | Tersedia |
-| High Contrast Meter | Tersedia | — | — |
-| Multi Information Display (MID) | — | Tersedia | Tersedia |
-| Key Cylinder Illumination | — | Tersedia | Tersedia |
-| Keyless Entry | — | Tersedia | Tersedia |
-| Keyless Operation System | Tersedia | — | — |
-| Engine Start / Stop | Tersedia | — | — |
-| Alarm | — | Tersedia | Tersedia |
-| Reverse Sensor | — | Tersedia | Tersedia |
-| Air Conditioner | Auto with Air Filter | sama | sama |
-| High Mounted Stop Lamp | On Spoiler | sama | sama |
-| Front Wiper & Washer (2 Speed & Intermittent) | Tersedia | sama | sama |
-| Rear Intermittent Wiper & Washer | Tersedia | sama | sama |
+| Spesifikasi | Ultimate CVT | Ultimate M/T | Exceed CVT | Exceed M/T | GLS CVT | GLS M/T |
+|---|---|---|---|---|---|---|
+| **DIMENSI** | | | | | | |
+| Overall Length (mm) | 4.595 | sama | sama | sama | sama | sama |
+| Overall Width (mm) | 1.750 | sama | sama | sama | sama | 1.730 |
+| Overall Height (mm) | 1.750 | sama | sama | sama | sama | sama |
+| Ground Clearance (mm) | 220 | — | — | 225 | 220 | 225 |
+| Seating Capacity | 7 | sama | sama | sama | sama | sama |
+| **MESIN** | | | | | | |
+| Engine Type | 1.5L MIVEC DOHC 16 Valve | sama | sama | sama | sama | sama |
+| Displacement (cc) | 1.499 | sama | sama | sama | sama | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama | sama | sama | sama | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama | sama | sama | sama | sama |
+| Fuel Tank Capacity (L) | 45 | sama | sama | sama | sama | sama |
+| **PERFORMA** | | | | | | |
+| Transmisi | CVT | 5 Speed M/T | CVT | 5 Speed M/T | CVT | 5 Speed M/T |
+| Suspensi Depan | MacPherson Strut with Coil Spring | sama | sama | sama | sama | sama |
+| Suspensi Belakang | Torsion Beam | sama | sama | sama | sama | sama |
+| Rem Depan | Disc Brake | sama | sama | sama | sama | sama |
+| Rem Belakang | Drum Brake | sama | sama | sama | sama | sama |
+| Cruise Control | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| **EKSTERIOR** | | | | | | |
+| Wheel & Tire | Two-tone Alloy Wheel 205/55 R17 | sama | sama | sama | Black Alloy 195/65 R16 | sama |
+| Front Headlamp | LED Projector | sama | sama | sama | Halogen | sama |
+| Fog Lamp | LED | sama | Halogen | sama | Halogen | sama |
+| Antenna | Shark Fin | sama | sama | sama | Short Pole | sama |
+| Rear Combination Lamp | LED (Body & Rear Gate) | sama | sama | sama | sama | sama |
+| **INTERIOR** | | | | | | |
+| Instrument & Door Trim | Black & Dark Belge with Soft Pad | Black & Brown with Soft Pad | Black & Brown with Soft Pad | sama | Material color with Silver Accent | sama |
+| Steering Wheel | Leather-wrapped (Hands-free Switch) | sama | Urethane (Hands-free Switch) | sama | sama | sama |
+| Wireless Charger | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Seat Material | High Grade Fabric Seat | sama | sama | sama | Fabric Seat | sama |
+| Parking Brake | Electric Parking Brake with Brake Auto Hold | Lever (Leather-wrapped) | Lever (Leather-wrapped) | sama | Lever (Urethane) | sama |
+| Air Conditioner | Digital Type | sama | sama | sama | Dial Type | sama |
+| Floor Center Console Box | Lid Type with Arm Rest | Shutter Type | sama | sama | Standard Type | sama |
+| USB Front Console | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| 2nd Row Armrest | Available with Cup Holder | sama | sama | sama | sama | sama |
+| Audio Size | 9 Inch Touchscreen | sama | 7 Inch Touchscreen | sama | 7 Inch Touchscreen | sama |
+| **KESELAMATAN** | | | | | | |
+| Speed Sensing Door Lock | Tersedia | sama | sama | sama | Tidak | Tidak |
+| ABS + EBD + BA | Tersedia | sama | sama | sama | sama | sama |
+| Dual SRS Airbags | Tersedia | sama | sama | sama | sama | sama |
+| ASC | Tersedia | sama | sama | sama | sama | sama |
+| HSA | Tersedia | sama | sama | sama | sama | sama |
+| Multi Around Monitor | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Parking Sensor | Tersedia | sama | sama | sama | Tidak | Tidak |
+| Keyless Operating System | Tersedia | sama | sama | sama | Tidak | Tidak |
+| Immobilizer with Security Alarm | Tersedia | sama | sama | sama | sama | sama |
+
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
 
 ---
 
 ## Pilihan Warna
 
-| Warna | PX | GLS | GLX |
-|---|---|---|---|
-| White Pearl | ● | ● | ● |
-| Cool Silver Metallic | ● | ● | ● |
-| Black Mica | ● | ● | ● |
-| Titanium Gray Metallic | ● | ● | ● |
-| Copper Metallic | ● | ● | ● |
-| Red Metallic | ● | — | — |
+| Warna | Ketersediaan Varian |
+|---|---|
+| Quartz White Pearl | Ultimate CVT & M/T, Exceed CVT & M/T, GLS CVT & M/T |
+| Jet Black Mica | Ultimate CVT & M/T, Exceed CVT & M/T, GLS CVT & M/T |
+| Blade Silver Metallic | Ultimate CVT & M/T, Exceed CVT & M/T, GLS CVT & M/T |
+| Red Metallic | Ultimate CVT & M/T |
+| Graphite Gray Metallic | Ultimate CVT & M/T |
 
 ---
 
-## Informasi Dealer & Layanan
+## Layanan & Jaminan
 
-| Informasi | Detail |
+| Layanan | Detail |
 |---|---|
-| Distributor | PT. Krama Yudha Tiga Berlian Motors |
-| Website | www.ktb.co.id/outlandersport |
-| Media Sosial | @KTBMitsubishi / KTB Mitsubishi Motors Indonesia |
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Website | www.mitsubishi-motors.co.id |
+| Customer Care | 0804-1-300-300 |
+| Gratis Biaya Jasa | 50.000 KM / 4 Tahun |
 | Garansi | 3 Tahun / 100.000 KM |
-| Bengkel Siaga | 24 Jam |
 
-*Note: Spesifikasi dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu.*
+---
+---
+
+# MITSUBISHI XPANDER (2025)
+
+## Tagline
+**"Level Up Your Family Adventure"**
+**"Drive your Ambition"**
+
+---
+
+## Varian
+- **Ultimate CVT**
+- **Ultimate M/T**
+- **Exceed Tourer CVT**
+- **Exceed Tourer M/T**
+- **GLS CVT**
+- **GLS M/T**
+
+---
+
+## Keunggulan Utama
+
+### Level Up Your Family Adventure
+Rasakan petualangan yang lebih seru dengan tampilan desain eksterior yang modern dan dinamis.
+
+### Ultimate Comfort with Black Elegance
+Hadir dengan interior bernuansa hitam yang elegan, memberikan kenyamanan dan kesan mewah di setiap adventure keluarga.
+
+### Drive Confidently, Engineered for Safety
+Dilengkapi Active Yaw Control (AYC) baru, 6 SRS Airbags, dan Multi Around Monitor untuk keselamatan berkendara yang lebih optimal *(Tipe Ultimate)*.
+
+---
+
+## Desain Eksterior (NEW)
+
+| Fitur | Ketersediaan |
+|---|---|
+| **NEW Face Design** | Semua varian |
+| **NEW LED Fog Light** | Ultimate |
+| **NEW 17-inch Alloy Wheel (205/55 R17)** | Ultimate, Exceed Tourer |
+| **NEW Rear Bumper Design** | Semua varian |
+| **Ground Clearance** | 220 mm (Ultimate CVT, GLS CVT), 225 mm (Exceed Tourer M/T, GLS M/T) |
+
+---
+
+## Interior & Kenyamanan (NEW)
+
+| Fitur | Ketersediaan |
+|---|---|
+| **NEW 10-inch Audio Head Unit** | Ultimate |
+| **8-inch Audio Touchscreen** | Exceed Tourer |
+| **7-inch Audio Touchscreen** | GLS |
+| **NEW 8-inch Digital Driver Display** | Ultimate |
+| **NEW 3-Spoke Steering Wheel Design** | Ultimate |
+| **Wireless Charger** | Ultimate CVT |
+| **Electric Parking Brake with Brake Auto Hold** | Ultimate CVT |
+| **Digital AC** | Ultimate |
+| **Dial AC** | Exceed Tourer, GLS |
+| **Wireless Smartphone Connectivity** | Ultimate CVT |
+| **2nd Row Armrest with Cup Holder** | Semua varian |
+| **Tilt & Telescopic Steering** | Semua varian |
+| **High Grade Fabric Seat** | Semua varian |
+| **Fabric Seat** | GLS |
+| **USB Front Console (Type A & C)** | Ultimate CVT |
+
+---
+
+## Teknologi Keselamatan
+
+| Fitur | Ketersediaan |
+|---|---|
+| **NEW Active Yaw Control (AYC)** | Ultimate |
+| **NEW 6 SRS Airbags** | Ultimate |
+| **Multi Around Monitor** | Ultimate CVT |
+| **Rear View Camera** | Exceed Tourer |
+| **ABS + EBD + Brake Assist (BA)** | Semua varian |
+| **ASC (Active Stability Control)** | Semua varian |
+| **HSA (Hill Start Assist)** | Semua varian |
+| **Dual SRS Airbags** | Exceed Tourer, GLS |
+| **Parking Sensor** | Ultimate, Exceed Tourer |
+| **Keyless Operating System** | Ultimate, Exceed Tourer |
+| **Immobilizer with Security Alarm** | Semua varian |
+| **ISO-FIX Child Seat Anchor x2 (2nd Row)** | Semua varian |
+| **Speed Sensing Door Lock** | Ultimate, Exceed Tourer |
+| **Cruise Control** | Ultimate CVT |
+| **RISE Body** | Semua varian |
+
+---
+
+## Spesifikasi Teknis
+
+| Spesifikasi | Ultimate CVT | Ultimate M/T | Exceed Tourer CVT | Exceed Tourer M/T | GLS CVT | GLS M/T |
+|---|---|---|---|---|---|---|
+| **DIMENSI** | | | | | | |
+| Overall Length (mm) | 4.595 | sama | sama | sama | sama | sama |
+| Overall Width (mm) | 1.750 | sama | sama | sama | sama | 1.730 |
+| Overall Height (mm) | 1.750 | sama | sama | sama | sama | sama |
+| Ground Clearance (mm) | 220 | — | — | 225 | 220 | 225 |
+| Seating Capacity | 7 | sama | sama | sama | sama | sama |
+| **MESIN** | | | | | | |
+| Engine Type | 1.5L MIVEC DOHC 16 Valve | sama | sama | sama | sama | sama |
+| Displacement (cc) | 1.499 | sama | sama | sama | sama | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama | sama | sama | sama | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama | sama | sama | sama | sama |
+| Fuel Tank Capacity (L) | 45 | sama | sama | sama | sama | sama |
+| **PERFORMA** | | | | | | |
+| Transmisi | CVT | 5 Speed M/T | CVT | 5 Speed M/T | CVT | 5 Speed M/T |
+| Suspensi Depan | MacPherson Strut with Coil Spring | sama | sama | sama | sama | sama |
+| Suspensi Belakang | Torsion Beam | sama | sama | sama | sama | sama |
+| Rem Depan | Disc Brake | sama | sama | sama | sama | sama |
+| Rem Belakang | Drum Brake | sama | sama | sama | sama | sama |
+| Cruise Control | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| **EKSTERIOR** | | | | | | |
+| Wheel & Tire | Two-tone Alloy Wheel 205/55 R17 | sama | sama | sama | Black Alloy 195/65 R16 | sama |
+| Front Headlamp | LED Projector | sama | sama | sama | Halogen | sama |
+| Fog Lamp | LED | sama | Halogen | sama | Halogen | sama |
+| Antenna | Shark Fin | sama | sama | sama | Short Pole | sama |
+| Rear Combination Lamp | LED (Body & Rear Gate) | sama | sama | sama | sama | sama |
+| **INTERIOR** | | | | | | |
+| Instrument & Door Trim | Black with Soft Pad | sama | Material color with Silver Accent | sama | sama | sama |
+| Steering Wheel | Leather-wrapped (Hands-free Switch) | sama | Urethane (Hands-free Switch) | sama | sama | sama |
+| Wireless Charger | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| Seat Material | High Grade Fabric Seat | sama | sama | sama | Fabric Seat | sama |
+| Parking Brake | Electric Parking Brake with Brake Auto Hold | Lever (Leather-wrapped) | Lever (Leather-wrapped) | sama | Lever (Urethane) | sama |
+| Air Conditioner | Digital Type | sama | sama | sama | Dial Type | sama |
+| Floor Center Console Box | Lid Type with Arm Rest | Shutter Type | sama | sama | Standard Type | sama |
+| USB Front Console | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| 2nd Row Armrest | Available with Cup Holder | sama | sama | sama | sama | sama |
+| Audio Size | 10 Inch Touchscreen | sama | 8 Inch Touchscreen | sama | 7 Inch Touchscreen | sama |
+| Wireless Smartphone Connectivity | Tersedia | Tidak | Tidak | Tidak | Tidak | Tidak |
+| **KESELAMATAN** | | | | | | |
+| Speed Sensing Door Lock | Tersedia | sama | sama | sama | Tidak | Tidak |
+| Active Yaw Control (AYC) | Tersedia | sama | Tidak | Tidak | Tidak | Tidak |
+| ABS + EBD + BA | Tersedia | sama | sama | sama | sama | sama |
+| SRS Airbags | 6 SRS Airbags | sama | Dual SRS Airbags | sama | Dual SRS Airbags | sama |
+| ASC | Tersedia | sama | sama | sama | sama | sama |
+| HSA | Tersedia | sama | sama | sama | sama | sama |
+| Multi Around Monitor | Tersedia | Tidak | Rear View Camera | sama | Tidak | Tidak |
+| Parking Sensor | Tersedia | sama | sama | sama | Tidak | Tidak |
+| Keyless Operating System | Tersedia | sama | sama | sama | Tidak | Tidak |
+| Immobilizer with Security Alarm | Tersedia | sama | sama | sama | sama | sama |
+
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
+
+---
+
+## Aksesori Genuine
+
+| Aksesori |
+|---|
+| Engine Hood Emblem |
+| Tailgate Spoiler |
+| Side Visor |
+| Fuel Lid Garnish |
+| Side Body Molding |
+| Muffler Cutter |
+| Wheel Lock Nut |
+| Rubber Mat |
+| Scuff Plate |
+| Luggage Mat |
+| Dashcam |
+
+---
+
+## Pilihan Warna
+
+| Warna | Ketersediaan Varian |
+|---|---|
+| Quartz White Pearl | Ultimate CVT & M/T, Exceed Tourer CVT & M/T, GLS CVT & M/T |
+| Jet Black Mica | Ultimate CVT & M/T, Exceed Tourer CVT & M/T, GLS CVT & M/T |
+| Blade Silver Metallic | Ultimate CVT & M/T, Exceed Tourer CVT & M/T, GLS CVT & M/T |
+| Red Metallic | Ultimate CVT & M/T |
+| Graphite Gray Metallic | Ultimate CVT & M/T |
+
+---
+
+## Layanan & Jaminan
+
+| Layanan | Detail |
+|---|---|
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Website | www.mitsubishi-motors.co.id |
+| Customer Care | 0804-1-300-300 |
+| Gratis Biaya Jasa | 50.000 KM / 4 Tahun |
+| Garansi | 100.000 KM / 3 Tahun |
+
+---
+---
+
+# MITSUBISHI XPANDER CROSS (2019)
+
+## Tagline
+**"Don't Stop. Xpand Your Adventure Today."**
+**"You Deserve the Best of Everything."**
+
+---
+
+## Varian
+- **AT** (Automatic Transmission)
+- **MT** (Manual Transmission)
+
+---
+
+## Keunggulan Utama
+
+### Robust Design
+Desain eksterior yang kokoh dan tangguh dengan berbagai elemen khas SUV cross.
+
+### Reliable Driving Performance
+Ground clearance tinggi 225 mm, suspensi khusus, dan mesin MIVEC 1.5L yang andal untuk berbagai medan.
+
+### Comfortable & Luxurious Interior
+Kabin premium dengan Dual-Tone Leather Seat, Two-Tone Luxurious Interior, dan berbagai fitur kenyamanan.
+
+---
+
+## Desain Eksterior
+
+| Fitur | Keterangan |
+|---|---|
+| **Front Grille & Bumper** | Desain robust khas SUV cross |
+| **Roof Rail** | Tersedia |
+| **17-inch Alloy Wheel** | Velg alloy two-tone 205/55 R17 |
+| **Wheel Arch Molding** | Cladding pelindung roda |
+| **Tailgate Garnish** | Tersedia |
+| **Rear Bumper** | Desain kokoh |
+| **Shark Fin Antenna** | Tersedia |
+| **Side Body Garnish** | Tersedia |
+| **LED Head Lamp & LED Fog Lamp** | Tersedia |
+| **Rear Window Defogger** | Tersedia |
+| **6. Auto-Folding Door Mirror** | Tersedia |
+| **High Ground Clearance** | 225 mm |
+
+---
+
+## Interior & Kenyamanan
+
+| Fitur | Keterangan |
+|---|---|
+| **Dual-Tone Leather Seat** | Jok kulit premium dual-tone |
+| **7-inch LCD Head Unit with Smartphone Connectivity** | Sistem audio layar sentuh 7 inci |
+| **Two-Tone Luxurious Interior** | Interior mewah dua warna |
+| **Seat Back Pocket Multifungsi** | Tersedia |
+| **Rear Seat 3rd Row yang Luas** | Tersedia |
+| **Tilt & Telescopic Steering** | Tersedia |
+| **Kotak Penyimpanan Tertutup (BOSS)** | Tersedia |
+| **Rotary Speaker Button & KOS (Kunci Remote)** | Tersedia |
+| **Soundproof Cabin** | Tersedia |
+| **Front Cup Holder** | Tersedia |
+| **Instrument Panel Side Pocket** | Tersedia |
+| **Closed Storage Box** | Tersedia |
+| **Gantungan Serbaguna** | Tersedia |
+| **Laci Bawah Kursi Serbaguna di Bagasi** | Tersedia |
+| **Cruise Control** | Tersedia (AT) |
+
+### Power Outlet
+- Depan
+- Tengah
+- Belakang
+
+---
+
+## Performa & Suspensi
+
+| Spesifikasi | AT | MT |
+|---|---|---|
+| Mesin | 1.5L MIVEC DOHC 16 Valve | sama |
+| Displacement (cc) | 1.499 | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama |
+| Fuel Tank Capacity (L) | 45 | sama |
+| Transmisi | 4 Speed AT | 5 Speed MT |
+| Suspensi Depan | MacPherson Strut with Coil Spring | sama |
+| Suspensi Belakang | Torsion Beam | sama |
+| Rem Depan | Disc Brake | sama |
+| Rem Belakang | Drum Brake | sama |
+| Cruise Control | Tersedia | Tidak tersedia |
+
+---
+
+## Teknologi Keselamatan
+
+| Fitur | Ketersediaan |
+|---|---|
+| **RISE Body** | Semua varian |
+| **Dual SRS Airbags** | Semua varian |
+| **ABS + EBD + Brake Assist (BA)** | Semua varian |
+| **ASC (Active Stability Control) + TCL** | Semua varian |
+| **HSA (Hill Start Assist)** | Semua varian |
+| **ESS (Emergency Stop Signal)** | Semua varian |
+| **Parking Sensor + Rear View Camera** | Semua varian |
+| **Keyless Operation System** | Semua varian |
+| **Immobilizer with Security Alarm** | Semua varian |
+| **ISO-FIX Child Seat Anchor x2 (2nd Row)** | Semua varian |
+
+---
+
+## Spesifikasi Teknis
+
+| Spesifikasi | AT | MT |
+|---|---|---|
+| **DIMENSI** | | |
+| Overall Length (mm) | 4.500 | sama |
+| Overall Width (mm) | 1.800 | sama |
+| Overall Height (mm) | 1.750 | sama |
+| Ground Clearance (mm) | 225 | sama |
+| Seating Capacity | 7 | sama |
+| **MESIN** | | |
+| Engine Type | 1.5L MIVEC DOHC 16 Valve | sama |
+| Displacement (cc) | 1.499 | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama |
+| Fuel Tank Capacity (L) | 45 | sama |
+| **EKSTERIOR** | | |
+| Wheel & Tire | Two-tone Alloy Wheel 205/55 R17 | sama |
+| Front Headlamp | LED | sama |
+| Position Lamp | LED | sama |
+| Fog Lamp | LED | sama |
+| Rear Combination Lamp | LED (Body & Rear Gate) | sama |
+| **INTERIOR** | | |
+| Steering Wheel | Leather-wrapped with Hands Free Switch | sama |
+| Tilt & Telescopic Steering | Tersedia | sama |
+| Seat Material | High Grade Fabric Seat | sama |
+| Audio System | Wide 2DIN (AM/FM, USB, iPhone/iPad/iPod, Bluetooth, Smartphone Connectivity) | sama |
+| **KESELAMATAN** | | |
+| ABS + EBD + BA | Tersedia | sama |
+| Dual SRS Airbags | Tersedia | sama |
+| ASC + TCL | Tersedia | sama |
+| HSA | Tersedia | sama |
+| Parking Sensor + Rear View Camera | Tersedia | sama |
+| Keyless Operation System | Tersedia | sama |
+| Immobilizer with Security Alarm | Tersedia | sama |
+
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
+
+---
+
+## Pilihan Warna
+
+- Quartz White Pearl
+- Jet Black Mica
+- Sterling Silver Metallic
+- Graphite Gray Metallic
+- Sunrise Orange Metallic
+
+---
+
+## Premium Package
+
+| Item | Keterangan |
+|---|---|
+| **Leather Seat** | Jok kulit premium |
+| **Engine Hood Emblem** | Tersedia |
+| **V-KOOL** | Tersedia *(hanya tersedia untuk Xpander Cross AT)* |
+
+---
+
+## Layanan & Jaminan
+
+| Layanan | Detail |
+|---|---|
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Jaringan Penjualan | 300* (*Data per November 2019) |
+| Website | www.mitsubishi-motors.co.id |
+
+---
+---
+
+# MITSUBISHI XPANDER CROSS (2022)
+
+## Tagline
+**"It's Your Time to Rise Above All"**
+**"Everywhere You Go is an Adventure to Rise"**
+**"Rise Above All with More Robust Look"**
+
+---
+
+## Varian
+- **CVT Premium Package**
+- **M/T**
+
+---
+
+## Keunggulan Utama
+
+### It's Your Time to Rise Above All
+The New Xpander Cross hadir dengan tampilan lebih kokoh dan interior yang nyaman serta dilengkapi fitur baru yang canggih untuk bangkitkan petualangan seru dalam hidup Anda.
+
+### Clean and Fresh Air Anytime
+Dilengkapi dengan Micron Air Filtration yang menjaga sirkulasi kualitas udara di dalam kabin dan meningkatkan kenyamanan seluruh anggota keluarga.
+
+### Luxurious Design with Premium Materials
+Menghadirkan pengalaman berkendara yang lebih baik dengan kemewahan interior melalui soft touch dan premium materials.
+
+---
+
+## Desain Eksterior (NEW)
+
+| Fitur | Keterangan |
+|---|---|
+| **NEW T-Shape Headlamp** | Lampu depan LED berkarakter T terbaru |
+| **NEW Rear Powerful Bumper Design** | Desain bumper belakang yang lebih tangguh |
+| **NEW 17-inch Alloy Wheel Design** | Desain velg alloy baru 205/55 R17 |
+| **LED Foglamp** | Tersedia |
+| **Micron Air Filtration** | Menyaring partikel PM 2.5, serbuk sari, dll. |
+| **High Ground Clearance** | 220 mm (CVT), 225 mm (M/T) |
+
+---
+
+## Interior & Kenyamanan (NEW)
+
+| Fitur | Ketersediaan |
+|---|---|
+| **9-inch Audio Head Unit with Smartphone Connectivity** | Semua varian |
+| **NEW Wireless Charger** | CVT Premium Package |
+| **NEW 8-inch LCD Meter Cluster** | Semua varian |
+| **NEW Steering Wheel Design** | Semua varian |
+| **Dual Tone Synthetic Leather Seat with Heat Guard** | CVT Premium Package |
+| **High Grade Fabric Seat** | M/T |
+| **Electric Parking Brake with Brake Auto Hold** | CVT Premium Package |
+| **Digital AC** | Semua varian |
+| **Tilt & Telescopic Steering** | Semua varian |
+| **4-Spoke Leather-wrapped Steering Wheel with Hands Free Switch** | Semua varian |
+| **Floor Console Box (Lid Type with Arm Rest)** | CVT Premium Package |
+| **Floor Console Box (Shutter Type)** | M/T |
+| **2nd Row Armrest with Cup Holder** | Semua varian |
+| **2nd Row USB Port** | CVT Premium Package |
+| **USB Front Console (Type A & C)** | CVT Premium Package |
+| **Instrument & Door Trim Panel** | Two-tone (Black & Navy Blue) with Soft Pad |
+| **Spacious Third Row Seats** | Semua varian |
+
+### Easy and Functional Cabin
+
+| Fitur |
+|---|
+| Instrument Panel Side Pocket |
+| Front Cup Holder *(CVT Premium)* |
+| Closed Storage Box *(CVT Premium)* |
+| Rear Luggage Compartment |
+| Underfloor Luggage Area Storage |
+| Seat Under Tray |
+| Multifunction Seat Back Pocket (Driver + Passenger) |
+| 2nd Row Armrest with Cup Holder |
+| 2nd Row USB Port *(CVT Premium)* |
+
+---
+
+## Performa
+
+| Spesifikasi | CVT Premium Package | M/T |
+|---|---|---|
+| Mesin | 1.5L MIVEC DOHC 16 Valve | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama |
+| Standar Emisi | Euro 4 | sama |
+| Transmisi | CVT | 5 Speed M/T |
+| Cruise Control | Tersedia | Tidak tersedia |
+
+---
+
+## Teknologi Keselamatan
+
+| Fitur | Ketersediaan |
+|---|---|
+| **NEW Active Yaw Control (AYC)** | Semua varian |
+| **NEW Multi Around Monitor** | Semua varian |
+| **Special Tuned Suspension with Rebound Spring** | Semua varian |
+| **RISE Body** | Semua varian |
+| **Dual SRS Airbags** | Semua varian |
+| **ABS + EBD + Brake Assist (BA)** | Semua varian |
+| **ASC (Active Stability Control)** | Semua varian |
+| **HSA (Hill Start Assist)** | Semua varian |
+| **ESS (Emergency Stop Signal)** | Semua varian |
+| **Pedestrian Protection** | Semua varian |
+| **Speed Sensing Door Lock** | Semua varian |
+| **Keyless Operating System** | Semua varian |
+| **Immobilizer with Security Alarm** | Semua varian |
+| **ISO-FIX Child Seat Anchor x2 (2nd Row)** | Semua varian |
+
+---
+
+## Spesifikasi Teknis
+
+| Spesifikasi | CVT Premium Package | M/T |
+|---|---|---|
+| **DIMENSI** | | |
+| Overall Length (mm) | 4.595 | sama |
+| Overall Width (mm) | 1.790 | sama |
+| Overall Height (mm) | 1.750 | sama |
+| Ground Clearance (mm) | 220 | 225 |
+| Seating Capacity | 7 | sama |
+| **MESIN** | | |
+| Engine Type | 1.5L MIVEC DOHC 16 Valve | sama |
+| Displacement (cc) | 1.499 | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama |
+| Fuel Tank Capacity (L) | 45 | sama |
+| **PERFORMA** | | |
+| Transmisi | CVT | 5 Speed M/T |
+| Suspensi Depan | Macpherson Strut with Coil Spring | sama |
+| Suspensi Belakang | Torsion Beam | sama |
+| Rem Depan | Disc Brake | sama |
+| Rem Belakang | Drum Brake | sama |
+| Cruise Control | Tersedia | Tidak tersedia |
+| **EKSTERIOR** | | |
+| Wheel & Tire | Two-tone Alloy Wheel 205/55 R17 | sama |
+| Front Headlamp | LED | sama |
+| Position Lamp | LED | sama |
+| Fog Lamp | LED | sama |
+| Rear Combination Lamp | LED (Body & Rear Gate) | sama |
+| **INTERIOR** | | |
+| Instrument & Door Trim | Two-tone (Black & Navy Blue) with Soft Pad | sama |
+| Multi Information Display | 8" LCD Meter Cluster | sama |
+| Steering Wheel | 4-Spoke Leather-wrapped with Hands Free Switch | sama |
+| Wireless Charger | Tersedia | Tidak tersedia |
+| Seat Material | Synthetic Leather Seat with Heat Guard | High Grade Fabric |
+| Parking Brake | Electric Parking Brake with Brake Auto Hold | Lever Type with Leather-wrapped |
+| Air Conditioner | Digital Type | sama |
+| Floor Center Console Box | Lid Type with Arm Rest | Shutter Type |
+| USB Front Console | Tersedia | Tidak tersedia |
+| 2nd Row Armrest | Available with Cup Holder | sama |
+| Audio Size | 9" Audio Touchscreen | sama |
+| **KESELAMATAN** | | |
+| Speed Sensing Door Lock | Tersedia | sama |
+| Active Yaw Control (AYC) | Tersedia | sama |
+| ABS + EBD + BA | Tersedia | sama |
+| Dual SRS Airbags | Tersedia | sama |
+| ASC | Tersedia | sama |
+| HSA | Tersedia | sama |
+| Multi Around Monitor | Tersedia | sama |
+| Keyless Operating System | Tersedia | sama |
+| Immobilizer with Security Alarm | Tersedia | sama |
+
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
+
+---
+
+## Aksesori Genuine
+
+| Aksesori |
+|---|
+| Mud Guard Set |
+| Rear Bumper Protector |
+| Side Visor Set |
+| Scuff Plate Set |
+| Engine Hood Emblem |
+| Fuel Lid Garnish |
+| Muffler Cutter |
+| Tailgate Spoiler |
+| Wheel Lock Nut Set |
+| Dashcam |
+
+---
+
+## Pilihan Warna
+
+- Quartz White Pearl
+- Jet Black Mica
+- Blade Silver Metallic
+- Graphite Gray Metallic
+- Green Bronze Metallic
+
+---
+
+## Layanan & Jaminan
+
+| Layanan | Detail |
+|---|---|
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Jaringan Penjualan | 165* (*Data per Juli 2022) |
+| Website | www.mitsubishi-motors.co.id |
+| Customer Care | 0804-1-300-300 |
+| Garansi | 3 Tahun / 100.000 KM |
+| Gratis Biaya Jasa | 50.000 KM / 4 Tahun |
 
 ---
 
@@ -1361,218 +1150,276 @@ Memungkinkan pengemudi memindahkan gigi secara manual dari posisi tangan tetap d
 ---
 ---
 
-# 11. MITSUBISHI PAJERO SPORT (2019)
+# MITSUBISHI XPANDER CROSS (2025)
 
 ## Tagline
-**"Drive your Ambition"**  
-**"Eksplorasi Lebih Jauh dengan Inovasi Terbaru"**
-
-*Temukan dunia baru melalui eksplorasi tanpa batas dengan Pajero Sport yang kini hadir lebih tangguh, bertenaga dan semakin menawan dengan teknologi yang canggih.*
+**"Bolder Look for More Adventures"**
+**"Drive Confidently with Advanced Safety"**
+**"Great Driving Experience"**
 
 ---
 
 ## Varian
-- **Dakar (4x4) AT** — 4WD, Transmisi Otomatis 8 Speed
-- **Dakar (4x2) Ultimate** — 2WD, Transmisi Otomatis 8 Speed, fitur paling lengkap
-- **Dakar (4x2) AT** — 2WD, Transmisi Otomatis 8 Speed
-- **Exceed (4x2) AT** — 2WD, Transmisi Otomatis 8 Speed
-- **Exceed (4x2) MT** — 2WD, Transmisi Manual 6 Speed
-- **GLX (4x4) MT** — 4WD, Transmisi Manual 6 Speed
+- **CVT Premium Package**
+- **M/T**
 
 ---
 
 ## Keunggulan Utama
 
-### Mesin Lebih Bertenaga & Ramah Lingkungan
-**Mesin diesel 4N15 2.4L MIVEC Turbocharged dan Intercooled** menghasilkan tenaga besar mencapai **181 PS** pada 3.500 rpm. Dilengkapi teknologi **VGT (Variable Geometry Turbo)** yang mampu mengoptimalkan kinerja turbin sehingga mesin semakin prima dan tangguh.
+### Bolder Look for More Adventures
+Hadir dengan tampilan eksterior baru, berikan kesan lebih tangguh. Bersiaplah untuk adventure seru selanjutnya.
 
-### 8 Speed Automatic Transmission
-Fitur 8 percepatan yang bertenaga serta tetap hemat bahan bakar. Sebuah inovasi terbaru pertama di kelasnya *(tersedia di varian Dakar dan Exceed AT)*.
+### Advanced Driving Experience
+Dilengkapi dengan fitur canggih pada digital display pengemudi yang lebih lengkap dan leluasa, membuat pengalaman berkendara lebih berkesan.
 
-### Paddle Shift
-Memudahkan pengemudi dalam memindahkan gigi secara manual pada saat berkendara tanpa harus melepas kemudi *(tersedia di varian Dakar dan Exceed AT)*.
+### Indulge in Comfort, Drive the Luxury
+Hadirkan suasana mewah di dalam kabin dengan warna interior burgundy dan hitam.
 
----
-
-## Desain Eksterior Modern
-
-Sebuah kombinasi sempurna teknologi terbaru kendaraan yang memiliki performa hebat dilengkapi tampilan modern yang bergaya.
-
-| Fitur | Ketersediaan |
-|---|---|
-| **Lampu Belakang LED yang Berkarakter** | Semua varian |
-| **Spoiler Belakang yang Sporty** | Dakar & Exceed |
-| **Kaca Spion Lipat Otomatis dengan Lampu Sein** | Tersedia |
-| **Washer Lampu Depan** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Roof Rail** | Dakar |
-| **Desain Depan Berkonsep Dynamic Shield** | Semua varian |
+### Drive Confidently with Advanced Safety
+Kini dilengkapi dengan 6 SRS Airbags untuk menambah keamanan, melindungi pengemudi dan penumpang jika terjadi benturan keras.
 
 ---
 
-## Kenyamanan Premium (Interior)
-
-| Fitur | Ketersediaan |
-|---|---|
-| **Sunroof** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Premium Entertainment dengan Sistem Navigasi** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Pengatur Kursi Elektrik** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Dual Zone Auto AC** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Bagasi yang Luas** | Semua varian |
-| **Roof Monitor** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Desain Kemudi Mewah Berbalut Kulit** | Semua varian Dakar & Exceed |
-| **Pendingin Udara di Baris Penumpang** | Semua varian |
-
----
-
-## Teknologi Terdepan
+## Desain Eksterior (NEW)
 
 | Fitur | Keterangan |
 |---|---|
-| **Multi Around View Monitor** | Parkir lebih mudah dan aman dengan kemampuan melihat dari berbagai sisi |
-| **RISE Body** | Body didesain untuk melindungi keselamatan penumpang (Reinforced Impact Safety Evolution) |
-| **ASTC** (Active Stability & Traction Control) | Menjaga stabilitas dan traksi kendaraan |
-| **ABS dengan EBD** | Anti-lock Braking System dengan Electronic Brakeforce Distribution |
-| **Off-Road Mode** | Memberikan kemudahan dalam melewati berbagai kondisi jalan dengan mengontrol sistem transmisi tenaga mesin dan traksi roda |
-| **Penakluk Semua Medan** | Mampu melewati berbagai medan berat dengan banyak jenis kontur tanah |
-| **Radius Putar Minimum** | 5,6 meter |
-| **TSA** (Trailer Stability Assist) | Meningkatkan stabilitas kendaraan ketika menderek |
-| **Sabuk Keselamatan Pretensioner** | Secara otomatis mengencangkan sabuk ketika terjadi benturan |
-| **HSA** (Hill Start Assist) | Mencegah kendaraan mundur ke belakang saat melepas rem di tanjakan |
-| **Super Select 4WD II** | Memindah mode penggerak roda menjadi begitu mudah dengan transfer knob tipe dial |
-| **Airbag 7 Titik** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Rem Parkir Elektrik** | Dakar 4x4 & Dakar 4x2 Ultimate |
-| **Tombol Start-Stop Mesin** | Dakar & Exceed AT |
-| **KOS** (Keyless Operating System) | Dakar 4x2 Ultimate |
+| **NEW Face Design** | Tampilan muka baru yang lebih bold dan tangguh |
+| **NEW 17-inch Alloy Wheel** | Desain velg alloy baru, Two-tone 205/55 R17 |
+| **NEW Rear Bumper Design** | Desain bumper belakang yang lebih berkarakter |
+| **LED Headlamp** | Tersedia |
+| **Daytime Running Light (LED)** | Tersedia |
+| **Fog Lamp (LED)** | Tersedia |
+| **Rear Combination Lamp** | LED (Body & Rear Gate) |
+| **High Ground Clearance** | 220 mm (CVT), 225 mm (M/T) |
 
 ---
 
-## Fitur Keselamatan Terbaru
+## Interior & Kenyamanan (NEW)
 
-| Fitur | Singkatan | Keterangan |
-|---|---|---|
-| **Sensor Kendaraan Tak Terlihat** | BSW — Blind Spot Warning | Mendeteksi kendaraan di titik buta |
-| **Sensor Pengereman Otomatis** | FCM — Forward Collision Mitigation | Mengurangi risiko tabrakan depan |
-| **Tangguh Melewati Air** | — | Kemampuan wading kendaraan di medan berair |
-| **Kontrol Kecepatan saat Menurun** | HDC — Hill Descent Control | Mengontrol kecepatan saat turun medan terjal |
-| **Sensor Kecepatan Adaptif** | ACC — Adaptive Cruise Control | Menjaga jarak aman dengan kendaraan di depan |
-| **Sensor Stop Otomatis** | UMS — Ultrasonic Misacceleration Mitigation System | Sensor stop otomatis saat terdeteksi kesalahan akselerasi |
+| Fitur | Ketersediaan |
+|---|---|
+| **NEW 10-inch Audio Head Unit** | Semua varian |
+| **NEW 8-inch Digital Driver Display** | Semua varian |
+| **NEW 3-Spoke Steering Wheel Design** | Semua varian |
+| **Dual Tone Synthetic Leather Seat with Heat Guard** | CVT Premium Package |
+| **High Grade Fabric Seat** | M/T |
+| **Wireless Charger** | CVT Premium Package |
+| **Electric Parking Brake with Brake Auto Hold** | CVT Premium Package |
+| **Digital AC** | Semua varian |
+| **Floor Console Box (Lid Type with Arm Rest)** | CVT Premium Package |
+| **Floor Console Box (Shutter Type)** | M/T |
+| **2nd Row Armrest with Cup Holder** | Semua varian |
+| **USB Front Console (Type A & C)** | CVT Premium Package |
+| **Instrument & Door Trim Panel** | Two-tone (Black & Burgundy) with Soft Pad |
+| **Multi Information Display** | 8-inch LCD Meter Cluster |
+| **Spacious Second Row Seats** | Semua varian |
+| **Soundproof Cabin** | Semua varian |
+
+### Easy and Functional Cabin
+
+| Fitur | Ketersediaan |
+|---|---|
+| Rear Luggage Compartment | Semua varian |
+| Instrument Panel Side Pocket | Semua varian |
+| Underseat Tray | Semua varian |
+| Closed Storage Box | CVT Premium Package |
+| Multifunction Seat Back Pocket (Driver + Passenger) | Semua varian |
+| Underfloor Luggage Area Storage | Semua varian |
+| 2nd Row USB Port | CVT Premium Package |
+| 2nd Row Armrest with Cup Holder | Semua varian |
 
 ---
 
-## Aksesoris Genuine
+## Teknologi Keselamatan
 
-- Tail Gate Spoiler
-- Side Window Deflector
-- Front Under Garnish
-- Rear Under Garnish
-- Exhaust Finisher
+| Fitur | Ketersediaan |
+|---|---|
+| **NEW 6 SRS Airbags** | Semua varian |
+| **Active Yaw Control (AYC)** | Semua varian |
+| **Special Tuned Suspension with Rebound Spring** | Semua varian |
+| **Multi Around Monitor** | Semua varian |
+| **ABS + EBD + Brake Assist (BA)** | Semua varian |
+| **ASC (Active Stability Control)** | Semua varian |
+| **HSA (Hill Start Assist)** | Semua varian |
+| **Speed Sensing Door Lock** | Semua varian |
+| **Keyless Operation System** | Semua varian |
+| **Immobilizer with Security Alarm** | Semua varian |
 
 ---
 
 ## Spesifikasi Teknis
 
-| Spesifikasi | Dakar (4x4) AT | Dakar (4x2) Ultimate | Dakar (4x2) AT | Exceed (4x2) AT | Exceed (4x2) MT | GLX (4x4) MT |
-|---|---|---|---|---|---|---|
-| **DIMENSI** | | | | | | |
-| Overall Length (mm) | 4.785 | 4.785 | 4.785 | 4.785 | 4.785 | 4.785 |
-| Overall Width (mm) | 1.815 | 1.815 | 1.815 | 1.815 | 1.815 | 1.815 |
-| Wheel Base (mm) | 2.800 | 2.800 | 2.800 | 2.800 | 2.800 | 2.800 |
-| Ground Clearance (mm) | 218 | 218 | 218 | 218 | 218 | 218 |
-| GVW (kg) | 2.710 | — | — | 2.603 | 2.603 | 2.710 |
-| Seating Capacity | 7 | 7 | 7 | 7 | 7 | 7 |
-| **MESIN** | | | | | | |
-| Engine Type | 4N15 2.4L MIVEC Turbocharged & Intercooled | sama | sama | 4D56 2.5L Di Common Rail Turbocharged & Intercooled DOHC | sama | sama |
-| Displacement (cc) | 2.442 | sama | sama | 2.477 | sama | sama |
-| Bore x Stroke (mm) | 86,0 x 105,1 | sama | sama | 91,1 x 95,0 | sama | sama |
-| Max Power (PS/rpm) | 181 (133 kW) / 3.500 | sama | sama | 136 (100 kW) / 4.000 | sama | sama |
-| Max Torque (kgm/rpm) | 43,0 (422 kNm) / 2.500 | sama | sama | 32,0 (314 Nm) / 2.000 | sama | sama |
-| Fuel Tank Capacity (liter) | 68 | sama | sama | 68 | sama | sama |
-| Start Stop Engine Button | Tersedia | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia |
-| **TRANSMISI** | | | | | | |
-| Tipe | 8 Speed AT | 8 Speed AT | 8 Speed AT | 6 Speed AT | 6 Speed MT | 6 Speed MT |
-| Gear Ratio 1st | 4,695 | sama | sama | 4,313 | 3,133 | sama |
-| Gear Ratio 2nd | 3,130 | sama | sama | 2,642 | 1,833 | sama |
-| Gear Ratio 3rd | 2,104 | sama | sama | 1,600 | 1,204 | sama |
-| Gear Ratio 4th | 1,674 | sama | sama | 1,000 | 1,000 | sama |
-| Gear Ratio 5th | 1,285 | sama | sama | 0,716 | 0,768 | sama |
-| Gear Ratio 6th | 1,000 | sama | sama | Tidak tersedia | Tidak tersedia | sama |
-| Gear Ratio 7th | 0,872 | sama | sama | — | — | — |
-| Gear Ratio 8th | 0,672 | sama | sama | — | — | — |
-| Reverse | 3,682 | sama | sama | 3,255 / 3,917 | 4,220 / 2,690 | sama |
-| Final Gear Ratio | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia | Tersedia |
-| Paddle Shift | Tersedia | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia |
-| **CHASSIS** | | | | | | |
-| Drive System | 4WD | 2WD | 2WD | 2WD | 2WD | 4WD |
-| Front Suspension | Double Wishbone Ax Type, Coil Spring | sama | sama | sama | sama | sama |
-| Rear Suspension | 5 Link Type Rigid Axle, Coil Spring | sama | sama | sama | sama | sama |
-| Rem Depan | Ventilated Disc | sama | sama | Ventilated Disc | Ventilated Disc | sama |
-| Rem Belakang | Ventilated Disc (Drum in) | sama | sama | sama | sama | sama |
-| ABS & EBD | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia |
-| Brake Assist — Hydraulic (BA) | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tidak tersedia |
-| Tire Size | 265/45 R20 104W | 265/45 R20 104W | 265/45 R20 104W | 265/70 R17 112S | 265/70 R17 112S | 265/70 R17 112S |
-| **KESELAMATAN** | | | | | | |
-| SRS Airbags | Driver, Passenger — 7 Points | sama | sama | 2 Points | sama | sama |
-| Seatbelt Front Row | 3P ELR Seatbelt x 2 with Pretensioner, For Driver (4x2) + Passenger (4x2) & adjustable seatbelt anchors | sama | sama | 3P ELR Seatbelt x 2 with Pretensioner, 3P GLA Seatbelt x 2, 3P ELR Seatbelt x 2 | sama | sama |
-| Attachment for ISO-FIX x 2, Tether Anchors 2 | Tersedia | sama | sama | Tersedia | sama | sama |
-| Child Proof Lock | Tersedia | sama | sama | Tersedia | sama | sama |
-| Parking Brake | Electric | Electric | Electric | Mechanical | Mechanical | Mechanical |
-| Hill Start Up Assist (TSA) | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia |
-| BSW (Blind Spot Warning) | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| FCM (Forward Collision Mitigation) | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| ASTC (Active Stability & Traction Control) | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tersedia |
-| Limited Slip Differential | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| Off-road Traction Control | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| **AUDIO** | | | | | | |
-| Tipe | Wide 200W Touchscreen Audio (8-inch MVGA): AM/FM Radio, DVD/CD/MP3, Bluetooth/WiFi/iPhone/iPad, USB Player, Navigation System | sama | sama | Wide 200W Touchscreen Audio (7-inch MVGA): AM/FM Radio, Miracast, Bluetooth/WiFi/iPhone/iPad, USB Player | sama | Wide 200W Audio: AM/FM Radio, CD/MP3, Bluetooth/WiFi/iPhone/iPad, USB Player |
-| Rear Camera | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tidak tersedia |
-| Multi Around View Monitor | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| Speaker | 6 Speakers + 2 Tweeters | sama | sama | 6 Speakers | sama | 4 Speakers |
-| Antena | Class A Antena | sama | sama | Class A Antena | sama | Roof Antena |
-| **INTERIOR** | | | | | | |
-| Seat Material | Leather Seat | sama | sama | Leather Seat | sama | High Quality Water Repellent Fabric Seat |
-| Height Seat Adjuster | Power Slide Seat with Dual Height & Reclining Function | sama | sama | Manual Height & Reclining Adjuster | sama | sama |
-| Gear Shift Grip | Dial Type | sama | sama | Leather Wrap | sama | Urethane / Urethane |
-| Air Conditioner | Dual Zone Full Auto | sama | sama | Full Auto | sama | Full Auto |
-| **EKSTERIOR** | | | | | | |
-| Side Step | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia |
-| Roof Rails | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| Retractable Door Mirror | Tersedia (with Folding Function) | sama | sama | Tersedia (with Folding Function) | sama | Tidak tersedia |
-| Front Headlamp | LED Headlamp with Autoleveling Function | sama | sama | LED Headlamp with Autoleveling Function | sama | Halogen Projector Headlamp Bellow Reflector |
-| Rear Combination Lamp | LED Type + Better Reflector | sama | sama | sama | sama | sama |
-| Daytime Running Light | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| Multi Information Display | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia |
-| Keyless Entry | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia | Tersedia |
-| Keyless Operation System | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| Engine Auto Folding | Tersedia | Tersedia | Tersedia | Tidak tersedia | Tidak tersedia | Tidak tersedia |
-| Power Rear Window | Auto Up & Down | sama | sama | Auto Up & Down | sama | sama |
-| **PRODUKSI** | | | | | | |
-| Diproduksi oleh | PT Mitsubishi Motors Krama Yudha Indonesia | sama | sama | Mitsubishi Motors Thailand Ltd. | sama | PT Mitsubishi Motors Krama Yudha Indonesia |
+| Spesifikasi | CVT Premium Package | M/T |
+|---|---|---|
+| **DIMENSI** | | |
+| Overall Length (mm) | 4.595 | sama |
+| Overall Width (mm) | 1.790 | sama |
+| Overall Height (mm) | 1.750 | sama |
+| Ground Clearance (mm) | 220 | 225 |
+| Seating Capacity | 7 | sama |
+| **MESIN** | | |
+| Engine Type | 1.5L MIVEC DOHC 16 Valve | sama |
+| Displacement (cc) | 1.499 | sama |
+| Max Power kW (PS)/rpm | 77 (105) / 6.000 | sama |
+| Max Torque Nm/rpm | 141 / 4.000 | sama |
+| Fuel Tank Capacity (L) | 45 | sama |
+| **PERFORMA** | | |
+| Transmisi | CVT | 5 Speed M/T |
+| Suspensi Depan | Macpherson Strut with Coil Spring | sama |
+| Suspensi Belakang | Torsion Beam | sama |
+| Rem Depan | Disc Brake | sama |
+| Rem Belakang | Drum Brake | sama |
+| Cruise Control | Tersedia | Tidak tersedia |
+| **EKSTERIOR** | | |
+| Wheel & Tire | Two-tone Alloy Wheel 205/55 R17 | sama |
+| Front Headlamp | LED | sama |
+| Daytime Running Light | LED | sama |
+| Fog Lamp | LED | sama |
+| Rear Combination Lamp | LED (Body & Rear Gate) | sama |
+| **INTERIOR** | | |
+| Instrument & Door Trim | Two-tone (Black & Burgundy) with Soft Pad | sama |
+| Multi Information Display | 8-inch LCD Meter Cluster | sama |
+| Steering Wheel | 3-Spoke, Leather-wrapped with Hands Free Switch | sama |
+| Wireless Charger | Tersedia | Tidak tersedia |
+| Seat Material | Synthetic Leather Seat with Heat Guard | High Grade Fabric |
+| Parking Brake | Electric Parking Brake with Brake Auto Hold | Lever Type with Leather-wrapped |
+| Air Conditioner | Digital Type | sama |
+| Floor Center Console Box | Lid Type with Arm Rest | Shutter Type |
+| USB Front Console (Type A & C) | Tersedia | Tidak tersedia |
+| 2nd Row Armrest | Available with Cup Holder | sama |
+| Audio Size | 10-inch Audio Touchscreen | sama |
+| Audio Features | AM/FM Radio, USB Player, iPhone/iPad/iPod, Wireless Smartphone Connectivity, Bluetooth with Hands-free Function, Voice Recognition | sama |
+| **KESELAMATAN** | | |
+| Speed Sensing Door Lock | Tersedia | sama |
+| ABS + EBD + BA | Tersedia | sama |
+| Active Yaw Control (AYC) | Tersedia | sama |
+| Airbags | 6 SRS Airbags | sama |
+| ASC | Tersedia | sama |
+| HSA | Tersedia | sama |
+| Multi Around Monitor | Tersedia | sama |
+| Keyless Operating System | Tersedia | sama |
+| Immobilizer with Security Alarm | Tersedia | sama |
 
-*Catatan: Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
+*Spesifikasi sewaktu-waktu dapat berubah tanpa pemberitahuan terlebih dahulu.*
+
+*Window Film dan APAR adalah Standard Equipment dari MMKSI. Audio Head Unit, 1st Row USB Port, Floor Mat, Parking Sensor, Multi Around Monitor, Wireless Charger, dan Tailgate Garnish adalah standard equipment dengan MMC Genuine Accessories.*
+
+---
+
+## Aksesori Genuine
+
+| Aksesori |
+|---|
+| Mud Guard |
+| Rear Bumper Protector |
+| Side Visor |
+| Engine Hood Emblem |
+| Scuff Plate |
+| Fuel Lid Garnish |
+| Muffler Cutter |
+| Tailgate Spoiler |
+| Wheel Lock Nut |
+| Dashcam |
 
 ---
 
 ## Pilihan Warna
 
-| Warna | Ketersediaan |
+| Warna | Keterangan |
 |---|---|
-| **Deep Bronze Metallic** | Hanya tipe Dakar |
-| **Titanium Grey Metallic** | Hanya tipe Exceed dan GLX |
-| **Sterling Silver Metallic** | Semua tipe |
-| **Quartz White Pearl / White Pearl** | Hanya tipe Exceed dan Ultimate |
-| **Diamond Black Mica** | Semua tipe |
+| Quartz White Pearl | Solid |
+| Jet Black Mica | Solid |
+| Blade Silver Metallic | Solid |
+| Green Bronze Metallic | Solid |
+| Graphite Gray Metallic | Solid |
+| Quartz White Pearl (Two-tone) | Two-tone dengan atap hitam |
+| Green Bronze Metallic (Two-tone) | Two-tone dengan atap hitam |
 
 ---
 
-## Layanan & Jaringan
+## Layanan & Jaminan
 
-| Informasi | Detail |
+| Layanan | Detail |
 |---|---|
 | Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
 | Website | www.mitsubishi-motors.co.id |
-| One Stop Service | 0804-1-300-300 |
-| Garansi | 3 Tahun / 100.000 KM |
-| Jaringan Penjualan | 284 jaringan (data Januari 2019) |
+| Customer Care | 0804-1-300-300 |
+| Gratis Biaya Jasa | 50.000 KM / 4 Tahun |
+| Garansi | 100.000 KM / 3 Tahun |
+
+---
+---
+
+# MITSUBISHI XPANDER CROSS ELITE LIMITED EDITION (2024)
+
+## Tagline
+**"Elite Limited Edition"**
+**"Experience the Unlimited Excitement of Adventures"**
+
+---
+
+## Varian
+- **CVT Premium Package** (basis varian, dengan paket aksesori eksklusif Elite Edition)
+
+*Catatan: Elite Limited Edition adalah edisi terbatas yang didasarkan pada varian Xpander Cross CVT Premium Package dengan penambahan paket aksesori eksklusif.*
+
+---
+
+## Keunggulan Utama
+
+### Modern Exterior Features
+Hadir dalam balutan two-tone color yang memberikan kesan mewah dan modern.
+
+### Modern Interior Features
+Rasakan kenyamanan kabin lega yang modern dengan dashboard yang sporty, melengkapi petualangan ke mana saja.
+
+### Premium Sound Audio
+Nikmati kualitas audio terbaik saat berkendara, dilengkapi dengan desain speaker yang stylish.
+
+---
+
+## Fitur Eksklusif Elite Limited Edition
+
+### Eksterior Eksklusif
+
+| Fitur | Keterangan |
+|---|---|
+| **Two-Tone Roof (Hitam)** | Atap berwarna hitam kontras dengan bodi utama |
+| **Black Shark Fin Antenna** | Antena fin hiu berwarna hitam |
+| **Black Side Mirror** | Spion samping berwarna hitam |
+
+### Interior & Teknologi Premium
+
+| Fitur | Keterangan |
+|---|---|
+| **Premium Dashboard** | Dashboard sporty dan modern |
+| **Premium Wireless Charger** | Pengisi daya nirkabel premium |
+| **Premium Around View Monitor** | Kamera 360° untuk kemudahan parkir |
+| **Premium Sound Audio + Subwoofer** | Sistem audio premium dengan subwoofer berkualitas tinggi |
+
+*\*\*Standard kelengkapan resmi dengan garansi selama 3 tahun/100.000 km dari PT Mitsubishi Motors Krama Yudha Sales Indonesia.*
+
+---
+
+## Pilihan Warna
+
+| Warna | Keterangan |
+|---|---|
+| **Green Bronze Metallic and Black** | Two-tone, bodi Green Bronze dengan atap hitam |
+| **Quartz White Pearl and Black** | Two-tone, bodi Quartz White Pearl dengan atap hitam |
+
+---
+
+## Layanan & Jaminan
+
+| Layanan | Detail |
+|---|---|
+| Distributor | PT Mitsubishi Motors Krama Yudha Sales Indonesia |
+| Website | www.mitsubishi-motors.co.id |
+| Customer Care | 0804-1-300-300 |
+| Garansi Aksesori Premium | 3 Tahun / 100.000 KM |
 
 ---
 
