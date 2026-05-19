@@ -10,6 +10,7 @@
 
 ## Tagline
 
+<<<<<<< HEAD
 **"The World's First Sport Utility MPV"**
 
 ---
@@ -2473,8 +2474,11 @@ Semakin nyaman saat perjalanan dengan kabin yang lega dan legroom yang lebih lua
 
 ## Tagline
 
-**"Futuristic Look Designed to Impress"**
-**"Drive your Ambition"**
+=======
+
+> > > > > > > 3955e8a7dd21ddb071a485a62d05abae00af08e7
+> > > > > > > **"Futuristic Look Designed to Impress"**
+> > > > > > > **"Drive your Ambition"**
 
 ---
 
@@ -2682,10 +2686,17 @@ _Warna two-tone hanya tersedia pada varian Ultimate with DIAMOND SENSE._
 
 ---
 
+# <<<<<<< HEAD
+
+---
+
+> > > > > > > 3955e8a7dd21ddb071a485a62d05abae00af08e7
+
 # 19. MITSUBISHI XFORCE (2025)
 
 ## Tagline
 
+<<<<<<< HEAD
 **"Futuristic Look Designed to Impress"**
 **"Drive your Ambition"**
 
@@ -2899,7 +2910,10 @@ _Warna two-tone hanya tersedia pada varian Ultimate with DIAMOND SENSE._
 
 ## Tagline
 
-**"More than just a smart MPV, but also the right one for everyone."**
+=======
+
+> > > > > > > 3955e8a7dd21ddb071a485a62d05abae00af08e7
+> > > > > > > **"More than just a smart MPV, but also the right one for everyone."**
 
 ---
 
