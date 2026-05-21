@@ -1,12 +1,7 @@
-# Brosur Mitsubishi Motors Indonesia
-
----
-
 # 1. MITSUBISHI DELICA (2015)
 
 ## Tagline
 
-<<<<<<< HEAD
 **"The World's First Sport Utility MPV"**
 
 ---
