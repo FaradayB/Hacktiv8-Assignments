@@ -1,0 +1,901 @@
+ticket-id,issue,category,expected_resolution
+TKT-001,Karyawan tidak bisa login Windows karena lupa password akun domain,Access,Arahkan ke self-service portal https://password-reset.bsi.id untuk reset mandiri
+TKT-002,Akun domain Windows terkunci setelah salah memasukkan password 3 kali berturut-turut,Access,Verifikasi NIK karyawan lalu unlock akun via console Active Directory
+TKT-003,Token MFA tidak berfungsi setelah karyawan mengganti smartphone baru,Access,Panduan reset MFA mandiri di https://my.bsi.mitsubishi.com/mfa menggunakan Revoke Token lalu daftarkan ulang Microsoft Authenticator
+TKT-004,QR Code MFA tidak muncul saat proses pendaftaran ulang Microsoft Authenticator,Access,Pastikan karyawan menggunakan browser laptop (bukan mobile); jika masih gagal eskalasi ke Tier 2
+TKT-005,Karyawan tidak bisa konek GlobalProtect VPN saat bekerja dari rumah,Network,Lakukan Sign Out → restart laptop → login ulang ke vpn.bsi.mitsubishi.com
+TKT-006,Muncul pesan error Gateway Not Responding pada aplikasi GlobalProtect,Network,Agen helpdesk melakukan force reset sesi VPN pengguna dari dashboard Palo Alto Firewall
+TKT-007,Koneksi VPN putus terus setiap beberapa menit saat WFH,Network,Periksa stabilitas ISP karyawan; lakukan Sign Out dan reconnect VPN; eskalasi ke Tier 2 jika berlanjut
+TKT-008,Vendor tidak bisa terhubung ke Wi-Fi di kantor,Network,Arahkan vendor ke jaringan BSI-Guest; password harian tersedia di layar monitor resepsionis
+TKT-009,Password Wi-Fi BSI-Guest yang digunakan tamu sudah tidak valid,Network,Password BSI-Guest dirotasi otomatis setiap Senin 08.00 WIB; arahkan tamu ke petugas resepsionis untuk password terbaru
+TKT-010,Karyawan meminta laptop pengganti karena performa sudah sangat lambat,Hardware,Verifikasi usia laptop di database IT Asset; jika sudah lebih dari 4 tahun arahkan untuk mengisi form refresh di portal ITSM
+TKT-011,Laptop karyawan berusia 5 tahun mengalami kerusakan fisik pada layar,Hardware,Arahkan karyawan mengisi form pengajuan device refresh di ITSM; proses membutuhkan approval Manajer Departemen dengan SLA 3 hari kerja
+TKT-012,Karyawan meminta monitor tambahan untuk kebutuhan kerja,Hardware,Arahkan buat tiket ITSM dengan business justification yang jelas dan lampirkan approval atasan langsung
+TKT-013,Tim desain grafis mengajukan permintaan monitor kedua untuk seluruh anggota tim (5 orang),Hardware,Arahkan manajer tim untuk membuat tiket ITSM per karyawan disertai justifikasi bisnis dan approval atasan; IT akan proses setelah approved
+TKT-014,Karyawan meminta mouse nirkabel tanpa menyertakan alasan bisnis,Hardware,Tolak tiket dan minta karyawan melengkapi business justification yang spesifik serta approval atasan sebelum diproses
+TKT-015,SAP GUI menampilkan error WSAECONNREFUSED saat karyawan mencoba login dari luar kantor,ERP,Pastikan VPN aktif terhubung ke vpn.bsi.mitsubishi.com; periksa konfigurasi saplogon.ini dan pastikan Application Server mengarah ke IP 10.50.100.12
+TKT-016,SAP GUI tidak bisa konek meski VPN sudah aktif dan konfigurasi IP sudah benar,ERP,Periksa apakah IP karyawan terkena blokir firewall ERP; koordinasikan dengan tim Network untuk investigasi lebih lanjut
+TKT-017,Akun SAP karyawan terkunci karena tidak digunakan selama 3 bulan saat cuti panjang,ERP,Eskalasi tiket ke SAP Basis Team via ITSM dengan menyertakan nama karyawan NIK dan SAP User ID; informasikan SLA unlock maks 1x24 jam
+TKT-018,Karyawan baru tidak bisa login SAP sama sekali padahal akun sudah dibuat,ERP,Verifikasi konfigurasi saplogon.ini dan status akun di Active Directory; jika akun SAP belum dikonfigurasi eskalasi ke SAP Basis Team
+TKT-019,Mailbox Outlook karyawan penuh dan tidak bisa menerima email baru,Software,Arahkan karyawan untuk hapus email berattachment besar dan aktifkan fitur Online Archive untuk email lebih dari 1 tahun
+TKT-020,Karyawan reguler meminta penambahan kuota mailbox di atas 50 GB,Software,Quota tambahan hanya untuk level Direktur ke atas atau dengan persetujuan khusus Head of IT; tolak dan jelaskan kebijakan ini kepada karyawan
+TKT-021,Direktur meminta upgrade kuota mailbox karena sudah hampir penuh,Software,Proses permintaan upgrade lisensi setelah mendapat persetujuan Head of IT; koordinasikan dengan tim Microsoft 365
+TKT-022,Karyawan meminta instalasi Microsoft Visio untuk kebutuhan pembuatan diagram alur proses,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan lampiran persetujuan Manajer Departemen; biaya lisensi akan di-charge-back ke cost-center departemen
+TKT-023,Tim project management meminta akses Microsoft Project untuk perencanaan proyek Q3,Software,Arahkan buat tiket permohonan software di ITSM; ingatkan bahwa biaya lisensi dibebankan ke cost-center departemen bukan anggaran IT
+TKT-024,Karyawan mengeluh tidak bisa mengakses email di Outlook karena akun Microsoft 365 diblokir,Software,Verifikasi status akun di Microsoft 365 Admin Center; jika akun diblokir karena policy eskalasi ke tim IT Security
+TKT-025,Karyawan meminta bantuan untuk memesan ruang rapat beserta konsumsi untuk meeting besok,Other,Layanan ini bukan ranah IT; arahkan karyawan ke sistem BSI Facility Booking atau hubungi General Affairs di ekstensi 101
+TKT-026,Proyektor di ruang rapat lantai 3 tidak berfungsi dan karyawan meminta IT untuk memperbaiki,Other,Ketersediaan proyektor di ruang rapat bukan tanggung jawab IT; arahkan ke General Affairs di ekstensi 101
+TKT-027,ID Card karyawan hilang dan tidak bisa masuk gedung kantor,Other,Ini bukan ranah IT; arahkan karyawan untuk melapor ke HR dan Security Gedung di lantai 1 untuk pencetakan ulang kartu; IT hanya sinkronisasi data setelah kartu baru diterbitkan
+TKT-028,ID Card karyawan rusak dan chip akses tidak terbaca oleh pintu,Other,Arahkan karyawan ke HR untuk proses administrasi dan Security Gedung lantai 1 untuk penggantian fisik kartu; IT akan melakukan sinkronisasi HRIS ke door access setelah kartu baru tersedia
+TKT-029,Karyawan tidak bisa login laptop sama sekali setelah update Windows terbaru,Access,Coba boot ke Safe Mode untuk diagnosa; jika gagal koordinasikan dengan tim desktop support untuk reimaging atau rollback update
+TKT-030,Karyawan baru belum menerima akses VPN meski sudah onboarding 3 hari yang lalu,Network,Verifikasi apakah akun Active Directory sudah aktif dan terdaftar di grup GlobalProtect; jika belum koordinasikan dengan tim IAM untuk provisioning akses VPN
+TKT-031,Akun Windows domain karyawan terkunci setelah lisensi belum di-assign,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-032,Karyawan tidak bisa akses sistem HRIS karena mutasi jabatan,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-033,Login SharePoint ditolak meskipun group policy berubah,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-034,Karyawan tidak bisa login SharePoint karena sesi terkunci otomatis,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-035,Login database aplikasi ditolak meskipun lupa password,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-036,Karyawan tidak bisa akses sistem manajemen dokumen karena akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-037,Karyawan tidak bisa akses sistem absensi karena lisensi belum di-assign,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-038,Token MFA tidak berfungsi setelah group policy berubah,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-039,Akun karyawan diblokir di sistem HRIS akibat sesi terkunci otomatis,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-040,Akun SharePoint karyawan terkunci setelah belum onboarding resmi,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-041,Karyawan baru belum mendapat akses ke portal training setelah lisensi belum di-assign,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-042,Hak akses karyawan ke sistem pengadaan perlu diperbarui karena mutasi jabatan,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-043,Akun sistem pengadaan karyawan terkunci setelah akun belum aktif,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-044,Karyawan tidak bisa akses portal training dari perangkat baru karena sesi terkunci otomatis,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-045,Akun Office 365 karyawan terkunci setelah terlalu banyak percobaan login gagal,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-046,Akun jaringan Wi-Fi karyawan terkunci setelah mutasi jabatan,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-047,Akun karyawan diblokir di sistem absensi akibat nama akun berubah setelah menikah,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-048,Karyawan baru belum mendapat akses ke portal training setelah sesi terkunci otomatis,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-049,Akun karyawan diblokir di sistem manajemen dokumen akibat perangkat baru belum terdaftar,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-050,Token MFA tidak berfungsi setelah terlalu banyak percobaan login gagal,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-051,Hak akses karyawan ke dashboard analytics perlu diperbarui karena lisensi belum di-assign,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-052,Login jaringan Wi-Fi ditolak meskipun nomor HP belum terdaftar di MFA,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-053,Karyawan tidak bisa akses Office 365 karena nomor HP belum terdaftar di MFA,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-054,Akun karyawan diblokir di SharePoint akibat sesi terkunci otomatis,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-055,Karyawan baru belum mendapat akses ke aplikasi CRM setelah sertifikat expired,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-056,Hak akses karyawan ke sistem HRIS perlu diperbarui karena lisensi belum di-assign,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-057,Karyawan tidak bisa akses sistem pengadaan karena akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-058,Karyawan tidak bisa akses aplikasi mobile dari perangkat baru karena belum onboarding resmi,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-059,Karyawan tidak bisa akses sistem HRIS karena password tidak memenuhi policy baru,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-060,Akun Office 365 karyawan terkunci setelah mutasi jabatan,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-061,Token MFA tidak berfungsi setelah group policy berubah,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-062,Akun dashboard analytics karyawan terkunci setelah belum onboarding resmi,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-063,Hak akses karyawan ke portal vendor perlu diperbarui karena lisensi belum di-assign,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-064,Karyawan tidak bisa login portal e-learning karena mutasi jabatan,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-065,Login VPN GlobalProtect ditolak meskipun nomor HP belum terdaftar di MFA,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-066,Akun karyawan diblokir di aplikasi mobile akibat belum di-provisioning,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-067,Karyawan tidak bisa login VPN GlobalProtect karena password tidak memenuhi policy baru,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-068,Login portal ITSM ditolak meskipun akun belum aktif,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-069,Login database aplikasi ditolak meskipun sesi terkunci otomatis,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-070,Karyawan baru belum mendapat akses ke portal HR setelah akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-071,Karyawan tidak bisa login database aplikasi karena nomor HP belum terdaftar di MFA,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-072,Karyawan tidak bisa login portal ITSM karena nama akun berubah setelah menikah,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-073,Karyawan tidak bisa akses Office 365 karena terlalu banyak percobaan login gagal,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-074,Akun SharePoint karyawan terkunci setelah sertifikat expired,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-075,Login sistem HRIS ditolak meskipun perubahan kebijakan keamanan,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-076,Hak akses karyawan ke sistem pengadaan perlu diperbarui karena belum di-provisioning,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-077,Login database aplikasi ditolak meskipun group policy berubah,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-078,Login sistem manajemen dokumen ditolak meskipun sesi terkunci otomatis,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-079,Akun karyawan diblokir di dashboard analytics akibat nama akun berubah setelah menikah,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-080,Login sistem absensi ditolak meskipun mutasi jabatan,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-081,Karyawan tidak bisa akses SharePoint karena nomor HP belum terdaftar di MFA,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-082,Karyawan tidak bisa akses sistem pengadaan dari perangkat baru karena terlalu banyak percobaan login gagal,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-083,Karyawan tidak bisa akses Windows domain karena perangkat baru belum terdaftar,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-084,Karyawan tidak bisa login jaringan Wi-Fi karena perangkat baru belum terdaftar,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-085,Karyawan baru belum mendapat akses ke SharePoint setelah password tidak memenuhi policy baru,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-086,Akun karyawan diblokir di portal e-learning akibat sertifikat expired,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-087,Login sistem HRIS ditolak meskipun sertifikat expired,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-088,Hak akses karyawan ke aplikasi mobile perlu diperbarui karena sesi terkunci otomatis,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-089,Akun portal e-learning karyawan terkunci setelah group policy berubah,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-090,Reset password aplikasi mobile gagal karena koneksi internet tidak stabil,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-091,Karyawan tidak bisa login portal e-learning karena mutasi jabatan,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-092,Reset password sistem ERP gagal karena mutasi jabatan,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-093,Karyawan tidak bisa akses aplikasi CRM karena akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-094,Token MFA tidak berfungsi setelah belum di-provisioning,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-095,Hak akses karyawan ke jaringan Wi-Fi perlu diperbarui karena perangkat baru belum terdaftar,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-096,Login portal ITSM ditolak meskipun akun expired,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-097,Login Windows domain ditolak meskipun perangkat baru belum terdaftar,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-098,Token MFA tidak berfungsi setelah sertifikat expired,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-099,Karyawan tidak bisa akses dashboard analytics karena akun expired,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-100,Reset password Windows domain gagal karena belum onboarding resmi,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-101,Hak akses karyawan ke Teams perlu diperbarui karena group policy berubah,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-102,Login portal e-learning ditolak meskipun sertifikat expired,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-103,Karyawan tidak bisa akses Teams karena sesi terkunci otomatis,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-104,Karyawan tidak bisa akses sistem pengadaan dari perangkat baru karena akun expired,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-105,Karyawan baru belum mendapat akses ke Office 365 setelah akun expired,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-106,Hak akses karyawan ke portal vendor perlu diperbarui karena password tidak memenuhi policy baru,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-107,Karyawan tidak bisa login portal vendor karena perangkat baru belum terdaftar,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-108,Akun database aplikasi karyawan terkunci setelah perangkat baru belum terdaftar,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-109,Karyawan tidak bisa akses dashboard analytics karena mutasi jabatan,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-110,Karyawan tidak bisa akses repository kode karena akun expired,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-111,Akun aplikasi mobile karyawan terkunci setelah password tidak memenuhi policy baru,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-112,Akun karyawan diblokir di aplikasi CRM akibat nomor HP belum terdaftar di MFA,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-113,Akun karyawan diblokir di dashboard analytics akibat perubahan kebijakan keamanan,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-114,Akun karyawan diblokir di sistem absensi akibat nomor HP belum terdaftar di MFA,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-115,Karyawan tidak bisa login sistem absensi karena mutasi jabatan,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-116,Login aplikasi CRM ditolak meskipun password tidak memenuhi policy baru,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-117,Token MFA tidak berfungsi setelah perangkat baru belum terdaftar,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-118,Karyawan baru belum mendapat akses ke Teams setelah belum di-provisioning,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-119,Login sistem manajemen dokumen ditolak meskipun akun belum aktif,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-120,Login Windows domain ditolak meskipun akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-121,Akun sistem HRIS karyawan terkunci setelah lisensi belum di-assign,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-122,Akun sistem pengadaan karyawan terkunci setelah perubahan kebijakan keamanan,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-123,Akun karyawan diblokir di database aplikasi akibat sesi terkunci otomatis,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-124,Karyawan baru belum mendapat akses ke aplikasi CRM setelah lisensi belum di-assign,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-125,Hak akses karyawan ke VPN GlobalProtect perlu diperbarui karena akun expired,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-126,Reset password VPN GlobalProtect gagal karena akun expired,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-127,Karyawan baru belum mendapat akses ke sistem HRIS setelah lisensi belum di-assign,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-128,Hak akses karyawan ke sistem pengadaan perlu diperbarui karena group policy berubah,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-129,Karyawan tidak bisa login portal ITSM karena perangkat baru belum terdaftar,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-130,Token MFA tidak berfungsi setelah akun expired,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-131,Karyawan tidak bisa akses sistem pengadaan dari perangkat baru karena perubahan kebijakan keamanan,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-132,Token MFA tidak berfungsi setelah akun belum aktif,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-133,Karyawan tidak bisa login portal training karena sesi terkunci otomatis,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-134,Karyawan tidak bisa akses portal e-learning karena mutasi jabatan,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-135,Login aplikasi mobile ditolak meskipun perubahan kebijakan keamanan,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-136,Token MFA tidak berfungsi setelah group policy berubah,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-137,Token MFA tidak berfungsi setelah group policy berubah,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-138,Karyawan tidak bisa akses VPN GlobalProtect karena belum di-provisioning,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-139,Akun dashboard analytics karyawan terkunci setelah akun expired,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-140,Karyawan tidak bisa akses aplikasi CRM karena koneksi internet tidak stabil,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-141,Akun karyawan diblokir di jaringan Wi-Fi akibat terlalu banyak percobaan login gagal,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-142,Karyawan tidak bisa akses dashboard analytics karena nomor HP belum terdaftar di MFA,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-143,Akun VPN GlobalProtect karyawan terkunci setelah nama akun berubah setelah menikah,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-144,Login dashboard analytics ditolak meskipun akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-145,Karyawan tidak bisa login portal ITSM karena lisensi belum di-assign,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-146,Karyawan tidak bisa akses VPN GlobalProtect dari perangkat baru karena akun expired,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-147,Karyawan tidak bisa akses aplikasi mobile dari perangkat baru karena nama akun berubah setelah menikah,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-148,Karyawan baru belum mendapat akses ke aplikasi mobile setelah password tidak memenuhi policy baru,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-149,Reset password repository kode gagal karena sesi terkunci otomatis,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-150,Karyawan tidak bisa login sistem manajemen dokumen karena group policy berubah,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-151,Login sistem pengadaan ditolak meskipun sesi terkunci otomatis,Access,Koordinasikan dengan tim IAM untuk provisioning akses; proses dalam 1 hari kerja
+TKT-152,Reset password SharePoint gagal karena nomor HP belum terdaftar di MFA,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-153,Karyawan baru belum mendapat akses ke portal e-learning setelah mutasi jabatan,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-154,Akun karyawan diblokir di portal vendor akibat akun belum aktif,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-155,Reset password sistem ERP gagal karena belum onboarding resmi,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-156,Akun karyawan diblokir di sistem pengadaan akibat perubahan kebijakan keamanan,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-157,Reset password portal e-learning gagal karena belum onboarding resmi,Access,Buat tiket ke tim IAM dengan approval atasan untuk provisioning akses ke sistem yang diperlukan
+TKT-158,Token MFA tidak berfungsi setelah akun belum aktif,Access,Reset password via AD dan informasikan via telepon atau secure channel ke karyawan
+TKT-159,Login Windows domain ditolak meskipun akun belum aktif,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-160,Karyawan tidak bisa akses aplikasi mobile karena nomor HP belum terdaftar di MFA,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-161,Hak akses karyawan ke sistem absensi perlu diperbarui karena sesi terkunci otomatis,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-162,Hak akses karyawan ke portal HR perlu diperbarui karena perangkat baru belum terdaftar,Access,Update group membership AD sesuai jabatan atau departemen baru; verifikasi dengan atasan
+TKT-163,Login portal e-learning ditolak meskipun nomor HP belum terdaftar di MFA,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-164,Karyawan tidak bisa akses portal e-learning karena akun belum aktif,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-165,Karyawan tidak bisa akses sistem HRIS karena lupa password,Access,Arahkan ke self-service portal untuk reset mandiri; jika gagal verifikasi identitas dan reset manual via AD
+TKT-166,Karyawan tidak bisa akses aplikasi keuangan karena perangkat baru belum terdaftar,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-167,Reset password SAP gagal karena sesi terkunci otomatis,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-168,Reset password aplikasi keuangan gagal karena belum onboarding resmi,Access,Periksa status akun di AD dan Azure AD; assign lisensi yang sesuai jika belum ada
+TKT-169,Token MFA tidak berfungsi setelah lupa password,Access,Verifikasi NIK karyawan dan status di HRIS; lakukan unlock akun via Active Directory
+TKT-170,Reset password jaringan Wi-Fi gagal karena belum di-provisioning,Access,Update nomor HP dan email alternatif di profil Microsoft 365 untuk pemulihan akun
+TKT-171,Login sistem absensi ditolak meskipun akun expired,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-172,Karyawan tidak bisa akses portal ITSM karena koneksi internet tidak stabil,Access,Revoke token MFA yang lama; daftarkan ulang Microsoft Authenticator setelah verifikasi identitas
+TKT-173,Hak akses karyawan ke portal e-learning perlu diperbarui karena password tidak memenuhi policy baru,Access,Verifikasi dan perbarui tanggal expired akun di AD; koordinasikan dengan HR untuk data kontrak terbaru
+TKT-174,Karyawan tidak bisa akses sistem ERP dari perangkat baru karena koneksi internet tidak stabil,Access,Eskalasi ke tim IT Security jika ada indikasi kompromi akun; investigasi log akses sebelum re-aktifasi
+TKT-175,Login aplikasi mobile ditolak meskipun akun dinonaktifkan otomatis karena tidak aktif 90 hari,Access,Daftarkan perangkat baru ke MDM; install sertifikat yang diperlukan untuk akses jaringan
+TKT-176,VPN GlobalProtect tidak terdeteksi saat meeting video conference,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-177,Jaringan area parkir mengalami timeout,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-178,VPN GlobalProtect putus-putus saat upload file besar,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-179,Koneksi internet tidak stabil di server room,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-180,DNS tidak bisa resolve aplikasi web internal,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-181,VPN GlobalProtect sangat lambat saat upload file besar,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-182,Koneksi internet tidak stabil di ruang meeting A,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-183,Jaringan lantai 3 mengalami sangat lambat,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-184,Koneksi internet sangat lambat di server room,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-185,Koneksi kabel LAN packet loss tinggi setelah perubahan konfigurasi,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-186,Koneksi jaringan tidak stabil di lantai 3,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-187,Jaringan area produksi mengalami putus-putus,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-188,Koneksi internet sangat lambat di area lobby,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-189,DNS tidak bisa resolve sistem ERP,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-190,Jaringan area parkir mengalami tidak terdeteksi,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-191,Karyawan tidak bisa akses sistem ERP dari server room,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-192,Koneksi ke NTP server tidak terdeteksi,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-193,Jaringan lantai 5 mengalami tidak stabil,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-194,Karyawan tidak bisa akses aplikasi web internal dari ruang meeting B,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-195,VPN GlobalProtect tidak terdeteksi saat meeting video conference,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-196,Jaringan lantai 5 mengalami tidak bisa diakses,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-197,VPN GlobalProtect tidak terdeteksi saat WFH,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-198,Jaringan area parkir mengalami putus-putus,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-199,Koneksi jaringan timeout di gudang,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-200,Jaringan gudang mengalami sangat lambat,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-201,VPN IPSec putus-putus saat jam kerja sibuk,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-202,Jaringan kantin mengalami putus-putus,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-203,Bandwidth lantai 3 tidak stabil pada pagi hari,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-204,Firewall memblokir akses ke DNS server,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-205,Firewall memblokir akses ke NTP server,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-206,Jaringan gudang mengalami tidak bisa diakses,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-207,Koneksi jaringan latency tinggi di server room,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-208,Koneksi internet tidak stabil di area parkir,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-209,DNS tidak bisa resolve NTP server,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-210,DNS tidak bisa resolve sistem ERP,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-211,DNS tidak bisa resolve sistem monitoring,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-212,Koneksi kabel LAN timeout setelah perubahan konfigurasi,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-213,DNS tidak bisa resolve portal intranet,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-214,Jaringan kantin mengalami tidak terdeteksi,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-215,Koneksi ke cloud storage latency tinggi,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-216,Bandwidth area produksi tidak bisa diakses pada jam sibuk,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-217,Koneksi jaringan timeout di ruang meeting B,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-218,Bandwidth area produksi packet loss tinggi pada pagi hari,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-219,Koneksi internet sangat lambat di gudang,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-220,Koneksi jaringan latency tinggi di gudang,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-221,VPN GlobalProtect putus-putus saat akses dari luar negeri,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-222,Jaringan area parkir mengalami sangat lambat,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-223,Jaringan area produksi mengalami timeout,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-224,Karyawan tidak bisa akses sistem ERP dari gudang,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-225,Koneksi internet sangat lambat di gudang,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-226,VPN IPSec sangat lambat saat meeting video conference,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-227,Bandwidth lantai 4 tidak bisa diakses pada jam sibuk,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-228,Jaringan kantin mengalami putus-putus,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-229,DNS tidak bisa resolve server database,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-230,Karyawan tidak bisa akses server email dari lantai 3,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-231,Koneksi Wi-Fi latency tinggi setelah perubahan konfigurasi,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-232,VPN GlobalProtect packet loss tinggi saat akses dari kantor cabang,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-233,Koneksi jaringan putus-putus di area produksi,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-234,DNS tidak bisa resolve server backup,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-235,Firewall memblokir akses ke server file,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-236,Koneksi ke server backup tidak bisa diakses,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-237,Koneksi jaringan tidak bisa diakses di kantin,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-238,DNS tidak bisa resolve aplikasi web internal,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-239,Koneksi internet sangat lambat di kantin,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-240,Koneksi kabel LAN putus-putus setelah upgrade switch,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-241,Karyawan tidak bisa akses portal vendor dari area lobby,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-242,Koneksi ke DNS server tidak stabil,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-243,Jaringan ruang meeting B mengalami tidak terdeteksi,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-244,DNS tidak bisa resolve portal vendor,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-245,Koneksi internet tidak stabil di ruang meeting A,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-246,DNS tidak bisa resolve server database,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-247,DNS tidak bisa resolve portal vendor,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-248,Firewall memblokir akses ke NTP server,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-249,Karyawan tidak bisa akses server backup dari lantai 4,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-250,Koneksi internet sangat lambat di area produksi,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-251,Karyawan tidak bisa akses server database dari area lobby,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-252,Koneksi internet sangat lambat di lantai 2,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-253,VPN GlobalProtect tidak stabil saat akses dari luar negeri,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-254,Koneksi internet tidak stabil di area parkir,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-255,VPN IPSec tidak terdeteksi saat akses dari kantor cabang,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-256,Koneksi jaringan packet loss tinggi di ruang meeting B,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-257,VPN GlobalProtect tidak bisa diakses saat meeting video conference,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-258,Koneksi kabel LAN tidak terdeteksi setelah upgrade switch,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-259,Karyawan tidak bisa akses DNS server dari lantai 4,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-260,Koneksi kabel LAN sangat lambat setelah upgrade switch,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-261,Bandwidth area parkir sangat lambat pada pagi hari,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-262,Koneksi kabel LAN packet loss tinggi setelah upgrade switch,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-263,DNS tidak bisa resolve portal intranet,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-264,Karyawan tidak bisa akses server backup dari lantai 3,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-265,Karyawan tidak bisa akses portal vendor dari lantai 3,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-266,Jaringan kantor cabang mengalami packet loss tinggi,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-267,Bandwidth kantor cabang sangat lambat pada pagi hari,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-268,VPN GlobalProtect putus-putus saat akses dari luar negeri,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-269,VPN GlobalProtect tidak bisa diakses saat jam kerja sibuk,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-270,Bandwidth ruang meeting B tidak stabil pada jam sibuk,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-271,Koneksi ke server email tidak terdeteksi,Network,Periksa routing dan ACL firewall; pastikan traffic ke destination tidak diblokir policy
+TKT-272,Firewall memblokir akses ke sistem ERP,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-273,Jaringan lantai 3 mengalami tidak bisa diakses,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-274,Karyawan tidak bisa akses NTP server dari lantai 2,Network,Periksa kapasitas access point di lokasi; lakukan rebalancing client antar AP jika perlu
+TKT-275,Karyawan tidak bisa akses portal intranet dari server room,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-276,Firewall memblokir akses ke server database,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-277,Koneksi ke server database sangat lambat,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-278,DNS tidak bisa resolve server email,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-279,Koneksi jaringan sangat lambat di area produksi,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-280,Karyawan tidak bisa akses aplikasi web internal dari ruang meeting A,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-281,Karyawan tidak bisa akses server file dari lantai 4,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-282,VPN IPSec putus-putus saat akses dari kantor cabang,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-283,Karyawan tidak bisa akses sistem monitoring dari ruang meeting A,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-284,Karyawan tidak bisa akses server database dari ruang meeting A,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-285,Koneksi kabel LAN timeout setelah upgrade switch,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-286,Koneksi jaringan packet loss tinggi di gudang,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-287,Jaringan area produksi mengalami sangat lambat,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-288,VPN IPSec tidak terdeteksi saat WFH,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-289,Firewall memblokir akses ke server email,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-290,Jaringan lantai 5 mengalami sangat lambat,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-291,Koneksi kabel LAN timeout setelah perubahan konfigurasi,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-292,Koneksi kabel LAN packet loss tinggi setelah upgrade switch,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-293,VPN GlobalProtect tidak stabil saat WFH,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-294,Karyawan tidak bisa akses repository kode dari area parkir,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-295,Bandwidth gudang tidak bisa diakses pada jam sibuk,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-296,Firewall memblokir akses ke repository kode,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-297,Karyawan tidak bisa akses cloud storage dari kantin,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-298,Jaringan gudang mengalami putus-putus,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-299,Karyawan tidak bisa akses server file dari gudang,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-300,Firewall memblokir akses ke server file,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-301,Jaringan area parkir mengalami sangat lambat,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-302,Karyawan tidak bisa akses server backup dari kantin,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-303,Koneksi ke server database sangat lambat,Network,Periksa status DNS server internal; flush cache dan test nslookup ke destination yang bermasalah
+TKT-304,Firewall memblokir akses ke server backup,Network,Verifikasi konfigurasi VLAN dan subnet routing; pastikan traffic antar VLAN melewati firewall dengan benar
+TKT-305,DNS tidak bisa resolve cloud storage,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-306,Jaringan kantor cabang mengalami putus-putus,Network,Lakukan speed test dari beberapa titik; identifikasi bottleneck dan escalasi ke tim Network
+TKT-307,Firewall memblokir akses ke cloud storage,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-308,Firewall memblokir akses ke portal intranet,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-309,DNS tidak bisa resolve sistem monitoring,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-310,VPN GlobalProtect packet loss tinggi saat jam kerja sibuk,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-311,DNS tidak bisa resolve aplikasi web internal,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-312,Koneksi internet sangat lambat di gudang,Network,Verifikasi konfigurasi VPN dan status gateway; force reconnect dari dashboard Palo Alto jika perlu
+TKT-313,DNS tidak bisa resolve aplikasi web internal,Network,Monitor log firewall untuk traffic yang diblokir; tambahkan rule exception jika traffic legitimate
+TKT-314,Karyawan tidak bisa akses portal intranet dari area lobby,Network,Tingkatkan QoS priority untuk traffic video conference; atau jadwalkan penggunaan bandwidth besar di luar jam sibuk
+TKT-315,Koneksi internet tidak stabil di kantin,Network,Restart access point di lokasi; periksa konfigurasi Wi-Fi controller untuk AP tersebut
+TKT-316,Karyawan tidak bisa akses server backup dari kantor cabang,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-317,Jaringan kantin mengalami tidak terdeteksi,Network,Periksa koneksi fisik dan kabel; test dengan laptop lain di lokasi yang sama untuk isolasi masalah
+TKT-318,DNS tidak bisa resolve NTP server,Network,Analisis utilisasi bandwidth pada waktu bermasalah; implementasi QoS untuk traffic prioritas tinggi
+TKT-319,Koneksi kabel LAN timeout setelah perubahan konfigurasi,Network,Koordinasikan dengan ISP jika masalah ada di sisi provider; buka tiket gangguan jika diperlukan
+TKT-320,Karyawan tidak bisa akses antivirus karena lisensi expired,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-321,software desain tidak bisa mencetak dokumen setelah migrasi laptop baru,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-322,Karyawan tidak bisa akses Outlook karena akun diblokir,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-323,Karyawan meminta instalasi Outlook untuk kebutuhan desain,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-324,aplikasi backup crash saat membuka file besar,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-325,Lisensi software akuntansi menampilkan error,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-326,PowerPoint crash saat digunakan bersamaan dengan aplikasi lain,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-327,Update Microsoft Teams menyebabkan tidak merespons,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-328,Karyawan meminta instalasi Word untuk kebutuhan proyek,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-329,Karyawan tidak bisa akses software desain karena akun diblokir,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-330,Karyawan tidak bisa export laporan menggunakan Outlook,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-331,Karyawan tidak bisa install menggunakan aplikasi backup,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-332,Aplikasi browser Chrome tidak merespons di laptop karyawan,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-333,Error muncul saat menggunakan fitur track changes di Outlook,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-334,Error muncul saat menggunakan fitur macro di browser Chrome,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-335,aplikasi backup tidak bisa mencetak dokumen setelah migrasi laptop baru,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-336,antivirus tidak kompatibel dengan macOS,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-337,Aplikasi antivirus menampilkan error di laptop karyawan,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-338,Error muncul saat menggunakan fitur track changes di antivirus,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-339,Lisensi antivirus tidak merespons,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-340,browser Edge crash saat digunakan bersamaan dengan aplikasi lain,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-341,Karyawan meminta instalasi browser Chrome untuk kebutuhan proyek,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-342,browser Edge tidak bisa join meeting setelah update sistem operasi,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-343,Outlook tidak kompatibel dengan Windows 11,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-344,software desain tidak kompatibel dengan Windows 11,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-345,aplikasi mobile perusahaan tidak kompatibel dengan Windows 11,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-346,Lisensi aplikasi backup expired,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-347,Aplikasi software analitik menampilkan error di laptop karyawan,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-348,software analitik tidak bisa share screen setelah update sistem operasi,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-349,Error muncul saat menggunakan fitur track changes di aplikasi laporan,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-350,Karyawan tidak bisa akses Outlook karena akun diblokir,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-351,Error muncul saat menggunakan fitur macro di software ERP,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-352,Aplikasi Microsoft Teams tidak merespons di laptop karyawan,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-353,Karyawan tidak bisa mencetak dokumen menggunakan aplikasi backup,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-354,Error muncul saat menggunakan fitur track changes di software analitik,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-355,browser Chrome tidak bisa install setelah update sistem operasi,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-356,Karyawan tidak bisa akses Outlook karena lisensi expired,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-357,Karyawan tidak bisa akses software analitik karena lisensi expired,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-358,Karyawan tidak bisa export laporan menggunakan software akuntansi,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-359,Karyawan tidak bisa install menggunakan aplikasi backup,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-360,Aplikasi aplikasi absensi expired di laptop karyawan,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-361,Karyawan meminta instalasi antivirus untuk kebutuhan desain,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-362,Aplikasi software akuntansi expired di laptop karyawan,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-363,Aplikasi Excel tidak tersinkronisasi di laptop karyawan,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-364,Karyawan tidak bisa akses antivirus karena akun diblokir,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-365,Error muncul saat menggunakan fitur macro di Excel,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-366,aplikasi CRM tidak bisa berbagi file setelah update sistem operasi,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-367,software desain tidak kompatibel dengan Windows 11,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-368,Lisensi browser Chrome tidak merespons,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-369,Error muncul saat menggunakan fitur track changes di Zoom,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-370,aplikasi absensi tidak kompatibel dengan macOS,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-371,plugin browser tidak bisa berbagi file setelah update sistem operasi,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-372,Lisensi Adobe Acrobat tidak bisa dibuka,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-373,Karyawan tidak bisa record meeting menggunakan aplikasi absensi,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-374,Update aplikasi backup menyebabkan berjalan sangat lambat,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-375,software ERP crash saat membuka file besar,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-376,Karyawan tidak bisa update menggunakan software akuntansi,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-377,plugin browser crash saat digunakan bersamaan dengan aplikasi lain,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-378,Microsoft Teams tidak bisa share screen setelah migrasi laptop baru,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-379,Update Word menyebabkan berjalan sangat lambat,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-380,aplikasi mobile perusahaan tidak bisa export laporan setelah migrasi laptop baru,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-381,Update Excel menyebabkan berjalan sangat lambat,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-382,Update browser Chrome menyebabkan tidak bisa menyimpan,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-383,Adobe Acrobat crash saat digunakan bersamaan dengan aplikasi lain,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-384,Karyawan tidak bisa akses software desain karena lisensi expired,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-385,Aplikasi aplikasi absensi menampilkan error di laptop karyawan,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-386,Karyawan tidak bisa record meeting menggunakan aplikasi absensi,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-387,software akuntansi tidak kompatibel dengan Windows 11,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-388,Update software ERP menyebabkan tidak bisa menyimpan,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-389,Karyawan tidak bisa akses Adobe Acrobat karena akun diblokir,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-390,Aplikasi aplikasi absensi berjalan sangat lambat di laptop karyawan,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-391,Karyawan meminta instalasi browser Edge untuk kebutuhan desain,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-392,Error muncul saat menggunakan fitur macro di software desain,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-393,Karyawan tidak bisa mencetak dokumen menggunakan plugin browser,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-394,Update software desain menyebabkan tidak tersinkronisasi,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-395,Aplikasi browser Edge menampilkan error di laptop karyawan,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-396,Lisensi Adobe Acrobat tidak bisa dibuka,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-397,Error muncul saat menggunakan fitur track changes di Excel,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-398,software desain crash saat membuka file besar,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-399,Excel crash saat digunakan bersamaan dengan aplikasi lain,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-400,Error muncul saat menggunakan fitur macro di Zoom,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-401,Karyawan meminta instalasi Excel untuk kebutuhan proyek,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-402,aplikasi backup tidak kompatibel dengan macOS,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-403,Update Excel menyebabkan tidak bisa dibuka,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-404,Karyawan tidak bisa install menggunakan Microsoft Teams,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-405,browser Edge tidak bisa update setelah migrasi laptop baru,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-406,Karyawan tidak bisa akses aplikasi CRM karena lisensi expired,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-407,Aplikasi antivirus crash tiba-tiba di laptop karyawan,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-408,Microsoft Teams crash saat digunakan bersamaan dengan aplikasi lain,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-409,Karyawan tidak bisa join meeting menggunakan Microsoft Teams,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-410,Aplikasi software desain berjalan sangat lambat di laptop karyawan,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-411,Aplikasi Microsoft Teams menampilkan error di laptop karyawan,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-412,antivirus tidak bisa mencetak dokumen setelah migrasi laptop baru,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-413,antivirus crash saat membuka file besar,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-414,Lisensi Zoom tidak merespons,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-415,Karyawan tidak bisa akses antivirus karena akun diblokir,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-416,Aplikasi browser Chrome tidak merespons di laptop karyawan,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-417,Karyawan tidak bisa record meeting menggunakan Outlook,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-418,Excel tidak bisa join meeting setelah update sistem operasi,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-419,Lisensi aplikasi CRM expired,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-420,Error muncul saat menggunakan fitur macro di aplikasi CRM,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-421,Karyawan meminta instalasi aplikasi mobile perusahaan untuk kebutuhan proyek,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-422,Karyawan meminta instalasi aplikasi absensi untuk kebutuhan desain,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-423,Karyawan tidak bisa mencetak dokumen menggunakan Microsoft Teams,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-424,Karyawan tidak bisa mencetak dokumen menggunakan Microsoft Teams,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-425,Error muncul saat menggunakan fitur macro di Outlook,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-426,Karyawan meminta instalasi aplikasi absensi untuk kebutuhan proyek,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-427,Karyawan tidak bisa membuka file menggunakan aplikasi absensi,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-428,software ERP tidak bisa record meeting setelah migrasi laptop baru,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-429,Microsoft Teams tidak kompatibel dengan macOS,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-430,aplikasi absensi tidak kompatibel dengan Windows 11,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-431,Update aplikasi CRM menyebabkan tidak tersinkronisasi,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-432,Karyawan tidak bisa akses software akuntansi karena akun diblokir,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-433,PowerPoint tidak kompatibel dengan Windows 11,Software,Periksa log error aplikasi; update driver atau komponen yang diperlukan
+TKT-434,Karyawan tidak bisa akses software ERP karena lisensi expired,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-435,software desain tidak bisa membuka file setelah update sistem operasi,Software,Deploy aplikasi via endpoint management (Intune/SCCM) dengan hak admin IT
+TKT-436,software akuntansi tidak bisa membuka file setelah update sistem operasi,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-437,Aplikasi Adobe Acrobat tidak tersinkronisasi di laptop karyawan,Software,Clear cache dan temporary files aplikasi; restart dan coba kembali
+TKT-438,Excel crash saat membuka file besar,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-439,aplikasi laporan tidak bisa membuka file setelah update sistem operasi,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-440,Adobe Acrobat tidak kompatibel dengan macOS,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-441,Excel crash saat digunakan bersamaan dengan aplikasi lain,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-442,Outlook crash saat membuka file besar,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-443,Karyawan meminta instalasi antivirus untuk kebutuhan proyek,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-444,Update software desain menyebabkan menampilkan error,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-445,Error muncul saat menggunakan fitur macro di software desain,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-446,Error muncul saat menggunakan fitur track changes di aplikasi absensi,Software,Periksa kompatibilitas versi aplikasi dengan OS yang digunakan; update atau rollback jika perlu
+TKT-447,Update antivirus menyebabkan tidak bisa dibuka,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-448,Karyawan meminta instalasi Excel untuk kebutuhan desain,Software,Tambahkan file atau proses ke whitelist antivirus; verifikasi keamanan file dari sumber terpercaya
+TKT-449,Adobe Acrobat crash saat membuka file besar,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-450,Karyawan meminta instalasi aplikasi CRM untuk kebutuhan proyek,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-451,Update software analitik menyebabkan tidak bisa menyimpan,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-452,Karyawan tidak bisa join meeting menggunakan software akuntansi,Software,Periksa setting proxy dan firewall untuk akses server aktivasi lisensi aplikasi
+TKT-453,Update browser Chrome menyebabkan tidak bisa dibuka,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-454,Lisensi software akuntansi tidak merespons,Software,"Update driver terkait (GPU, audio, USB) yang mungkin mempengaruhi performa aplikasi"
+TKT-455,Error muncul saat menggunakan fitur macro di aplikasi CRM,Software,Repair instalasi aplikasi melalui Control Panel atau via endpoint management
+TKT-456,Lisensi Outlook berjalan sangat lambat,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-457,Outlook tidak kompatibel dengan Windows 11,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-458,Karyawan tidak bisa berbagi file menggunakan Microsoft Teams,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-459,Karyawan tidak bisa join meeting menggunakan software akuntansi,Software,Verifikasi dan perbarui lisensi melalui portal Microsoft 365 Admin Center atau vendor terkait
+TKT-460,Karyawan meminta instalasi browser Edge untuk kebutuhan proyek,Software,Arahkan karyawan buat tiket permohonan software di ITSM dengan approval atasan; biaya dibebankan ke cost center
+TKT-461,Karyawan meminta instalasi browser Edge untuk kebutuhan proyek,Software,Uninstall dan reinstall aplikasi; pastikan versi terbaru digunakan dan kompatibel dengan OS
+TKT-462,Karyawan tidak bisa akses software ERP karena akun diblokir,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-463,Karyawan meminta instalasi Zoom untuk kebutuhan desain,Software,Koordinasikan dengan vendor aplikasi untuk support teknis; eskalasi jika dalam SLA vendor
+TKT-464,Karyawan meminta upgrade SSD laptop karena jatuh atau terbentur,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-465,Baterai printer overheat,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-466,Performa UPS menurun drastis karena jatuh atau terbentur,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-467,Karyawan meminta penggantian desktop PC karena jatuh atau terbentur,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-468,Perangkat UPS menunjukkan gejala kerusakan hardware,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-469,Performa monitor menurun drastis karena jatuh atau terbentur,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-470,charger laptop rusak karena jatuh atau terbentur dan perlu penggantian,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-471,Laptop karyawan tidak bisa charging dan perlu upgrade RAM,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-472,Karyawan meminta upgrade SSD tablet grafis karena usia sudah tua,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-473,Laptop karyawan tidak merespons dan perlu perbaikan,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-474,Karyawan meminta kalibrasi ulang monitor karena jatuh atau terbentur,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-475,Performa hub USB menurun drastis karena usia sudah tua,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-476,Karyawan meminta perbaikan barcode scanner karena usia sudah tua,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-477,Port USB-A laptop reboot sendiri,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-478,Laptop karyawan berjalan sangat lambat dan perlu upgrade SSD,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-479,Laptop karyawan reboot sendiri dan perlu pembersihan,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-480,Performa monitor menurun drastis karena jatuh atau terbentur,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-481,Port USB-C laptop tidak terdeteksi,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-482,Laptop karyawan berjalan sangat lambat dan perlu kalibrasi ulang,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-483,Perangkat scanner menunjukkan gejala kerusakan hardware,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-484,Port USB-A laptop berjalan sangat lambat,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-485,Port USB-C laptop rusak fisik,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-486,Perangkat barcode scanner menunjukkan gejala kerusakan hardware,Hardware,Gunakan perangkat eksternal sebagai solusi sementara; proses penggantian dalam 1-3 hari kerja
+TKT-487,tablet grafis di ruang kerja rusak fisik,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-488,Karyawan meminta penggantian docking station karena jatuh atau terbentur,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-489,Performa scanner menurun drastis karena usia sudah tua,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-490,Port USB-A laptop mengeluarkan suara bising,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-491,Karyawan tidak bisa menggunakan webcam karena berjalan sangat lambat,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-492,scanner rusak karena usia sudah tua dan perlu penggantian,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-493,Laptop karyawan reboot sendiri dan perlu upgrade SSD,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-494,Perangkat hub USB menunjukkan gejala kerusakan hardware,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-495,Port USB-C laptop performa menurun,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-496,Perangkat hub USB menunjukkan gejala kerusakan hardware,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-497,proyektor di ruang meeting rusak fisik,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-498,Port USB-C laptop reboot sendiri,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-499,Baterai hub USB mengeluarkan suara bising,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-500,Karyawan meminta penggantian webcam karena usia sudah tua,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-501,proyektor tidak berfungsi setelah migrasi perangkat,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-502,Performa UPS menurun drastis karena usia sudah tua,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-503,Port USB-C laptop performa menurun,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-504,Baterai tablet grafis performa menurun,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-505,Laptop karyawan mengeluarkan suara bising dan perlu penggantian,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-506,Karyawan meminta perbaikan mouse karena jatuh atau terbentur,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-507,Performa scanner menurun drastis karena usia sudah tua,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-508,barcode scanner rusak karena usia sudah tua dan perlu penggantian,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-509,hard disk eksternal tidak berfungsi setelah update Windows,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-510,webcam di ruang kerja mengeluarkan suara bising,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-511,Perangkat laptop menunjukkan gejala performa menurun,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-512,Baterai UPS tidak bisa charging,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-513,hub USB di ruang kerja mengeluarkan suara bising,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-514,Port USB-C laptop layarnya berkedip,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-515,Port USB-C laptop layarnya berkedip,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-516,proyektor rusak karena usia sudah tua dan perlu penggantian,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-517,Karyawan tidak bisa menggunakan mouse karena tidak terdeteksi,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-518,Performa laptop menurun drastis karena usia sudah tua,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-519,Performa tablet grafis menurun drastis karena jatuh atau terbentur,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-520,Karyawan meminta penggantian proyektor karena jatuh atau terbentur,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-521,Port USB-A laptop reboot sendiri,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-522,hard disk eksternal di ruang meeting tidak merespons,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-523,laptop rusak karena jatuh atau terbentur dan perlu penggantian,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-524,Karyawan meminta pembersihan UPS karena usia sudah tua,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-525,Laptop karyawan tidak merespons dan perlu kalibrasi ulang,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-526,Performa headset menurun drastis karena usia sudah tua,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-527,Performa charger laptop menurun drastis karena usia sudah tua,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-528,Port USB-C laptop performa menurun,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-529,Baterai UPS rusak fisik,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-530,tablet grafis tidak berfungsi setelah update Windows,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-531,Karyawan tidak bisa menggunakan monitor karena mengeluarkan suara bising,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-532,keyboard di ruang kerja tidak bisa dihidupkan,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-533,Performa proyektor menurun drastis karena usia sudah tua,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-534,Perangkat headset menunjukkan gejala kerusakan hardware,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-535,Karyawan meminta upgrade SSD hub USB karena usia sudah tua,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-536,Karyawan tidak bisa menggunakan hard disk eksternal karena tidak bisa dihidupkan,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-537,Port USB-A laptop tidak bisa charging,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-538,Perangkat proyektor menunjukkan gejala kerusakan hardware,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-539,Performa proyektor menurun drastis karena jatuh atau terbentur,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-540,Laptop karyawan mengeluarkan suara bising dan perlu upgrade SSD,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-541,Baterai monitor performa menurun,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-542,Karyawan meminta perbaikan tablet grafis karena usia sudah tua,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-543,Karyawan meminta upgrade RAM mouse karena usia sudah tua,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-544,Perangkat keyboard menunjukkan gejala performa menurun,Hardware,Gunakan perangkat eksternal sebagai solusi sementara; proses penggantian dalam 1-3 hari kerja
+TKT-545,Baterai webcam rusak fisik,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-546,barcode scanner tidak berfungsi setelah update Windows,Hardware,Gunakan perangkat eksternal sebagai solusi sementara; proses penggantian dalam 1-3 hari kerja
+TKT-547,Baterai monitor mengeluarkan suara bising,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-548,Karyawan tidak bisa menggunakan headset karena rusak fisik,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-549,Laptop karyawan reboot sendiri dan perlu perbaikan,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-550,Baterai monitor reboot sendiri,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-551,proyektor rusak karena usia sudah tua dan perlu penggantian,Hardware,Update driver perangkat; jika masalah persisten eskalasi ke teknisi untuk penanganan hardware
+TKT-552,desktop PC tidak berfungsi setelah update Windows,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-553,Port USB-C laptop performa menurun,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-554,Karyawan tidak bisa menggunakan proyektor karena tidak terdeteksi,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-555,charger laptop tidak berfungsi setelah migrasi perangkat,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-556,Laptop karyawan reboot sendiri dan perlu pembersihan,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-557,Perangkat scanner menunjukkan gejala performa menurun,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-558,Baterai mouse mengeluarkan suara bising,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-559,Laptop karyawan tidak merespons dan perlu pembersihan,Hardware,Gunakan perangkat eksternal sebagai solusi sementara; proses penggantian dalam 1-3 hari kerja
+TKT-560,proyektor di ruang kerja reboot sendiri,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-561,Performa UPS menurun drastis karena usia sudah tua,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-562,Baterai laptop tidak terdeteksi,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-563,Perangkat proyektor menunjukkan gejala kerusakan hardware,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-564,Baterai laptop tidak bisa charging,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-565,hard disk eksternal rusak karena usia sudah tua dan perlu penggantian,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-566,webcam di ruang meeting tidak bisa charging,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-567,Karyawan tidak bisa menggunakan printer karena layarnya berkedip,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-568,Karyawan meminta penggantian monitor karena usia sudah tua,Hardware,Verifikasi usia perangkat di database IT Asset; proses refresh/penggantian via ITSM jika sudah lebih dari 4 tahun
+TKT-569,Karyawan tidak bisa menggunakan hard disk eksternal karena rusak fisik,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-570,Perangkat barcode scanner menunjukkan gejala kerusakan hardware,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-571,webcam rusak karena jatuh atau terbentur dan perlu penggantian,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-572,desktop PC di ruang kerja overheat,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-573,Port USB-C laptop tidak bisa charging,Hardware,Gunakan perangkat eksternal sebagai solusi sementara; proses penggantian dalam 1-3 hari kerja
+TKT-574,Baterai headset rusak fisik,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-575,headset tidak berfungsi setelah migrasi perangkat,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-576,Performa desktop PC menurun drastis karena usia sudah tua,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-577,Perangkat docking station menunjukkan gejala kerusakan hardware,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-578,Port USB-A laptop reboot sendiri,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-579,Karyawan meminta upgrade RAM UPS karena jatuh atau terbentur,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-580,Karyawan tidak bisa menggunakan headset karena mengeluarkan suara bising,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-581,webcam di ruang meeting overheat,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-582,Port USB-C laptop tidak bisa charging,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-583,printer di ruang meeting mengeluarkan suara bising,Hardware,Coba perangkat di workstation lain untuk isolasi masalah hardware vs software/driver
+TKT-584,Performa keyboard menurun drastis karena jatuh atau terbentur,Hardware,Periksa power supply dan konfigurasi BIOS; jalankan diagnostic tool bawaan perangkat
+TKT-585,Perangkat charger laptop menunjukkan gejala kerusakan hardware,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-586,Karyawan tidak bisa menggunakan charger laptop karena tidak merespons,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-587,Baterai tablet grafis tidak merespons,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-588,Perangkat hard disk eksternal menunjukkan gejala kerusakan hardware,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-589,Karyawan tidak bisa menggunakan laptop karena tidak bisa charging,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-590,Port USB-A laptop reboot sendiri,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-591,Perangkat keyboard menunjukkan gejala kerusakan hardware,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-592,Performa proyektor menurun drastis karena jatuh atau terbentur,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-593,Baterai docking station layarnya berkedip,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-594,Karyawan meminta perbaikan charger laptop karena jatuh atau terbentur,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-595,Port USB-C laptop tidak bisa dihidupkan,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-596,Karyawan tidak bisa menggunakan webcam karena layarnya berkedip,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-597,mouse tidak berfungsi setelah update Windows,Hardware,Backup data terlebih dahulu sebelum proses perbaikan; koordinasikan jadwal dengan karyawan
+TKT-598,Port USB-A laptop performa menurun,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-599,Port USB-A laptop performa menurun,Hardware,Proses peminjaman perangkat pengganti sementara selama perbaikan berlangsung
+TKT-600,barcode scanner di ruang kerja layarnya berkedip,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-601,webcam tidak berfungsi setelah update Windows,Hardware,Bersihkan perangkat dari debu dan debris; update firmware/driver terbaru sebelum eskalasi ke teknisi
+TKT-602,Karyawan meminta upgrade SSD monitor karena usia sudah tua,Hardware,Hard reset perangkat; periksa koneksi fisik dan kabel; restart service terkait
+TKT-603,laptop tidak berfungsi setelah migrasi perangkat,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-604,Karyawan tidak bisa menggunakan printer karena rusak fisik,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-605,Karyawan meminta perbaikan keyboard karena usia sudah tua,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-606,webcam rusak karena usia sudah tua dan perlu penggantian,Hardware,Koordinasikan dengan vendor untuk garansi claim jika perangkat masih dalam masa garansi
+TKT-607,printer rusak karena usia sudah tua dan perlu penggantian,Hardware,Arahkan karyawan isi form pengajuan perbaikan/penggantian di ITSM; sertakan approval atasan
+TKT-608,hub USB di ruang meeting performa menurun,Hardware,Diagnosa awal oleh teknisi; estimasi biaya dan waktu perbaikan akan diinformasikan sebelum eksekusi
+TKT-609,Karyawan tidak bisa posting transaksi di SAP karena role belum dikonfigurasi,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-610,SAP GUI sangat lambat saat jam kerja sibuk,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-611,Karyawan tidak bisa menjalankan laporan di SAP karena role belum dikonfigurasi,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-612,Workflow month-end closing di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-613,Akun SAP karyawan tidak berjalan karena role belum dikonfigurasi,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-614,Workflow MRP di SAP tidak berjalan karena VPN tidak aktif,ERP,Periksa konfigurasi master data yang terlibat dalam transaksi; koordinasikan dengan SAP Functional team
+TKT-615,Data di SAP HR (Human Resources) tidak berjalan setelah upgrade sistem,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-616,Data di SAP HR (Human Resources) tidak berjalan setelah perubahan konfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-617,Akun SAP karyawan menampilkan error karena VPN tidak aktif,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-618,Data di SAP ESS (Employee Self Service) menampilkan error setelah upgrade sistem,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-619,Karyawan tidak bisa akses modul Fiori di SAP karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-620,Karyawan tidak bisa posting transaksi di SAP karena role belum dikonfigurasi,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-621,Laporan laporan stok di SAP tidak menampilkan data dengan benar,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-622,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-623,Laporan laporan keuangan di SAP tidak bisa diakses,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-624,Proses payroll processing di SAP menampilkan error,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-625,Laporan laporan keuangan di SAP tidak bisa diakses,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-626,Data di SAP QM (Quality Management) menampilkan error setelah upgrade sistem,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-627,Laporan laporan keuangan di SAP tidak menampilkan data dengan benar,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-628,Integrasi SAP dengan sistem HRIS tidak berjalan,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-629,Integrasi SAP dengan sistem payroll tidak berjalan,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-630,Akun SAP karyawan menampilkan error karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-631,SAP GUI sangat lambat saat proses month-end closing,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-632,Integrasi SAP dengan sistem HRIS menampilkan error,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-633,SAP menampilkan error system not available saat posting transaksi di modul SD (Sales Distribution),ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-634,Data di SAP FI (Finance) tidak berjalan setelah perubahan konfigurasi,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-635,Workflow goods issue di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-636,SAP GUI sangat lambat saat proses month-end closing,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-637,Karyawan tidak bisa posting transaksi di SAP karena VPN tidak aktif,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-638,Proses goods receipt di SAP tidak berjalan,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-639,Integrasi SAP dengan sistem payroll menampilkan error,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-640,Proses month-end closing di SAP tidak berjalan,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-641,SAP Fiori sangat lambat saat proses month-end closing,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-642,SAP menampilkan error document number range exhausted saat posting transaksi di modul HR (Human Resources),ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-643,Proses goods receipt di SAP tidak berjalan,ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-644,Proses MRP di SAP tidak berjalan,ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-645,Akun SAP karyawan tidak berjalan karena VPN tidak aktif,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-646,Akun SAP karyawan menampilkan error karena VPN tidak aktif,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-647,Workflow payroll processing di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-648,Akun SAP karyawan tidak berjalan karena VPN tidak aktif,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-649,Integrasi SAP dengan sistem payroll tidak berjalan,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-650,Karyawan tidak bisa menjalankan laporan di SAP karena VPN tidak aktif,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-651,Integrasi SAP dengan sistem HRIS menampilkan error,ERP,Periksa konfigurasi master data yang terlibat dalam transaksi; koordinasikan dengan SAP Functional team
+TKT-652,Karyawan tidak bisa posting transaksi di SAP karena role belum dikonfigurasi,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-653,Proses intercompany billing di SAP menampilkan error,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-654,Workflow goods issue di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-655,Karyawan tidak bisa posting transaksi di SAP karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-656,Akun SAP karyawan tidak berjalan karena VPN tidak aktif,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-657,SAP GUI sangat lambat saat jam kerja sibuk,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-658,SAP GUI sangat lambat saat proses month-end closing,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-659,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-660,Integrasi SAP dengan sistem HRIS tidak berjalan,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-661,Akun SAP karyawan tidak berjalan karena role belum dikonfigurasi,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-662,Akun SAP karyawan menampilkan error karena role belum dikonfigurasi,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-663,SAP menampilkan error WSAECONNREFUSED saat menjalankan laporan di modul MM (Material Management),ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-664,Laporan laporan keuangan di SAP tidak menampilkan data dengan benar,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-665,SAP menampilkan error currency conversion error saat posting transaksi di modul FI (Finance),ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-666,Karyawan tidak bisa akses modul QM (Quality Management) di SAP karena VPN tidak aktif,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-667,Proses month-end closing di SAP tidak berjalan,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-668,Akun SAP karyawan tidak berjalan karena role belum dikonfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-669,Workflow purchase order di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-670,Workflow approval workflow di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-671,Akun SAP karyawan menampilkan error karena role belum dikonfigurasi,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-672,SAP menampilkan error document number range exhausted saat posting transaksi di modul Fiori,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-673,Workflow approval workflow di SAP tidak berjalan karena VPN tidak aktif,ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-674,Integrasi SAP dengan sistem payroll tidak berjalan,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-675,Karyawan tidak bisa akses modul ESS (Employee Self Service) di SAP karena VPN tidak aktif,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-676,SAP Fiori sangat lambat saat proses month-end closing,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-677,SAP menampilkan error WSAECONNREFUSED saat posting transaksi di modul ESS (Employee Self Service),ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-678,Data di SAP QM (Quality Management) menampilkan error setelah perubahan konfigurasi,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-679,Data di SAP FI (Finance) menampilkan error setelah upgrade sistem,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-680,Akun SAP karyawan tidak berjalan karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-681,Karyawan tidak bisa akses modul CO (Controlling) di SAP karena VPN tidak aktif,ERP,Periksa konfigurasi master data yang terlibat dalam transaksi; koordinasikan dengan SAP Functional team
+TKT-682,Akun SAP karyawan tidak berjalan karena VPN tidak aktif,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-683,Laporan laporan stok di SAP tidak menampilkan data dengan benar,ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-684,SAP GUI sangat lambat saat proses month-end closing,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-685,Karyawan tidak bisa akses modul ESS (Employee Self Service) di SAP karena VPN tidak aktif,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-686,Data di SAP CO (Controlling) menampilkan error setelah upgrade sistem,ERP,Periksa konfigurasi master data yang terlibat dalam transaksi; koordinasikan dengan SAP Functional team
+TKT-687,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-688,Karyawan tidak bisa akses modul ESS (Employee Self Service) di SAP karena role belum dikonfigurasi,ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-689,SAP menampilkan error mandatory field missing saat posting transaksi di modul Fiori,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-690,Karyawan tidak bisa menjalankan laporan di SAP karena VPN tidak aktif,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-691,Integrasi SAP dengan sistem payroll menampilkan error,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-692,Proses invoice verification di SAP menampilkan error,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-693,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-694,Laporan laporan keuangan di SAP tidak menampilkan data dengan benar,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-695,Data di SAP CO (Controlling) menampilkan error setelah perubahan konfigurasi,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-696,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-697,Data di SAP CO (Controlling) menampilkan error setelah perubahan konfigurasi,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-698,Proses depreciation run di SAP menampilkan error,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-699,Laporan laporan stok di SAP tidak bisa diakses,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-700,Workflow goods issue di SAP tidak berjalan karena VPN tidak aktif,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-701,Data di SAP Fiori tidak berjalan setelah perubahan konfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-702,Karyawan tidak bisa menjalankan laporan di SAP karena role belum dikonfigurasi,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-703,Laporan laporan stok di SAP tidak menampilkan data dengan benar,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-704,SAP menampilkan error WSAECONNREFUSED saat menjalankan laporan di modul PP (Production Planning),ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-705,SAP menampilkan error posting period closed saat posting transaksi di modul ESS (Employee Self Service),ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-706,Data di SAP SD (Sales Distribution) tidak berjalan setelah upgrade sistem,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-707,Workflow month-end closing di SAP tidak berjalan karena VPN tidak aktif,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-708,Integrasi SAP dengan sistem HRIS tidak berjalan,ERP,Periksa konfigurasi master data yang terlibat dalam transaksi; koordinasikan dengan SAP Functional team
+TKT-709,Workflow invoice verification di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-710,Integrasi SAP dengan sistem HRIS menampilkan error,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-711,Proses purchase order di SAP menampilkan error,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-712,Proses approval workflow di SAP menampilkan error,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-713,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-714,Integrasi SAP dengan sistem HRIS tidak berjalan,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-715,Proses goods issue di SAP menampilkan error,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-716,Data di SAP PM (Plant Maintenance) tidak berjalan setelah perubahan konfigurasi,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-717,Proses depreciation run di SAP menampilkan error,ERP,Buat reversal document dan posting ulang dengan data yang benar; dokumen SAP tidak bisa dihapus
+TKT-718,Laporan laporan stok di SAP tidak bisa diakses,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-719,Akun SAP karyawan menampilkan error karena role belum dikonfigurasi,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-720,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-721,SAP GUI sangat lambat saat jam kerja sibuk,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-722,Akun SAP karyawan tidak berjalan karena role belum dikonfigurasi,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-723,Integrasi SAP dengan sistem HRIS menampilkan error,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-724,Data di SAP Fiori menampilkan error setelah perubahan konfigurasi,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-725,Akun SAP karyawan menampilkan error karena VPN tidak aktif,ERP,Periksa konfigurasi master data yang terlibat dalam transaksi; koordinasikan dengan SAP Functional team
+TKT-726,Workflow intercompany billing di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-727,Laporan laporan stok di SAP tidak bisa diakses,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-728,Proses goods receipt di SAP menampilkan error,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-729,Workflow purchase order di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-730,Integrasi SAP dengan sistem payroll menampilkan error,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-731,Workflow intercompany billing di SAP tidak berjalan karena VPN tidak aktif,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-732,SAP Fiori sangat lambat saat proses month-end closing,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-733,Laporan laporan keuangan di SAP tidak menampilkan data dengan benar,ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-734,Data di SAP PM (Plant Maintenance) menampilkan error setelah upgrade sistem,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-735,Karyawan tidak bisa akses modul CO (Controlling) di SAP karena role belum dikonfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-736,SAP Fiori sangat lambat saat proses month-end closing,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-737,Laporan laporan stok di SAP tidak menampilkan data dengan benar,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-738,Laporan laporan stok di SAP tidak menampilkan data dengan benar,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-739,Workflow goods receipt di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-740,Proses month-end closing di SAP tidak berjalan,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-741,Workflow MRP di SAP tidak berjalan karena role belum dikonfigurasi,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-742,Akun SAP karyawan menampilkan error karena VPN tidak aktif,ERP,Pastikan VPN aktif dan terhubung sebelum membuka SAP GUI; periksa konfigurasi saplogon.ini
+TKT-743,Karyawan tidak bisa menjalankan laporan di SAP karena VPN tidak aktif,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-744,Integrasi SAP dengan sistem payroll menampilkan error,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-745,Karyawan tidak bisa akses modul CO (Controlling) di SAP karena role belum dikonfigurasi,ERP,Koordinasikan dengan tim Finance untuk proses koreksi manual; periode closed memerlukan special authorization
+TKT-746,Akun SAP karyawan menampilkan error karena VPN tidak aktif,ERP,Update konfigurasi output device dan printer di SAP; verifikasi email setting untuk output elektronik
+TKT-747,Integrasi SAP dengan sistem payroll tidak berjalan,ERP,Verifikasi status kurs dan harga di master data SAP untuk periode transaksi yang bersangkutan
+TKT-748,SAP Fiori sangat lambat saat jam kerja sibuk,ERP,Jalankan laporan dengan parameter lebih spesifik atau jadwalkan sebagai background job
+TKT-749,Karyawan tidak bisa akses modul CO (Controlling) di SAP karena role belum dikonfigurasi,ERP,Verifikasi authorization object yang diperlukan; buat permintaan akses ke SAP Basis dengan approval atasan
+TKT-750,Data di SAP QM (Quality Management) tidak berjalan setelah perubahan konfigurasi,ERP,Eskalasi ke SAP Basis Team via ITSM; sertakan screenshot error dan langkah yang sudah dicoba
+TKT-751,SAP menampilkan error mandatory field missing saat posting transaksi di modul FI (Finance),ERP,Koordinasikan dengan tim SAP Functional untuk analisis error dan solusi yang tepat
+TKT-752,Proses intercompany billing di SAP tidak berjalan,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-753,Integrasi SAP dengan sistem HRIS menampilkan error,ERP,Periksa dan perbaiki interface middleware antara SAP dan sistem terintegrasi
+TKT-754,Karyawan tidak bisa posting transaksi di SAP karena role belum dikonfigurasi,ERP,Periksa workflow konfigurasi dan log; verifikasi email approver aktif di sistem
+TKT-755,Karyawan meminta bantuan IT untuk buat badge visitor yang sebenarnya bukan tanggung jawab IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-756,Karyawan menanyakan prosedur lembur kepada IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-757,Karyawan meminta bantuan IT untuk meminjam perlengkapan kantor yang sebenarnya di luar cakupan layanan IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-758,Karyawan menanyakan prosedur lembur kepada IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-759,Karyawan melaporkan lampu mati kepada IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-760,Karyawan menanyakan reimburse biaya internet kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-761,Karyawan meminta IT untuk mengurus yang bukan tanggung jawab IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-762,Karyawan melaporkan proyektor ruang meeting tidak nyala kepada IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-763,Karyawan melaporkan proyektor ruang meeting tidak nyala kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-764,Karyawan meminta IT untuk mengurus yang bukan tanggung jawab IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-765,Tiket masuk ke IT untuk suhu ruangan terlalu dingin yang seharusnya ke Finance,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-766,Karyawan meminta IT untuk mengurus yang di luar cakupan layanan IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-767,Karyawan meminta bantuan IT untuk setup dekorasi ruangan yang sebenarnya bukan tanggung jawab IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-768,Karyawan melaporkan meja goyang kepada IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-769,Karyawan melaporkan meja goyang kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-770,Karyawan menanyakan tunjangan makan kepada IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-771,Karyawan meminta bantuan IT untuk mengatur meja ergonomis yang sebenarnya di luar cakupan layanan IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-772,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-773,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-774,Tiket masuk ke IT untuk lift tidak berfungsi yang seharusnya ke General Affairs,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-775,Karyawan melaporkan kulkas pantry bermasalah kepada IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-776,Tiket masuk ke IT untuk toilet bermasalah yang seharusnya ke Legal,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-777,Karyawan menanyakan aturan penggunaan laptop kantor untuk keperluan pribadi kepada IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-778,Karyawan meminta IT untuk membantu yang di luar cakupan layanan IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-779,Karyawan melaporkan toilet bermasalah kepada IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-780,Karyawan meminta bantuan IT untuk mengatur meja ergonomis yang sebenarnya di luar cakupan layanan IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-781,Karyawan melaporkan kursi rusak kepada IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-782,Tiket masuk ke IT untuk parkiran penuh yang seharusnya ke Finance,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-783,Karyawan meminta bantuan IT untuk meminjam perlengkapan kantor yang sebenarnya bukan tanggung jawab IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-784,Karyawan meminta bantuan IT untuk pesan konsumsi meeting yang sebenarnya di luar cakupan layanan IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-785,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-786,Tiket masuk ke IT untuk AC rusak yang seharusnya ke Facility Management,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-787,Karyawan meminta bantuan IT untuk buat badge visitor yang sebenarnya di luar cakupan layanan IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-788,Karyawan meminta IT untuk mengurus yang di luar cakupan layanan IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-789,Karyawan melaporkan coffee machine rusak kepada IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-790,Karyawan meminta bantuan IT untuk setup kendaraan dinas yang sebenarnya bukan tanggung jawab IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-791,Tiket masuk ke IT untuk coffee machine rusak yang seharusnya ke Tim Marketing,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-792,Karyawan meminta bantuan IT untuk service kendaraan dinas yang sebenarnya di luar cakupan layanan IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-793,Tiket masuk ke IT untuk lampu mati yang seharusnya ke Legal,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-794,Karyawan melaporkan meja goyang kepada IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-795,Karyawan meminta bantuan IT untuk setup dekorasi ruangan yang sebenarnya bukan tanggung jawab IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-796,Karyawan menanyakan kebijakan WFH kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-797,Karyawan melaporkan coffee machine rusak kepada IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-798,Karyawan meminta IT untuk mengurus yang bukan tanggung jawab IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-799,Karyawan meminta bantuan IT untuk pesan konsumsi meeting yang sebenarnya bukan tanggung jawab IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-800,Karyawan meminta IT untuk mengurus yang bukan tanggung jawab IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-801,Karyawan meminta IT untuk mengurus yang di luar cakupan layanan IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-802,Karyawan melaporkan kebocoran atap kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-803,Karyawan meminta bantuan IT untuk buat ID card yang sebenarnya bukan tanggung jawab IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-804,Karyawan meminta IT untuk mengurus yang di luar cakupan layanan IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-805,Karyawan menanyakan dress code kepada IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-806,Karyawan meminta bantuan IT untuk mengatur meja ergonomis yang sebenarnya di luar cakupan layanan IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-807,Karyawan meminta bantuan IT untuk service kendaraan dinas yang sebenarnya di luar cakupan layanan IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-808,Karyawan meminta bantuan IT untuk mengatur meja ergonomis yang sebenarnya bukan tanggung jawab IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-809,Karyawan menanyakan prosedur lembur kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-810,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-811,Karyawan melaporkan suhu ruangan terlalu dingin kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-812,Karyawan melaporkan coffee machine rusak kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-813,Karyawan meminta bantuan IT untuk setup kendaraan dinas yang sebenarnya bukan tanggung jawab IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-814,Karyawan menanyakan aturan cuti kepada IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-815,Karyawan menanyakan proses klaim asuransi kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-816,Karyawan meminta bantuan IT untuk buat badge visitor yang sebenarnya di luar cakupan layanan IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-817,Tiket masuk ke IT untuk kebocoran atap yang seharusnya ke HR,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-818,Karyawan menanyakan prosedur lembur kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-819,Karyawan menanyakan tunjangan makan kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-820,Karyawan meminta IT untuk mengurus yang di luar cakupan layanan IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-821,Karyawan melaporkan lift tidak berfungsi kepada IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-822,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-823,Tiket masuk ke IT untuk toilet bermasalah yang seharusnya ke Tim Marketing,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-824,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-825,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-826,Karyawan meminta bantuan IT untuk buat ID card yang sebenarnya bukan tanggung jawab IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-827,Tiket masuk ke IT untuk kebocoran atap yang seharusnya ke Tim Marketing,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-828,Karyawan menanyakan dress code kepada IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-829,Tiket masuk ke IT untuk proyektor ruang meeting tidak nyala yang seharusnya ke Finance,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-830,Karyawan meminta bantuan IT untuk service kendaraan dinas yang sebenarnya bukan tanggung jawab IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-831,Karyawan meminta bantuan IT untuk setup kendaraan dinas yang sebenarnya di luar cakupan layanan IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-832,Karyawan menanyakan jadwal cuti bersama kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-833,Karyawan melaporkan kebocoran atap kepada IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-834,Karyawan melaporkan parkiran penuh kepada IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-835,Karyawan melaporkan coffee machine rusak kepada IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-836,Karyawan melaporkan kebocoran atap kepada IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-837,Karyawan menanyakan prosedur lembur kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-838,Karyawan melaporkan suhu ruangan terlalu dingin kepada IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-839,Karyawan meminta bantuan IT untuk buat badge visitor yang sebenarnya di luar cakupan layanan IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-840,Tiket masuk ke IT untuk lift tidak berfungsi yang seharusnya ke Finance,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-841,Karyawan menanyakan proses klaim asuransi kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-842,Karyawan meminta IT untuk mengurus yang bukan tanggung jawab IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-843,Karyawan meminta bantuan IT untuk service kendaraan dinas yang sebenarnya di luar cakupan layanan IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-844,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-845,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-846,Karyawan melaporkan AC rusak kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-847,Karyawan meminta bantuan IT untuk pesan tiket perjalanan dinas yang sebenarnya bukan tanggung jawab IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-848,Karyawan melaporkan AC rusak kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-849,Karyawan meminta bantuan IT untuk urus asuransi perangkat pribadi yang sebenarnya bukan tanggung jawab IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-850,Tiket masuk ke IT untuk parkiran penuh yang seharusnya ke General Affairs,Other,Arahkan ke vendor atau departemen yang berwenang; berikan nomor kontak yang tepat kepada karyawan
+TKT-851,Karyawan meminta bantuan IT untuk setup kendaraan dinas yang sebenarnya di luar cakupan layanan IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-852,Karyawan meminta bantuan IT untuk pindah barang saat mutasi yang sebenarnya bukan tanggung jawab IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-853,Karyawan melaporkan kebocoran atap kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-854,Karyawan meminta bantuan IT untuk buat ID card yang sebenarnya di luar cakupan layanan IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-855,Karyawan meminta bantuan IT untuk setup dekorasi ruangan yang sebenarnya di luar cakupan layanan IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-856,Karyawan meminta bantuan IT untuk buat ID card yang sebenarnya di luar cakupan layanan IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-857,Karyawan melaporkan parkiran penuh kepada IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-858,Tiket masuk ke IT untuk toilet bermasalah yang seharusnya ke Security,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-859,Karyawan melaporkan coffee machine rusak kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-860,Karyawan menanyakan kebijakan WFH kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-861,Karyawan menanyakan tunjangan makan kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-862,Karyawan melaporkan lampu mati kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-863,Tiket masuk ke IT untuk proyektor ruang meeting tidak nyala yang seharusnya ke Security,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-864,Karyawan menanyakan jadwal cuti bersama kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-865,Karyawan melaporkan parkiran penuh kepada IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-866,Tiket masuk ke IT untuk kebocoran atap yang seharusnya ke HR,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-867,Karyawan meminta bantuan IT untuk urus asuransi perangkat pribadi yang sebenarnya di luar cakupan layanan IT,Other,IT hanya support perangkat dan sistem kantor; untuk kebutuhan pribadi karyawan bertanggung jawab sendiri
+TKT-868,Karyawan melaporkan lampu mati kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-869,Karyawan melaporkan meja goyang kepada IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-870,Karyawan melaporkan proyektor ruang meeting tidak nyala kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-871,Karyawan melaporkan meja goyang kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-872,Tiket masuk ke IT untuk toilet bermasalah yang seharusnya ke HR,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-873,Karyawan menanyakan proses klaim asuransi kepada IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-874,Tiket masuk ke IT untuk coffee machine rusak yang seharusnya ke General Affairs,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-875,Karyawan meminta IT untuk mengurus yang di luar cakupan layanan IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-876,Karyawan melaporkan coffee machine rusak kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-877,Karyawan menanyakan tunjangan makan kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-878,Karyawan melaporkan lampu mati kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-879,Karyawan menanyakan tunjangan makan kepada IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-880,Karyawan melaporkan parkiran penuh kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-881,Karyawan meminta bantuan IT untuk pindah barang saat mutasi yang sebenarnya bukan tanggung jawab IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-882,Karyawan meminta bantuan IT untuk mengatur meja ergonomis yang sebenarnya di luar cakupan layanan IT,Other,Catat sebagai tiket yang salah routing; arahkan ke departemen yang tepat dan tutup tiket IT
+TKT-883,Karyawan meminta bantuan IT untuk buat ID card yang sebenarnya bukan tanggung jawab IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-884,Tiket masuk ke IT untuk parkiran penuh yang seharusnya ke HR,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-885,Karyawan meminta bantuan IT untuk mengatur meja ergonomis yang sebenarnya bukan tanggung jawab IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-886,Karyawan melaporkan lift tidak berfungsi kepada IT,Other,Fasilitas gedung adalah tanggung jawab Facility Management; arahkan laporan ke departemen tersebut
+TKT-887,Karyawan melaporkan AC rusak kepada IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-888,Karyawan menanyakan reimburse biaya internet kepada IT,Other,Koordinasikan dengan Procurement untuk permintaan yang berkaitan dengan pengadaan non-IT
+TKT-889,Karyawan menanyakan reimburse biaya internet kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-890,Karyawan meminta IT untuk membantu yang di luar cakupan layanan IT,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-891,Karyawan meminta IT untuk membantu yang bukan tanggung jawab IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan
+TKT-892,Karyawan menanyakan prosedur lembur kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-893,Karyawan meminta bantuan IT untuk urus asuransi perangkat pribadi yang sebenarnya di luar cakupan layanan IT,Other,Tandai tiket sebagai 'out of scope IT'; koordinasikan penutupan tiket dan arahkan ke PIC yang benar
+TKT-894,Karyawan menanyakan reimburse biaya internet kepada IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-895,Karyawan meminta bantuan IT untuk setup kendaraan dinas yang sebenarnya di luar cakupan layanan IT,Other,Ini bukan ranah IT; arahkan karyawan ke General Affairs di ekstensi 101 untuk penanganan
+TKT-896,Karyawan meminta bantuan IT untuk meminjam perlengkapan kantor yang sebenarnya di luar cakupan layanan IT,Other,Tolak tiket dan jelaskan bahwa layanan ini bukan ranah IT; arahkan ke departemen yang tepat
+TKT-897,Tiket masuk ke IT untuk lampu mati yang seharusnya ke General Affairs,Other,Berikan panduan ke karyawan tentang cara menghubungi departemen yang tepat untuk kebutuhannya
+TKT-898,Karyawan melaporkan lampu mati kepada IT,Other,Keamanan fisik ditangani oleh Security Gedung; arahkan ke petugas keamanan di lantai 1
+TKT-899,Karyawan menanyakan aturan penggunaan laptop kantor untuk keperluan pribadi kepada IT,Other,Masalah ini ditangani oleh HR; arahkan ke tim HR atau lihat panduan di portal intranet
+TKT-900,Karyawan melaporkan kursi rusak kepada IT,Other,Informasikan kebijakan helpdesk IT yang hanya menangani masalah teknologi informasi perusahaan

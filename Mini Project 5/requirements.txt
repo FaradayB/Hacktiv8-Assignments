@@ -1,6 +1,30 @@
-openai>=1.30.0
-azure-search-documents>=11.4.0
-azure-core>=1.30.0
+# ============================================================
+# requirements.txt – IT Helpdesk RAG System
+# Mini Project 5 | Faraday Barr Fatahillah
+#
+# Instalasi:
+#   pip install -r requirements.txt
+#
+# Catatan: Ollama harus diinstal secara terpisah.
+# Lihat: https://ollama.com
+# ============================================================
+
+# --- Manipulasi Data ---
 pandas>=2.0.0
-python-dotenv>=1.0.0
+
+# --- Machine Learning & Klasifikasi Teks ---
+scikit-learn>=1.3.0
+
+# --- Embedding & Penyimpanan Vektor ---
+chromadb>=0.5.0
+sentence-transformers>=2.7.0
+
+# --- LLM Lokal via Ollama ---
+ollama>=0.2.0
+
+# --- Format JSON Lines ---
 jsonlines>=4.0.0
+
+# --- Notebook Jupyter ---
+jupyter>=1.0.0
+ipykernel>=6.0.0
