@@ -65,12 +65,6 @@ class OpenAIGenerator:
         if not chunks:
             return "Saya tidak memiliki informasi tersebut berdasarkan dokumen yang tersedia."
 
-        try:
-            from openai import OpenAI
-        except Exception:
-            return FakeGroundedGenerator().generate(query, chunks)
-
-        client = OpenAI(base_url=self.base_url, api_key=self.api_key)
         context = build_context(chunks)
 
         user_prompt = (
@@ -80,7 +74,7 @@ class OpenAIGenerator:
             "Jika tidak ada dukungan di konteks, gunakan kalimat fallback yang diberikan."
         )
 
-        resp = client.chat.completions.create(
+        resp = self.client.chat.completions.create(
             model=self.model,
             temperature=0,
             messages=[

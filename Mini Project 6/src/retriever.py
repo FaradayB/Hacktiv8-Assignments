@@ -1,12 +1,12 @@
 import csv
 import json
 from collections import Counter
-from src.text_utils import cosine_from_counters
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from src.config import settings
-from src.text_utils import chunk_text, tokenize
+from src.text_utils import chunk_text, tokenize, cosine_from_counters
+from src.schemas import Source
 from pypdf import PdfReader
 
 
@@ -128,27 +128,38 @@ class LocalRetriever:
         self.ensure_loaded()
         query_tokens = tokenize(query)
         _ = query_tokens
-        # TODO(STAGE 1): Score chunks and return top_k RetrievedChunk objects.
-        if not query_tokens:
+        # TODO(STAGE 1): Score chunks and return top_k RetrievedChunk objects
+        if not self.chunks:
             return []
-        
+
         query_counter = Counter(query_tokens)
         scored: list[RetrievedChunk] = []
 
         for chunk in self.chunks:
-            score = cosine_from_counters(query_counter, Counter(chunk.tokens))
-            if score > 0:
-                score.append(
-                    RetrievedChunk(
-                        chunk_id=chunk.chunk_id,
-                        filename=chunk.filename,
-                        text=chunk.text,
-                        score=score
-                    )
+            chunk_counter = Counter(chunk.tokens)
+            score = cosine_from_counters(query_counter, chunk_counter)
+            scored.append(
+                RetrievedChunk(
+                    chunk_id=chunk.chunk_id,
+                    filename=chunk.filename,
+                    text=chunk.text,
+                    score=score,
                 )
+            )
+
         scored.sort(key=lambda item: item.score, reverse=True)
         k = top_k if top_k is not None else settings.top_k
         return scored[:k]
+    
+    def make_sources(self, chunks: list[RetrievedChunk]) -> list[Source]:
+        return [
+            Source(
+                chunk_id=chunk.chunk_id,
+                filename=chunk.filename,
+                score=chunk.score,
+            )
+            for chunk in chunks
+        ]
 
 
 def build_index() -> None:
