@@ -20,7 +20,7 @@ def estimate_tokens(text: str) -> int:
 
 def cosine_from_counters(a: Counter, b: Counter) -> float:
     # TODO(STAGE 1): Implement cosine similarity for sparse lexical vectors.
-    if not a or b: 
+    if not a or not b: 
         return 0.0
     dot = 0.0
     for token, a_val in a.items():

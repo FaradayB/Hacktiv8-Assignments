@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     log_path: str = "./logs/app.jsonl"
     top_k: int = 4
     max_context_chars: int = 5000
-    idr_per_usd: float = 16200.0
+    idr_per_usd: float = 17885.0
     input_usd_per_1m_tokens: float = 0.15
     output_usd_per_1m_tokens: float = 0.60
 
