@@ -221,6 +221,8 @@ This system directly contributes to both by reducing the frequency of safety-cri
 | 7   | Kementerian Perhubungan — Road safety statistics Indonesia         | https://www.dephub.go.id                                                                  |
 | 8   | Deloitte — Automotive predictive maintenance ROI, 2022             | https://www2.deloitte.com/automotive                                                      |
 
+---
+
 I thought this through about the pipeline LLM Powered Predictive Maintenance
 
 Concept:
@@ -229,6 +231,10 @@ The data is captured by mechanics from an automated detection system or taking t
 As for the car owner, it will get a predictive maintenance of when to check the data, so the electrical/IoT system of the car will give a 12 hour (1 - 2 hour gap data for the day from 7 AM to 7 PM) tabular report to the database then it will give the data to the model and send the summary of what needs to be alerted to the car owner.
 
 could you change this markdown according to the concept I gave? I want a problem statement, Objective, User, Business relevance, etc. Anything that is inline with a business pitch
+
+---
+
+Flow chart
 
 ```mermaid
 flowchart LR
@@ -256,5 +262,4 @@ flowchart LR
         E -->|"Risk"| I["LLM Summarizer\nin Bahasa Indonesia"]
         I -->K["Push Alert\nPlain language\nUrgency + action"]
     end
-
 ```
