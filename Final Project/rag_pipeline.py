@@ -62,7 +62,7 @@ CHUNK_SIZE      = 500
 CHUNK_OVERLAP   = 50
 TOP_K           = 4
 
-EMBEDDING_MODEL = "models/text-embedding-004"   # Google's latest embedding model
+EMBEDDING_MODEL = os.getenv("GOOGLE_EMBEDDING")  # Google's latest embedding model
 
 # Map each SOP filename to a human-readable track label
 SOP_TRACK_MAP = {
@@ -325,41 +325,41 @@ def format_context(docs: List[Document]) -> str:
     return "\n\n---\n\n".join(parts)
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# SELF-TEST
-# ─────────────────────────────────────────────────────────────────────────────
+# # ─────────────────────────────────────────────────────────────────────────────
+# # SELF-TEST
+# # ─────────────────────────────────────────────────────────────────────────────
 
-if __name__ == "__main__":
-    print("\n" + "=" * 60)
-    print("  RAG Pipeline — Self Test (Google Gemini, SOP Corpus)")
-    print("=" * 60)
+# if __name__ == "__main__":
+#     print("\n" + "=" * 60)
+#     print("  RAG Pipeline — Self Test (Google Gemini, SOP Corpus)")
+#     print("=" * 60)
 
-    vs = build_vectorstore(force_rebuild=True)
+#     vs = build_vectorstore(force_rebuild=True)
 
-    test_queries = [
-        # Track 1 — technician
-        "oil pressure low inspection steps",
-        "battery degradation alternator check",
-        "engine misfire spark plug diagnosis",
-        "cooling system overheating thermostat",
-        # Track 2 — owner alert
-        "high risk alert owner bahasa indonesia do not drive",
-        "medium risk schedule service notification",
-        "TPMS tyre pressure low owner warning",
-        "Class 3 risiko tinggi immediate action",
-    ]
+#     test_queries = [
+#         # Track 1 — technician
+#         "oil pressure low inspection steps",
+#         "battery degradation alternator check",
+#         "engine misfire spark plug diagnosis",
+#         "cooling system overheating thermostat",
+#         # Track 2 — owner alert
+#         "high risk alert owner bahasa indonesia do not drive",
+#         "medium risk schedule service notification",
+#         "TPMS tyre pressure low owner warning",
+#         "Class 3 risiko tinggi immediate action",
+#     ]
 
-    print(f"\nRunning {len(test_queries)} test queries ...\n")
-    for q in test_queries:
-        print(f"  Q: {q}")
-        results = retrieve(q, vectorstore=vs, k=3)
-        for doc in results:
-            track   = doc.metadata.get("track", "?")
-            chunk   = doc.metadata.get("chunk_id", "?")
-            snippet = doc.page_content[:100].replace("\n", " ")
-            print(f"    [{track} | chunk {chunk}]  {snippet}...")
-        print()
+#     print(f"\nRunning {len(test_queries)} test queries ...\n")
+#     for q in test_queries:
+#         print(f"  Q: {q}")
+#         results = retrieve(q, vectorstore=vs, k=3)
+#         for doc in results:
+#             track   = doc.metadata.get("track", "?")
+#             chunk   = doc.metadata.get("chunk_id", "?")
+#             snippet = doc.page_content[:100].replace("\n", " ")
+#             print(f"    [{track} | chunk {chunk}]  {snippet}...")
+#         print()
 
-    print("=" * 60)
-    print("  Self-test complete. Vector store persisted to chroma_db/")
-    print("=" * 60)
+#     print("=" * 60)
+#     print("  Self-test complete. Vector store persisted to chroma_db/")
+#     print("=" * 60)

@@ -1,7 +1,7 @@
 # Vehicle Predictive Maintenance — Full Project
 # Install: pip install -r requirements.txt
-# Run:     jupyter lab
-# Requires: GOOGLE_API_KEY in .env file
+# Run:     jupyter lab  (notebooks) | streamlit run app_technician.py
+# Requires: GOOGLE_API_KEY and DB_* variables in .env file
 
 # ── Jupyter environment ───────────────────────────────────────────────────────
 jupyterlab==4.5.7          # Recommended UI for running notebooks
@@ -18,12 +18,21 @@ langchain-chroma==1.1.0          # ChromaDB vector store integration
 langchain-text-splitters==1.1.2  # RecursiveCharacterTextSplitter
 chromadb==1.5.9                  # Vector store (persisted to chroma_db/)
 google-genai==2.7.0              # Google Generative AI SDK
-python-dotenv==1.2.2             # Load GOOGLE_API_KEY from .env file
+python-dotenv==1.2.2             # Load environment variables from .env file
+
+# ── Monitoring ────────────────────────────────────────────────────────────────
+prometheus-client==0.25.0        # Exposes /metrics endpoint scraped by Prometheus
+
+# ── Application ───────────────────────────────────────────────────────────────
+streamlit                        # Web UI for both apps (tablet + mobile)
+
+# ── Database ──────────────────────────────────────────────────────────────────
+psycopg2-binary==2.9.12          # PostgreSQL connector
 
 # ── Core data handling ────────────────────────────────────────────────────────
 pandas==3.0.2
 numpy==2.4.4
-openpyxl==3.1.5            # Excel (.xlsx) file reading
+openpyxl==3.1.5            # Excel (.xlsx) file reading (seeding the DB)
 
 # ── Machine learning ──────────────────────────────────────────────────────────
 scikit-learn==1.8.0
