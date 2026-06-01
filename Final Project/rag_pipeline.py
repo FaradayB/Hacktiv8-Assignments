@@ -82,14 +82,11 @@ def load_documents(docs_dir: Path = DOCS_DIR) -> List[Document]:
     can cite the source in its output.
     """
     if not docs_dir.exists():
-        raise FileNotFoundError(
-            f"docs/ directory not found at '{docs_dir.resolve()}'. "
-            "Create it and place the SOP .md files inside."
-        )
+        raise FileNotFoundError("directory not found")
 
     md_files = sorted(docs_dir.glob("*.md"))
     if not md_files:
-        raise ValueError(f"No .md files found in '{docs_dir}'.")
+        raise ValueError("No files found")
 
     log.info(f"[Stage 1] Loading SOP documents from '{docs_dir}' ...")
 
@@ -164,7 +161,7 @@ def get_embeddings() -> GoogleGenerativeAIEmbeddings:
     Initialise Google Generative AI embedding model.
     Requires GOOGLE_API_KEY in .env or environment.
 
-    Model: text-embedding-004
+    Model: gemini-embedding-2
     - 768-dimensional embeddings
     - Supports task_type='retrieval_document' for indexing
       and task_type='retrieval_query' for queries
@@ -175,7 +172,7 @@ def get_embeddings() -> GoogleGenerativeAIEmbeddings:
             "GOOGLE_API_KEY not found. Add it to your .env file:\n"
             "  GOOGLE_API_KEY=your_key_here"
         )
-    log.info(f"[Stage 3] Initialising embeddings  (model={EMBEDDING_MODEL}) ...")
+    log.info(f"[Stage 3] Initializing embeddings  (model={EMBEDDING_MODEL}) ...")
     return GoogleGenerativeAIEmbeddings(
         model=EMBEDDING_MODEL,
         google_api_key=api_key,
@@ -293,6 +290,7 @@ def retrieve(
     Returns:
         List of Document objects with page_content and metadata.
     """
+
     if vectorstore is None:
         vectorstore = build_vectorstore(force_rebuild=False)
 
@@ -325,41 +323,41 @@ def format_context(docs: List[Document]) -> str:
     return "\n\n---\n\n".join(parts)
 
 
-# # ─────────────────────────────────────────────────────────────────────────────
-# # SELF-TEST
-# # ─────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# SELF-TEST
+# ─────────────────────────────────────────────────────────────────────────────
 
-# if __name__ == "__main__":
-#     print("\n" + "=" * 60)
-#     print("  RAG Pipeline — Self Test (Google Gemini, SOP Corpus)")
-#     print("=" * 60)
+if __name__ == "__main__":
+    print("\n" + "=" * 60)
+    print("  RAG Pipeline — Self Test (Google Gemini, SOP Corpus)")
+    print("=" * 60)
 
-#     vs = build_vectorstore(force_rebuild=True)
+    vs = build_vectorstore(force_rebuild=True)
 
-#     test_queries = [
-#         # Track 1 — technician
-#         "oil pressure low inspection steps",
-#         "battery degradation alternator check",
-#         "engine misfire spark plug diagnosis",
-#         "cooling system overheating thermostat",
-#         # Track 2 — owner alert
-#         "high risk alert owner bahasa indonesia do not drive",
-#         "medium risk schedule service notification",
-#         "TPMS tyre pressure low owner warning",
-#         "Class 3 risiko tinggi immediate action",
-#     ]
+    test_queries = [
+        # Track 1 — technician
+        "oil pressure low inspection steps",
+        "battery degradation alternator check",
+        "engine misfire spark plug diagnosis",
+        "cooling system overheating thermostat",
+        # Track 2 — owner alert
+        "high risk alert owner bahasa indonesia do not drive",
+        "medium risk schedule service notification",
+        "TPMS tyre pressure low owner warning",
+        "Class 3 risiko tinggi immediate action",
+    ]
 
-#     print(f"\nRunning {len(test_queries)} test queries ...\n")
-#     for q in test_queries:
-#         print(f"  Q: {q}")
-#         results = retrieve(q, vectorstore=vs, k=3)
-#         for doc in results:
-#             track   = doc.metadata.get("track", "?")
-#             chunk   = doc.metadata.get("chunk_id", "?")
-#             snippet = doc.page_content[:100].replace("\n", " ")
-#             print(f"    [{track} | chunk {chunk}]  {snippet}...")
-#         print()
+    print(f"\nRunning {len(test_queries)} test queries ...\n")
+    for q in test_queries:
+        print(f"  Q: {q}")
+        results = retrieve(q, vectorstore=vs, k=3)
+        for doc in results:
+            track   = doc.metadata.get("track", "?")
+            chunk   = doc.metadata.get("chunk_id", "?")
+            snippet = doc.page_content[:100].replace("\n", " ")
+            print(f"    [{track} | chunk {chunk}]  {snippet}...")
+        print()
 
-#     print("=" * 60)
-#     print("  Self-test complete. Vector store persisted to chroma_db/")
-#     print("=" * 60)
+    print("=" * 60)
+    print("  Self-test complete. Vector store persisted to chroma_db/")
+    print("=" * 60)

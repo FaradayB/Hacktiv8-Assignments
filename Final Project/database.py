@@ -518,78 +518,78 @@ def row_to_track2_sensors(row: Dict[str, Any]) -> Dict[str, float]:
     }
 
 
-# # ─────────────────────────────────────────────────────────────────────────────
-# # SELF-TEST
-# # ─────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# SELF-TEST
+# ─────────────────────────────────────────────────────────────────────────────
 
-# if __name__ == "__main__":
-#     import sys
-#     logging.basicConfig(level=logging.INFO, format="%(levelname)s  %(message)s")
+if __name__ == "__main__":
+    import sys
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s  %(message)s")
 
-#     print("\n" + "=" * 60)
-#     print("  db.py — Self Test")
-#     print("=" * 60)
+    print("\n" + "=" * 60)
+    print("  db.py — Self Test")
+    print("=" * 60)
 
-#     # Step 1: Create schema
-#     print("\n[1] Creating schema ...")
-#     create_schema()
+    # Step 1: Create schema
+    print("\n[1] Creating schema ...")
+    create_schema()
 
-#     # Step 2: Seed from Excel
-#     print("\n[2] Seeding from Excel ...")
-#     seed_database()
+    # Step 2: Seed from Excel
+    print("\n[2] Seeding from Excel ...")
+    seed_database()
 
-#     # Step 3: Query plates
-#     print("\n[3] Available plates (Track 1):")
-#     plates_t1 = get_all_plates(track=1)
-#     for p in plates_t1[:5]:
-#         print(f"   {p}")
-#     print(f"   ... ({len(plates_t1)} total)")
+    # Step 3: Query plates
+    print("\n[3] Available plates (Track 1):")
+    plates_t1 = get_all_plates(track=1)
+    for p in plates_t1[:5]:
+        print(f"   {p}")
+    print(f"   ... ({len(plates_t1)} total)")
 
-#     # Step 4: Fetch a Track 1 record
-#     test_plate = plates_t1[0]
-#     print(f"\n[4] Track 1 record for plate: {test_plate}")
-#     rec = get_track1_record(test_plate)
-#     if rec:
-#         print(f"   Owner     : {rec['owner_name']}")
-#         print(f"   Model     : {rec['car_model']} {rec['car_year']}")
-#         print(f"   True Fault: {rec['true_fault_class']} — {rec['true_fault_label']}")
-#         sensors = row_to_track1_sensors(rec)
-#         print(f"   Sensors   : {len(sensors)} features extracted")
+    # Step 4: Fetch a Track 1 record
+    test_plate = plates_t1[0]
+    print(f"\n[4] Track 1 record for plate: {test_plate}")
+    rec = get_track1_record(test_plate)
+    if rec:
+        print(f"   Owner     : {rec['owner_name']}")
+        print(f"   Model     : {rec['car_model']} {rec['car_year']}")
+        print(f"   True Fault: {rec['true_fault_class']} — {rec['true_fault_label']}")
+        sensors = row_to_track1_sensors(rec)
+        print(f"   Sensors   : {len(sensors)} features extracted")
 
-#     # Step 5: Fetch a Track 2 record
-#     plates_t2 = get_all_plates(track=2)
-#     test_plate2 = plates_t2[0]
-#     print(f"\n[5] Track 2 record for plate: {test_plate2}")
-#     rec2 = get_track2_record(test_plate2)
-#     if rec2:
-#         print(f"   Owner     : {rec2['owner_name']}")
-#         print(f"   Model     : {rec2['car_model']} {rec2['car_year']}")
-#         print(f"   True Risk : {rec2['true_risk_class']} — {rec2['true_risk_label']}")
-#         sensors2 = row_to_track2_sensors(rec2)
-#         print(f"   Sensors   : {len(sensors2)} features extracted")
+    # Step 5: Fetch a Track 2 record
+    plates_t2 = get_all_plates(track=2)
+    test_plate2 = plates_t2[0]
+    print(f"\n[5] Track 2 record for plate: {test_plate2}")
+    rec2 = get_track2_record(test_plate2)
+    if rec2:
+        print(f"   Owner     : {rec2['owner_name']}")
+        print(f"   Model     : {rec2['car_model']} {rec2['car_year']}")
+        print(f"   True Risk : {rec2['true_risk_class']} — {rec2['true_risk_label']}")
+        sensors2 = row_to_track2_sensors(rec2)
+        print(f"   Sensors   : {len(sensors2)} features extracted")
 
-#     # Step 6: Log a dummy query
-#     print("\n[6] Logging dummy query ...")
-#     if rec:
-#         log_query(
-#             track=1,
-#             plate_number=test_plate,
-#             test_id=rec["test_id"],
-#             predicted_class=0,
-#             predicted_label="Normal",
-#             response_time_ms=0,
-#             context_chunks=0,
-#             llm_called=False,
-#         )
-#         print("   Query logged.")
+    # Step 6: Log a dummy query
+    print("\n[6] Logging dummy query ...")
+    if rec:
+        log_query(
+            track=1,
+            plate_number=test_plate,
+            test_id=rec["test_id"],
+            predicted_class=0,
+            predicted_label="Normal",
+            response_time_ms=0,
+            context_chunks=0,
+            llm_called=False,
+        )
+        print("   Query logged.")
 
-#     # Step 7: Read query log
-#     print("\n[7] Recent query log:")
-#     logs = get_query_log(limit=3)
-#     for entry in logs:
-#         print(f"   {entry['queried_at']} | T{entry['track']} | "
-#               f"{entry['plate_number']} | {entry['predicted_label']}")
+    # Step 7: Read query log
+    print("\n[7] Recent query log:")
+    logs = get_query_log(limit=3)
+    for entry in logs:
+        print(f"   {entry['queried_at']} | T{entry['track']} | "
+              f"{entry['plate_number']} | {entry['predicted_label']}")
 
-#     print("\n" + "=" * 60)
-#     print("  Self-test complete.")
-#     print("=" * 60)
+    print("\n" + "=" * 60)
+    print("  Self-test complete.")
+    print("=" * 60)

@@ -62,12 +62,8 @@ def get_llm() -> ChatGoogleGenerativeAI:
     """
     api_key = os.getenv("GOOGLE_API_KEY")
     if not api_key:
-        raise EnvironmentError(
-            "GOOGLE_API_KEY not found. Add it to your .env file:\n"
-            "  GOOGLE_API_KEY=your_key_here\n"
-            "Get a free key: https://aistudio.google.com/app/apikey"
-        )
-    log.info(f"Initialising LLM  (model={LLM_MODEL}, temp={TEMPERATURE})")
+        raise EnvironmentError("GOOGLE_API_KEY not found")
+    log.info(f"Initializing LLM (model={LLM_MODEL}, temp={TEMPERATURE})")
     return ChatGoogleGenerativeAI(
         model=LLM_MODEL,
         google_api_key=api_key,
@@ -80,7 +76,7 @@ def get_llm() -> ChatGoogleGenerativeAI:
 # TRACK 1 — TECHNICIAN FAULT BRIEF
 # ─────────────────────────────────────────────────────────────────────────────
 
-TRACK1_SYSTEM_PROMPT = """You are an expert automotive diagnostic assistant for Mitsubishi authorised workshops.
+TRACK1_SYSTEM_PROMPT = """You are an expert automotive diagnostic assistant for Mitsubishi authorized workshops.
 
 Your role is to generate a structured Technician Fault Brief based on:
 1. The ML anomaly detection result (fault class and label)
@@ -117,11 +113,11 @@ Detection     : 30-day telemetry anomaly (ML classification)
 
 SENSOR FINDINGS
 ---------------
-[List each sensor that is outside normal SOP thresholds. Format: Sensor: actual value (SOP normal range: X–Y)]
+[List each sensor that is outside normal SOP thresholds. Format: Sensor: actual value (SOP normal range: X-Y)]
 
 PROBABLE CAUSE
 --------------
-[Top 1–3 probable causes from the SOP, ranked by likelihood]
+[Top 1-3 probable causes from the SOP, ranked by likelihood]
 
 INSPECTION CHECKLIST
 --------------------
@@ -216,7 +212,7 @@ def build_chains(vectorstore: Chroma) -> Dict[str, Any]:
     llm = get_llm()
     log.info("Building Track 1 chain (Technician Fault Brief) ...")
     t1_chain = build_track1_chain(llm)
-    log.info("Building Track 2 chain (Owner Risk Alert — Bahasa Indonesia) ...")
+    log.info("Building Track 2 chain (Owner Risk Alert - Bahasa Indonesia) ...")
     t2_chain = build_track2_chain(llm)
     log.info("Both chains ready.")
     return {
@@ -264,7 +260,7 @@ def run_track1(
 
     Args:
         chains:          Output of build_chains()
-        fault_class:     ML model output (0–7)
+        fault_class:     ML model output (0-7)
         sensor_readings: Dict of sensor name → value from 30-day telemetry
 
     Returns:
@@ -384,68 +380,68 @@ def run_track2(
     }
 
 
-# # ─────────────────────────────────────────────────────────────────────────────
-# # SELF-TEST
-# # ─────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# SELF-TEST
+# ─────────────────────────────────────────────────────────────────────────────
 
-# if __name__ == "__main__":
-#     from rag_pipeline import build_vectorstore
+if __name__ == "__main__":
+    from rag_pipeline import build_vectorstore
 
-#     print("\n" + "=" * 60)
-#     print("  LLM Chain — Self Test (Google Gemini)")
-#     print("=" * 60)
+    print("\n" + "=" * 60)
+    print("  LLM Chain — Self Test (Google Gemini)")
+    print("=" * 60)
 
-#     vs     = build_vectorstore(force_rebuild=False)
-#     chains = build_chains(vs)
+    vs     = build_vectorstore(force_rebuild=False)
+    chains = build_chains(vs)
 
-#     # ── Track 1 test: Oil Pressure Issue (Class 6 — Critical) ──
-#     print("\n--- Track 1 Test: Class 6 — Oil Pressure Issue ---\n")
-#     t1_result = run_track1(
-#         chains,
-#         fault_class=6,
-#         sensor_readings={
-#             "O2 Sensor Voltage":    0.46,
-#             "MAF (g/s)":            5.9,
-#             "Throttle Position %":  15.3,
-#             "Crank RPM":            895,
-#             "Cam Advance (deg)":    10.4,
-#             "Knock Count (30d)":    0,
-#             "Coolant Temp (C)":     91.0,
-#             "Oil Pressure (PSI)":   17.5,
-#             "MAP (kPa)":            36.6,
-#             "EGR Duty %":           21.8,
-#             "Battery Voltage (V)":  14.02,
-#             "Fuel Temp (C)":        36.3,
-#         },
-#     )
-#     print(t1_result["brief"])
-#     print(f"\n[Response time: {t1_result['response_time_ms']}ms | "
-#           f"Context chunks: {t1_result['context_chunks']}]")
+    # ── Track 1 test: Oil Pressure Issue (Class 6 — Critical) ──
+    print("\n--- Track 1 Test: Class 6 — Oil Pressure Issue ---\n")
+    t1_result = run_track1(
+        chains,
+        fault_class=6,
+        sensor_readings={
+            "O2 Sensor Voltage":    0.46,
+            "MAF (g/s)":            5.9,
+            "Throttle Position %":  15.3,
+            "Crank RPM":            895,
+            "Cam Advance (deg)":    10.4,
+            "Knock Count (30d)":    0,
+            "Coolant Temp (C)":     91.0,
+            "Oil Pressure (PSI)":   17.5,
+            "MAP (kPa)":            36.6,
+            "EGR Duty %":           21.8,
+            "Battery Voltage (V)":  14.02,
+            "Fuel Temp (C)":        36.3,
+        },
+    )
+    print(t1_result["brief"])
+    print(f"\n[Response time: {t1_result['response_time_ms']}ms | "
+          f"Context chunks: {t1_result['context_chunks']}]")
 
-#     # ── Track 2 test: High Risk (Class 3) ──
-#     print("\n--- Track 2 Test: Class 3 — High Risk ---\n")
-#     t2_result = run_track2(
-#         chains,
-#         risk_class=3,
-#         sensor_readings={
-#             "O2 Sensor Voltage":    0.68,
-#             "MAF (g/s)":            4.5,
-#             "Throttle Position %":  14.0,
-#             "Coolant Temp (C)":     112.0,
-#             "Oil Pressure (PSI)":   17.0,
-#             "Battery Voltage (V)":  11.2,
-#             "TPMS (PSI)":           24.0,
-#             "Ambient Temp (C)":     38.0,
-#             "Cabin Humidity %":     70.0,
-#             "Fuel Level %":         8.0,
-#             "Brake Pedal Events":   45,
-#             "Avg Speed (km/h)":     95.0,
-#         },
-#     )
-#     print(t2_result["alert"])
-#     print(f"\n[Response time: {t2_result['response_time_ms']}ms | "
-#           f"Context chunks: {t2_result['context_chunks']}]")
+    # ── Track 2 test: High Risk (Class 3) ──
+    print("\n--- Track 2 Test: Class 3 — High Risk ---\n")
+    t2_result = run_track2(
+        chains,
+        risk_class=3,
+        sensor_readings={
+            "O2 Sensor Voltage":    0.68,
+            "MAF (g/s)":            4.5,
+            "Throttle Position %":  14.0,
+            "Coolant Temp (C)":     112.0,
+            "Oil Pressure (PSI)":   17.0,
+            "Battery Voltage (V)":  11.2,
+            "TPMS (PSI)":           24.0,
+            "Ambient Temp (C)":     38.0,
+            "Cabin Humidity %":     70.0,
+            "Fuel Level %":         8.0,
+            "Brake Pedal Events":   45,
+            "Avg Speed (km/h)":     95.0,
+        },
+    )
+    print(t2_result["alert"])
+    print(f"\n[Response time: {t2_result['response_time_ms']}ms | "
+          f"Context chunks: {t2_result['context_chunks']}]")
 
-#     print("\n" + "=" * 60)
-#     print("  Self-test complete.")
-#     print("=" * 60)
+    print("\n" + "=" * 60)
+    print("  Self-test complete.")
+    print("=" * 60)
