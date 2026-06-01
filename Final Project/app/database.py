@@ -346,6 +346,94 @@ def get_track1_history(plate_number: str) -> List[Dict[str, Any]]:
             return [dict(r) for r in cur.fetchall()]
 
 
+def get_track1_avg_sensors(plate_number: str) -> Optional[Dict[str, Any]]:
+    """
+    Compute the 30-day average of all sensor readings for a given plate.
+    This is the correct input for the ML classifier — it was trained on
+    aggregated telemetry, not single-day snapshots.
+
+    Also returns vehicle identity and fault ground truth from the most
+    recent row (day 30) for display purposes.
+
+    Args:
+        plate_number: Vehicle plate number (e.g. 'B 1234 ABC')
+
+    Returns:
+        Dict with:
+          - averaged sensor values (keyed as the ML model expects)
+          - owner_name, car_model, car_year, plate_number (from day 30)
+          - true_fault_class, true_fault_label (from day 30)
+          - test_id (from day 30, used for saving predictions)
+        or None if plate not found.
+    """
+    with get_connection() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            # Fetch all 30 rows for averaging
+            cur.execute("""
+                SELECT
+                    AVG(o2_sensor_v)        AS o2_sensor_v,
+                    AVG(maf_g_per_s)        AS maf_g_per_s,
+                    AVG(throttle_pos_pct)   AS throttle_pos_pct,
+                    AVG(crank_rpm)          AS crank_rpm,
+                    AVG(cam_advance_deg)    AS cam_advance_deg,
+                    AVG(knock_count_30d)    AS knock_count_30d,
+                    AVG(coolant_temp_c)     AS coolant_temp_c,
+                    AVG(oil_pressure_psi)   AS oil_pressure_psi,
+                    AVG(map_kpa)            AS map_kpa,
+                    AVG(egr_duty_pct)       AS egr_duty_pct,
+                    AVG(battery_voltage_v)  AS battery_voltage_v,
+                    AVG(fuel_temp_c)        AS fuel_temp_c,
+                    COUNT(*)                AS days_recorded
+                FROM track1_technician
+                WHERE plate_number = %s
+            """, (plate_number,))
+            avg_row = cur.fetchone()
+
+            if not avg_row or avg_row['days_recorded'] == 0:
+                return None
+
+            # Fetch identity + ground truth from the latest day
+            cur.execute("""
+                SELECT test_id, owner_name, plate_number,
+                       car_model, car_year,
+                       true_fault_class, true_fault_label
+                FROM track1_technician
+                WHERE plate_number = %s
+                ORDER BY day_in_window DESC
+                LIMIT 1
+            """, (plate_number,))
+            meta = cur.fetchone()
+
+            if not meta:
+                return None
+
+            return {
+                # Identity
+                'test_id':           meta['test_id'],
+                'owner_name':        meta['owner_name'],
+                'plate_number':      meta['plate_number'],
+                'car_model':         meta['car_model'],
+                'car_year':          meta['car_year'],
+                # Ground truth
+                'true_fault_class':  meta['true_fault_class'],
+                'true_fault_label':  meta['true_fault_label'],
+                # 30-day averaged sensors (float for ML input)
+                'O2 SENSOR V':       float(avg_row['o2_sensor_v']),
+                'MAF G PER S':       float(avg_row['maf_g_per_s']),
+                'THROTTLE POS PCT':  float(avg_row['throttle_pos_pct']),
+                'CRANK RPM':         float(avg_row['crank_rpm']),
+                'CAM ADVANCE DEG':   float(avg_row['cam_advance_deg']),
+                'KNOCK COUNT 30D':   float(avg_row['knock_count_30d']),
+                'COOLANT TEMP C':    float(avg_row['coolant_temp_c']),
+                'OIL PRESSURE PSI':  float(avg_row['oil_pressure_psi']),
+                'MAP KPA':           float(avg_row['map_kpa']),
+                'EGR DUTY PCT':      float(avg_row['egr_duty_pct']),
+                'BATTERY VOLTAGE V': float(avg_row['battery_voltage_v']),
+                'FUEL TEMP C':       float(avg_row['fuel_temp_c']),
+                'days_recorded':     int(avg_row['days_recorded']),
+            }
+
+
 def save_track1_prediction(
     test_id: str,
     predicted_class: int,
@@ -406,6 +494,95 @@ def get_track2_history(plate_number: str) -> List[Dict[str, Any]]:
                 ORDER BY hour_of_day ASC
             """, (plate_number,))
             return [dict(r) for r in cur.fetchall()]
+
+
+def get_track2_avg_sensors(plate_number: str) -> Optional[Dict[str, Any]]:
+    """
+    Compute the daily average of all 7 two-hourly sensor readings
+    (07:00–19:00) for a given plate.
+
+    The ML risk classifier receives this averaged dict — consistent with
+    how the system was designed: pattern detection across the day,
+    not a single-moment snapshot.
+
+    Returns:
+        Dict with averaged sensor values, vehicle identity, and ground
+        truth — or None if plate not found.
+    """
+    with get_connection() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+
+            # 7-reading daily average
+            cur.execute("""
+                SELECT
+                    AVG(o2_sensor_v)        AS o2_sensor_v,
+                    AVG(maf_g_per_s)        AS maf_g_per_s,
+                    AVG(throttle_pos_pct)   AS throttle_pos_pct,
+                    AVG(coolant_temp_c)     AS coolant_temp_c,
+                    AVG(oil_pressure_psi)   AS oil_pressure_psi,
+                    AVG(battery_voltage_v)  AS battery_voltage_v,
+                    AVG(tpms_psi)           AS tpms_psi,
+                    AVG(ambient_temp_c)     AS ambient_temp_c,
+                    AVG(cabin_humidity_pct) AS cabin_humidity_pct,
+                    AVG(fuel_level_pct)     AS fuel_level_pct,
+                    AVG(brake_pedal_events) AS brake_pedal_events,
+                    AVG(speed_kmh)          AS speed_kmh,
+                    COUNT(*)                AS readings_count
+                FROM track2_owner
+                WHERE plate_number = %s
+            """, (plate_number,))
+            avg_row = cur.fetchone()
+
+            if not avg_row or avg_row['readings_count'] == 0:
+                return None
+
+            # Identity + ground truth from the latest hour
+            cur.execute("""
+                SELECT test_id, owner_name, plate_number,
+                       car_model, car_year,
+                       true_risk_class, true_risk_label
+                FROM track2_owner
+                WHERE plate_number = %s
+                ORDER BY hour_of_day DESC
+                LIMIT 1
+            """, (plate_number,))
+            meta = cur.fetchone()
+
+            if not meta:
+                return None
+
+            return {
+                # Identity
+                'test_id':           meta['test_id'],
+                'owner_name':        meta['owner_name'],
+                'plate_number':      meta['plate_number'],
+                'car_model':         meta['car_model'],
+                'car_year':          meta['car_year'],
+                # Ground truth
+                'true_risk_class':   meta['true_risk_class'],
+                'true_risk_label':   meta['true_risk_label'],
+                # 7-reading daily averaged sensors (float for ML input)
+                'O2 SENSOR V':        float(avg_row['o2_sensor_v']),
+                'MAF G PER S':        float(avg_row['maf_g_per_s']),
+                'THROTTLE POS PCT':   float(avg_row['throttle_pos_pct']),
+                'COOLANT TEMP C':     float(avg_row['coolant_temp_c']),
+                'OIL PRESSURE PSI':   float(avg_row['oil_pressure_psi']),
+                'BATTERY VOLTAGE V':  float(avg_row['battery_voltage_v']),
+                'TPMS PSI':           float(avg_row['tpms_psi']),
+                'AMBIENT TEMP C':     float(avg_row['ambient_temp_c']),
+                'CABIN HUMIDITY PCT': float(avg_row['cabin_humidity_pct']),
+                'FUEL LEVEL PCT':     float(avg_row['fuel_level_pct']),
+                'BRAKE PEDAL EVENTS': float(avg_row['brake_pedal_events']),
+                'SPEED KMH':          float(avg_row['speed_kmh']),
+                'readings_count':     int(avg_row['readings_count']),
+                # Averaged values also as lowercase keys for sensor pill display
+                'coolant_temp_c':     float(avg_row['coolant_temp_c']),
+                'oil_pressure_psi':   float(avg_row['oil_pressure_psi']),
+                'battery_voltage_v':  float(avg_row['battery_voltage_v']),
+                'tpms_psi':           float(avg_row['tpms_psi']),
+                'fuel_level_pct':     float(avg_row['fuel_level_pct']),
+                'speed_kmh':          float(avg_row['speed_kmh']),
+            }
 
 
 def save_track2_prediction(

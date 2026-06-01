@@ -35,8 +35,10 @@ from pydantic import BaseModel, field_validator
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from db import (
-    get_all_plates, get_track1_record, get_track2_record,
+from database import (
+    get_all_plates,
+    get_track1_avg_sensors, get_track1_record,
+    get_track2_avg_sensors, get_track2_record,
     save_track1_prediction, save_track2_prediction, log_query,
     row_to_track1_sensors, row_to_track2_sensors,
 )
@@ -189,6 +191,13 @@ class AlertResponse(BaseModel):
     context_chunks:   int
     safety_passed:    bool
     output_valid:     bool
+    # Sensor readings — for display in owner app sensor pills
+    coolant_temp_c:     Optional[float]
+    oil_pressure_psi:   Optional[float]
+    battery_voltage_v:  Optional[float]
+    tpms_psi:           Optional[float]
+    fuel_level_pct:     Optional[float]
+    speed_kmh:          Optional[float]
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -233,15 +242,24 @@ async def diagnose(request: DiagnoseRequest):
     """
     plate = request.plate_number
 
-    # ── Fetch record ──────────────────────────────────────────────────────────
-    record = get_track1_record(plate)
+    # ── Fetch 30-day telemetry and compute average ────────────────────────────
+    # The ML classifier was trained on aggregated 30-day sensor data.
+    # get_track1_avg_sensors() queries all 30 daily rows and returns their
+    # mean — this is the correct input for classification.
+    record = get_track1_avg_sensors(plate)
     if not record:
         raise HTTPException(
             status_code=404,
-            detail=f"No Track 1 data found for plate: {plate}",
+            detail=f"No Track 1 telemetry found for plate: {plate}",
         )
 
-    sensors = row_to_track1_sensors(record)
+    # Sensor dict is already keyed correctly by get_track1_avg_sensors()
+    sensors = {k: record[k] for k in [
+        "O2 SENSOR V", "MAF G PER S", "THROTTLE POS PCT", "CRANK RPM",
+        "CAM ADVANCE DEG", "KNOCK COUNT 30D", "COOLANT TEMP C",
+        "OIL PRESSURE PSI", "MAP KPA", "EGR DUTY PCT",
+        "BATTERY VOLTAGE V", "FUEL TEMP C",
+    ]}
 
     # ── Safety validation ─────────────────────────────────────────────────────
     ok, err = validate_request(plate, sensors, track=1)
@@ -348,14 +366,23 @@ async def alert(request: AlertRequest):
     """
     plate = request.plate_number
 
-    record = get_track2_record(plate)
+    # ── Fetch daily readings and compute average ─────────────────────────────
+    # The ML risk classifier receives the 7-reading daily average
+    # (one per 2-hour interval, 07:00–19:00) — not a single snapshot.
+    record = get_track2_avg_sensors(plate)
     if not record:
         raise HTTPException(
             status_code=404,
-            detail=f"No Track 2 data found for plate: {plate}",
+            detail=f"No Track 2 telemetry found for plate: {plate}",
         )
 
-    sensors = row_to_track2_sensors(record)
+    # Sensor dict already keyed correctly by get_track2_avg_sensors()
+    sensors = {k: record[k] for k in [
+        "O2 SENSOR V", "MAF G PER S", "THROTTLE POS PCT",
+        "COOLANT TEMP C", "OIL PRESSURE PSI", "BATTERY VOLTAGE V",
+        "TPMS PSI", "AMBIENT TEMP C", "CABIN HUMIDITY PCT",
+        "FUEL LEVEL PCT", "BRAKE PEDAL EVENTS", "SPEED KMH",
+    ]}
 
     ok, err = validate_request(plate, sensors, track=2)
     if not ok:
@@ -426,6 +453,11 @@ async def alert(request: AlertRequest):
     except Exception:
         pass
 
+    def _f(key):
+        # record from get_track2_avg_sensors already has lowercase sensor keys
+        v = record.get(key)
+        return float(v) if v is not None else None
+
     return AlertResponse(
         plate_number=plate,
         test_id=record.get("test_id"),
@@ -442,4 +474,10 @@ async def alert(request: AlertRequest):
         context_chunks=chunks_used,
         safety_passed=True,
         output_valid=output_valid,
+        coolant_temp_c=_f("coolant_temp_c"),
+        oil_pressure_psi=_f("oil_pressure_psi"),
+        battery_voltage_v=_f("battery_voltage_v"),
+        tpms_psi=_f("tpms_psi"),
+        fuel_level_pct=_f("fuel_level_pct"),
+        speed_kmh=_f("speed_kmh"),
     )

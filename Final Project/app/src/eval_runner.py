@@ -37,9 +37,10 @@ from dotenv import load_dotenv
 # Add project root to path so imports work
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from db import (
-    get_all_plates, get_track1_record, get_track2_record,
-    row_to_track1_sensors, row_to_track2_sensors,
+from database import (
+    get_all_plates,
+    get_track1_avg_sensors,
+    get_track2_avg_sensors,
 )
 from src.logger import log_request
 from src.safety import validate_request
@@ -98,11 +99,17 @@ def run_track1_eval() -> pd.DataFrame:
 
     rows = []
     for plate in plates:
-        record = get_track1_record(plate)
+        # Average all 30 daily readings — same logic as the live app
+        record = get_track1_avg_sensors(plate)
         if not record:
             continue
 
-        sensors = row_to_track1_sensors(record)
+        sensors = {k: record[k] for k in [
+            "O2 SENSOR V", "MAF G PER S", "THROTTLE POS PCT", "CRANK RPM",
+            "CAM ADVANCE DEG", "KNOCK COUNT 30D", "COOLANT TEMP C",
+            "OIL PRESSURE PSI", "MAP KPA", "EGR DUTY PCT",
+            "BATTERY VOLTAGE V", "FUEL TEMP C",
+        ]}
 
         # Safety check
         ok, err = validate_request(plate, sensors, track=1)
@@ -165,11 +172,17 @@ def run_track2_eval() -> pd.DataFrame:
 
     rows = []
     for plate in plates:
-        record = get_track2_record(plate)
+        # Average all 7 daily readings — same logic as the live app
+        record = get_track2_avg_sensors(plate)
         if not record:
             continue
 
-        sensors = row_to_track2_sensors(record)
+        sensors = {k: record[k] for k in [
+            "O2 SENSOR V", "MAF G PER S", "THROTTLE POS PCT",
+            "COOLANT TEMP C", "OIL PRESSURE PSI", "BATTERY VOLTAGE V",
+            "TPMS PSI", "AMBIENT TEMP C", "CABIN HUMIDITY PCT",
+            "FUEL LEVEL PCT", "BRAKE PEDAL EVENTS", "SPEED KMH",
+        ]}
 
         ok, err = validate_request(plate, sensors, track=2)
         if not ok:
