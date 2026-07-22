@@ -1,10 +1,23 @@
-Mini Project 3/ai-cv-reviewer/__pycache__
-Mini Project 3/.env
-Mini Project 3/ai-cv-reviewer/.env
-Mini Project 4/.env
-Mini Project 4/.env
-Assignment 36/.env
-Assignment 29/.env
-Assignment 28/.env
-Mini Project 5/chroma_db
-.vscode
+# --- Secrets -----------------------------------------------------------------
+# Matches a file named .env at ANY depth. The previous version listed explicit
+# paths that silently matched nothing (wrong folder names / missing the plural
+# "Mini Projects" prefix), which is how real API keys ended up committed.
+# Keep this name-based, never path-based.
+.env
+.env.local
+
+# Templates are safe to commit
+!.env.example
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Generated artifacts -----------------------------------------------------
+chroma_db/
+*.save
+
+# --- Editor ------------------------------------------------------------------
+.vscode/
+.ipynb_checkpoints/
